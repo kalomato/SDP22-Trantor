@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var trantorVM = TrantorViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List(trantorVM.trantorBooks) { books in
+            Text(books.title)
         }
-        .padding()
     }
+    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
