@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2446942993EE6F009E759A /* NetworkInterface.swift */; };
+		CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD843B2F2992E62C008FF645 /* ModelOperations.swift */; };
 		CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64D299028EB0089B537 /* TrantorApp.swift */; };
 		CD8ED650299028EB0089B537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64F299028EB0089B537 /* ContentView.swift */; };
 		CD8ED652299028EC0089B537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED651299028EC0089B537 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD2446942993EE6F009E759A /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		CD843B2F2992E62C008FF645 /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
 		CD8ED64A299028EB0089B537 /* Trantor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trantor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8ED64D299028EB0089B537 /* TrantorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrantorApp.swift; sourceTree = "<group>"; };
 		CD8ED64F299028EB0089B537 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,10 +46,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD2446932993EE36009E759A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CD2446942993EE6F009E759A /* NetworkInterface.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		CD8ED641299028EA0089B537 = {
 			isa = PBXGroup;
 			children = (
 				CD8ED64C299028EB0089B537 /* Trantor */,
+				CD8ED6692990542A0089B537 /* TrantorTests */,
 				CD8ED64B299028EB0089B537 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,12 +74,11 @@
 		CD8ED64C299028EB0089B537 /* Trantor */ = {
 			isa = PBXGroup;
 			children = (
-				CD8ED64D299028EB0089B537 /* TrantorApp.swift */,
-				CD8ED64F299028EB0089B537 /* ContentView.swift */,
-				CD8ED65F299037AE0089B537 /* ModelDefinition.swift */,
-				CD8ED66129904D560089B537 /* ModelPersistence.swift */,
-				CD8ED663299050090089B537 /* TrantorViewModel.swift */,
-				CD8ED651299028EC0089B537 /* Assets.xcassets */,
+				CD8ED6652990536E0089B537 /* Views */,
+				CD8ED666299053800089B537 /* ViewModels */,
+				CD8ED668299053D80089B537 /* Model */,
+				CD2446932993EE36009E759A /* Network */,
+				CD8ED667299053A50089B537 /* System */,
 				CD8ED653299028EC0089B537 /* Preview Content */,
 			);
 			path = Trantor;
@@ -80,6 +92,49 @@
 				CD8ED654299028EC0089B537 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD8ED6652990536E0089B537 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED64F299028EB0089B537 /* ContentView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CD8ED666299053800089B537 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED663299050090089B537 /* TrantorViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		CD8ED667299053A50089B537 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED64D299028EB0089B537 /* TrantorApp.swift */,
+				CD8ED651299028EC0089B537 /* Assets.xcassets */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		CD8ED668299053D80089B537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED65F299037AE0089B537 /* ModelDefinition.swift */,
+				CD843B2F2992E62C008FF645 /* ModelOperations.swift */,
+				CD8ED66129904D560089B537 /* ModelPersistence.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CD8ED6692990542A0089B537 /* TrantorTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TrantorTests;
+			path = Trantor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +212,10 @@
 				CD8ED650299028EB0089B537 /* ContentView.swift in Sources */,
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
 				CD8ED664299050090089B537 /* TrantorViewModel.swift in Sources */,
+				CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */,
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
 				CD8ED66229904D560089B537 /* ModelPersistence.swift in Sources */,
+				CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

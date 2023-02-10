@@ -10,8 +10,8 @@ import SwiftUI
 final class TrantorViewModel:ObservableObject {
     let persistence = ModelPersistence()
     
-    @Published var trantorBooks:[TrantorBooks]
-    @Published var trantorAuthors:[TrantorAuthors]
+    @Published var trantorBooks:[Books]
+    @Published var trantorAuthors:[Authors]
     
     init() {
         self.trantorBooks = persistence.loadTrantorBooks()

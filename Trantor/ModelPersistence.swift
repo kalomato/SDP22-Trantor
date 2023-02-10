@@ -9,11 +9,11 @@ import Foundation
 
 final class ModelPersistence {
     
-    func loadTrantorBooks() -> [TrantorBooks] {
+    func loadTrantorBooks() -> [Books] {
         []
     }
     
-    func loadTrantorAuthors() -> [TrantorAuthors] {
+    func loadTrantorAuthors() -> [Authors] {
         []
     }
     
@@ -24,4 +24,5 @@ final class ModelPersistence {
     func saveTrantorOrder() {
         
     }
+    
 }
