@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05599F299C1144006609D6 /* NetworkPersistence.swift */; };
 		CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2446942993EE6F009E759A /* NetworkInterface.swift */; };
 		CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD843B2F2992E62C008FF645 /* ModelOperations.swift */; };
 		CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64D299028EB0089B537 /* TrantorApp.swift */; };
@@ -17,10 +18,11 @@
 		CD8ED65E299034D20089B537 /* trantorBooksTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65C299034D20089B537 /* trantorBooksTest.json */; };
 		CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED65F299037AE0089B537 /* ModelDefinition.swift */; };
 		CD8ED66229904D560089B537 /* ModelPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED66129904D560089B537 /* ModelPersistence.swift */; };
-		CD8ED664299050090089B537 /* TrantorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* TrantorViewModel.swift */; };
+		CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* BooksViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD05599F299C1144006609D6 /* NetworkPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPersistence.swift; sourceTree = "<group>"; };
 		CD2446942993EE6F009E759A /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		CD843B2F2992E62C008FF645 /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
 		CD8ED64A299028EB0089B537 /* Trantor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trantor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,7 +34,7 @@
 		CD8ED65C299034D20089B537 /* trantorBooksTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorBooksTest.json; sourceTree = "<group>"; };
 		CD8ED65F299037AE0089B537 /* ModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDefinition.swift; sourceTree = "<group>"; };
 		CD8ED66129904D560089B537 /* ModelPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPersistence.swift; sourceTree = "<group>"; };
-		CD8ED663299050090089B537 /* TrantorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrantorViewModel.swift; sourceTree = "<group>"; };
+		CD8ED663299050090089B537 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2446942993EE6F009E759A /* NetworkInterface.swift */,
+				CD05599F299C1144006609D6 /* NetworkPersistence.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -105,7 +108,7 @@
 		CD8ED666299053800089B537 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CD8ED663299050090089B537 /* TrantorViewModel.swift */,
+				CD8ED663299050090089B537 /* BooksViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -211,7 +214,8 @@
 			files = (
 				CD8ED650299028EB0089B537 /* ContentView.swift in Sources */,
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
-				CD8ED664299050090089B537 /* TrantorViewModel.swift in Sources */,
+				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
+				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
 				CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */,
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
 				CD8ED66229904D560089B537 /* ModelPersistence.swift in Sources */,

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var trantorVM = TrantorViewModel()
+    @ObservedObject var trantorVM = BooksViewModel()
     
     var body: some View {
-        List(trantorVM.trantorBooks) { books in
+        List(trantorVM.books) { books in
             Text(books.title)
         }
     }
