@@ -13,16 +13,13 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(vm.books) { book in
-                //ESP 28 3:09H ***
+                //ESP 28 3:09 ***
                 HStack {
                     AsyncImage(url: book.cover) { image in
                         image
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50)
-                            .background {
-                                Color.gray.opacity(0.2)
-                            }
                         
                     } placeholder: {
                         Image(systemName: "text.book.closed")
@@ -36,7 +33,6 @@ struct ContentView: View {
                         Text("\(book.year.description)")
                             .font(.caption)
                     }
-
 
                 }
             }

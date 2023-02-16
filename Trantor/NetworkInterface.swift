@@ -21,38 +21,41 @@ extension URL {
     
     //URLs para los 16 ENDPOINT de la API
     //ENDPOINT libros
-    static let getBooks         = serverURL.appending(component: "books").appending(component: "list")             //GET lista completa libros
-    static let getBooksLatest   = serverURL.appending(component: "books/latest")            //GET libros destacados
-    static let getAuthors       = serverURL.appending(component: "books/authors")           //GET listado todos autores
+    static let bookAPI          = "books"
+    static let getBooks         = serverURL.appending(component: "\(bookAPI)").appending(component: "list")             //GET lista completa libros
+    static let getBooksLatest   = serverURL.appending(component: "\(bookAPI)").appending(component: "latest")           //GET libros destacados
+    static let getAuthors       = serverURL.appending(component: "\(bookAPI)").appending(component: "authors")          //GET listado todos autores
 
-    static func getBookAuthor(id:String) -> URL {                                            //GET solicitar autor a partir de id de autor
-        serverURL.appending(component: "books/getAuthor/\(id)")
+    static func getBookAuthor(id:String) -> URL {                                                                       //GET solicitar autor a partir de id
+        serverURL.appending(component: "\(bookAPI)").appending(component: "getAuthor").appending(component: "\(id)")
     }
     
-    static func findBook(search:String) -> URL {                                             //GET buscar libro por título
-        serverURL.appending(component: "books/find/\(search)")
+    static func findBook(search:String) -> URL {                                                                        //GET buscar libro por título
+        serverURL.appending(component: "\(bookAPI)").appending(component: "find").appending(component: "\(search)")
     }
 
     //ENDPOINT clientes/usuarios
-    static let createUser        = serverURL.appending(component: "client")                  //POST crear usuario
-    static let updateUser        = serverURL.appending(component: "client")                  //PUT  actualizar usuario
-    static let infoUser          = serverURL.appending(component: "client/query")            //POST información cliente (email)
-    static let markRead          = serverURL.appending(component: "client/readQuery")        //POST marcar leídos libros de usuario
-    static let reportBooksUser   = serverURL.appending(component: "client/reportBooks/User") //POST libros leídos/comprados usuario
-    static let readedBooks       = serverURL.appending(component: "client/readedBooks")      //POST libros leídos usuario
+    static let clientAPI        = "client"
+    static let createUser       = serverURL.appending(component: "\(clientAPI)")                                        //POST crear usuario
+    static let updateUser       = serverURL.appending(component: "\(clientAPI)")                                        //PUT  actualizar usuario
+    static let infoUser         = serverURL.appending(component: "\(clientAPI)").appending(component: "query")          //POST información cliente (email)
+    static let markRead         = serverURL.appending(component: "\(clientAPI)").appending(component: "readQuery")      //POST marcar leídos libros de usuario
+    static let reportBooksUser  = serverURL.appending(component: "\(clientAPI)").appending(component: "reportBooksUser")//POST libros leídos/comprados usuario
+    static let readedBooks      = serverURL.appending(component: "\(clientAPI)").appending(component: "readedBooks")    //POST libros leídos usuario
 
     //ENDPOINT compras
-    static let newOrder          = serverURL.appending(component: "shop/newOrder")           //POST nuevo pedido libros usuario
-    static let orders            = serverURL.appending(component: "shop/orders")             //POST pedidos usuario
-    static let modifyOrderStatus = serverURL.appending(component: "shop/orderStatus")        //PUT  modificar estado pedido
+    static let shopAPI           = "shop"
+    static let newOrder          = serverURL.appending(component: "\(shopAPI)").appending(component: "newOrder")        //POST nuevo pedido libros usuario
+    static let orders            = serverURL.appending(component: "\(shopAPI)").appending(component: "orders")          //POST pedidos usuario
+    static let modifyOrderStatus = serverURL.appending(component: "\(shopAPI)").appending(component: "orderStatus")     //PUT  modificar estado pedido
     
     
-    static func orderInfo(id:String) -> URL {                                                //GET solicitar información de un pedido
-        serverURL.appending(component: "shop/order/\(id)")
+    static func orderInfo(id:String) -> URL {                                                                           //GET solicitar información de un pedido
+        serverURL.appending(component: "\(shopAPI)").appending(component: "order").appending(component: "\(id)")
     }
     
-    static func orderStatus(id:String) -> URL {                                              //GET estado de un pedido
-        serverURL.appending(component: "shop/orderStatus/\(id)")
+    static func orderStatus(id:String) -> URL {                                                                         //GET estado de un pedido
+        serverURL.appending(component: "\(shopAPI)").appending(component: "orderStatus").appending(component: "\(id)")
     }
 }
 
