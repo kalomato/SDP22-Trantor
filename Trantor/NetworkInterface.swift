@@ -21,9 +21,9 @@ extension URL {
     
     //URLs para los 16 ENDPOINT de la API
     //ENDPOINT libros
-    static let getBooks          = serverURL.appending(component: "books/list")              //GET lista completa libros
-    static let getBooksLatest    = serverURL.appending(component: "books/latest")            //GET libros destacados
-    static let getAuthors        = serverURL.appending(component: "books/authors")           //GET listado todos autores
+    static let getBooks         = serverURL.appending(component: "books").appending(component: "list")             //GET lista completa libros
+    static let getBooksLatest   = serverURL.appending(component: "books/latest")            //GET libros destacados
+    static let getAuthors       = serverURL.appending(component: "books/authors")           //GET listado todos autores
 
     static func getBookAuthor(id:String) -> URL {                                            //GET solicitar autor a partir de id de autor
         serverURL.appending(component: "books/getAuthor/\(id)")

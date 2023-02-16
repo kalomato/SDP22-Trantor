@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-//clase 28 segunda parte. No me entero de nada. 3:19H
-
 final class NetworkPersistence {
     static let shared = NetworkPersistence()
     
@@ -23,4 +21,5 @@ final class NetworkPersistence {
         return try JSONDecoder().decode([Authors].self, from: data)
     }
 
+    
 }

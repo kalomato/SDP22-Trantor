@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TrantorApp: App {
+    @StateObject var booksVM = BooksViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(booksVM)
         }
     }
 }

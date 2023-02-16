@@ -8,19 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var trantorVM = BooksViewModel()
+    @EnvironmentObject var vm:BooksViewModel
     
     var body: some View {
-        List(trantorVM.books) { books in
-            Text(books.title)
+        NavigationStack {
+            List(vm.books) { book in
+                //ESP 28 3:09H ***
+                HStack {
+                    AsyncImage(url: book.cover) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                            .background {
+                                Color.gray.opacity(0.2)
+                            }
+                        
+                    } placeholder: {
+                        Image(systemName: "text.book.closed")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                    }
+                    VStack(alignment: .leading) {
+                        Text(book.title)
+                            .font(.headline)
+    //                    Text(book.pages)
+    //                        .font(.caption)
+                    }
+
+
+                }
+            }
+            .navigationTitle("Libros")
+        }
+        .alert("ERROR",
+               isPresented: $vm.showAlert) {
+            Button(action: {}) {
+                Text("OK")
+            }
+        } message: {
+            Text(vm.errorMSG)
         }
     }
-    
+
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(BooksViewModel())
     }
 }
