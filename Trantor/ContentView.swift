@@ -33,8 +33,8 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text(book.title)
                             .font(.headline)
-    //                    Text(book.pages)
-    //                        .font(.caption)
+                        Text("\(book.year.description)")
+                            .font(.caption)
                     }
 
 
