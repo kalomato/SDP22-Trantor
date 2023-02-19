@@ -13,7 +13,7 @@ struct TrantorApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabsView()
                 .environmentObject(booksVM)
         }
     }

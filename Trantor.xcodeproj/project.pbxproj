@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05599F299C1144006609D6 /* NetworkPersistence.swift */; };
 		CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2446942993EE6F009E759A /* NetworkInterface.swift */; };
+		CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36129A0C62B0096AC89 /* TabsView.swift */; };
+		CD39D36429A0C71F0096AC89 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36329A0C71F0096AC89 /* FavoritesView.swift */; };
+		CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36529A0C9E50096AC89 /* LatestView.swift */; };
+		CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36729A0CA710096AC89 /* OrdersView.swift */; };
 		CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53FDBE299E52FC005A269C /* NetworkTest.swift */; };
 		CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD843B2F2992E62C008FF645 /* ModelOperations.swift */; };
 		CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64D299028EB0089B537 /* TrantorApp.swift */; };
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		CD05599F299C1144006609D6 /* NetworkPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPersistence.swift; sourceTree = "<group>"; };
 		CD2446942993EE6F009E759A /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		CD39D36129A0C62B0096AC89 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		CD39D36329A0C71F0096AC89 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		CD39D36529A0C9E50096AC89 /* LatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestView.swift; sourceTree = "<group>"; };
+		CD39D36729A0CA710096AC89 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
 		CD53FDBE299E52FC005A269C /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		CD843B2F2992E62C008FF645 /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
 		CD8ED64A299028EB0089B537 /* Trantor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trantor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +113,10 @@
 			isa = PBXGroup;
 			children = (
 				CD8ED64F299028EB0089B537 /* ContentView.swift */,
+				CD39D36129A0C62B0096AC89 /* TabsView.swift */,
+				CD39D36329A0C71F0096AC89 /* FavoritesView.swift */,
+				CD39D36529A0C9E50096AC89 /* LatestView.swift */,
+				CD39D36729A0CA710096AC89 /* OrdersView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -215,15 +227,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD39D36429A0C71F0096AC89 /* FavoritesView.swift in Sources */,
 				CD8ED650299028EB0089B537 /* ContentView.swift in Sources */,
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
 				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
 				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
 				CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */,
 				CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */,
+				CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */,
+				CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */,
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
 				CD8ED66229904D560089B537 /* ModelPersistence.swift in Sources */,
 				CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */,
+				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

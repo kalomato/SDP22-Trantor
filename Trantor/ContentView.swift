@@ -13,7 +13,6 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(vm.books) { book in
-                //ESP 28 3:09 ***
                 HStack {
                     AsyncImage(url: book.cover) { image in
                         image
@@ -22,7 +21,7 @@ struct ContentView: View {
                             .frame(width: 50)
                         
                     } placeholder: {
-                        Image(systemName: "text.book.closed")
+                        Image(systemName: "text.book.closed.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50)
@@ -37,6 +36,9 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Libros")
+            .refreshable {
+                await vm.getBooks()
+            }
         }
         .alert("ERROR",
                isPresented: $vm.showAlert) {
