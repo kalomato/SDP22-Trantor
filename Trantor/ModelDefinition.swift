@@ -50,7 +50,7 @@ struct Books: Codable, Identifiable, Hashable {
 
 
 extension Books {
-    static let booksTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", title: "The Time Machine", id: 1, author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", pages: 118, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", year: 1985, isbn: "0451528557", rating: 3.87)
+    static let bookTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", title: "The Time Machine", id: 1, author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", pages: 118, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", year: 1985, isbn: "0451528557", rating: 3.87)
 }
 
 // MARK: - Struct Autores
@@ -60,7 +60,7 @@ struct Authors: Codable, Identifiable, Hashable {
 
 
 extension Authors {
-    static let authorsTest = Authors(name: "H. G. Wells", id: "531EDFA6-A361-4E15-873F-45E4EA0AF120")
+    static let authorTest = Authors(name: "H. G. Wells", id: "531EDFA6-A361-4E15-873F-45E4EA0AF120")
 }
 
 // MARK: - Struct Cliente

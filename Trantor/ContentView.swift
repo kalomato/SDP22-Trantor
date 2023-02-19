@@ -13,27 +13,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(vm.books) { book in
-                HStack {
-                    AsyncImage(url: book.cover) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50)
-                        
-                    } placeholder: {
-                        Image(systemName: "text.book.closed.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50)
-                    }
-                    VStack(alignment: .leading) {
-                        Text(book.title)
-                            .font(.headline)
-                        Text("\(book.year.description)")
-                            .font(.caption)
-                    }
-
-                }
+                BookRow(book: book)
             }
             .navigationTitle("Libros")
             .refreshable {
@@ -54,8 +34,15 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
+    static let vm = BooksViewModel()
     static var previews: some View {
         ContentView()
-            .environmentObject(BooksViewModel())
+            //.environmentObject(BooksViewModel())
+            .environmentObject(vm)
+            .task {
+                await vm.getBooks()
+            }
     }
 }
+
+
