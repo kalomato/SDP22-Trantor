@@ -27,8 +27,12 @@ struct BookRow: View {
             VStack(alignment: .leading) {
                 Text(book.title)
                     .font(.headline)
-                Text("\(book.year.description)")
+                Text(book.author)
                     .font(.caption)
+                Text(book.year.description)
+                    .font(.caption)
+//                Text("Páginas: \(book.pages.description)")
+//                    .font(.caption)
             }
             
         }

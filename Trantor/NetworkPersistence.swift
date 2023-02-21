@@ -10,15 +10,64 @@ import SwiftUI
 final class NetworkPersistence {
     static let shared = NetworkPersistence()
     
-    //de momento sin control de errores
+    //En la misma funcion que recupera libros actualizo campo de autor
     func getBooks() async throws -> [Books] {
-        let (data, _) = try await URLSession.shared.data(from: .getBooks)
-        return try JSONDecoder().decode([Books].self, from: data)
+        var books = try await queryJSON(request: .request(url: .getBooks), type: [Books].self)
+        //let authors = try await getAuthors()
+        //recuperamos array autores y los metemos en diccionario para mejorar la búsqueda que haremos posteriormente.
+        let authors = try await getAuthors().reduce(into: [String: Authors]()) { dict, author in dict[author.id] = author }
+
+        for i in 0..<books.count {
+            //if let author = authors.first(where: {$0.id == books[i].author}) {
+            if let author = authors[books[i].author] {
+                books[i].author = author.name
+            }
+        }
+        return books
+    }
+    
+    //A costa de más consultas a la API, garantizo la información volviendo a consultar
+    //por si el dato hubiera cambiado cuando se solicita sólo un libro.
+    //La API sólo da opción de búsqueda por título, pero no me garantiza un resultado sea único
+    //(por ejemplo, título "The fisrt man" y "The fist man in the moon" devolvería dos resultados)
+    func getBook(id: Int) async throws -> Books? {
+        let result = try await getBooks()
+        return result.first(where: { $0.id == id })
     }
     
     func getAuthors() async throws -> [Authors] {
-        let (data, _) = try await URLSession.shared.data(from: .getAuthors)
-        return try JSONDecoder().decode([Authors].self, from: data)
+        //let (data, _) = try await URLSession.shared.data(from: .getAuthors)
+        //return try JSONDecoder().decode([Authors].self, from: data)
+        try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
+    }
+    
+    func getAuthor(id: String) async throws -> String {
+        try await queryJSON(request: .request(url: .getBookAuthor(id: id)), type: String.self)
+    }
+    
+    
+    //Función genérica para peticiones
+    func queryJSON<T:Codable>(request:URLRequest,
+                              type:T.Type,
+                              decoder:JSONDecoder = JSONDecoder(),
+                              satusOK:Int = 200) async throws -> T {
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard let response = response as? HTTPURLResponse else { throw APIErrors.nonHTTP }
+            if response.statusCode == satusOK {
+                do {
+                    return try decoder.decode(T.self, from: data)
+                } catch {
+                    throw APIErrors.json(error)
+                }
+            } else {
+                throw APIErrors.satus(response.statusCode)
+            }
+        } catch let error as APIErrors {
+            throw error
+        } catch {
+            throw APIErrors.general(error)
+        }
     }
 
     

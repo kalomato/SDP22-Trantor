@@ -27,6 +27,9 @@ final class BooksViewModel:ObservableObject {
     @MainActor func getBooks() async {
         do {
             books = try await persistence.getBooks()
+        } catch let error as APIErrors {
+            errorMSG = error.description
+            showAlert.toggle()
         } catch {
             errorMSG = error.localizedDescription
             showAlert.toggle()

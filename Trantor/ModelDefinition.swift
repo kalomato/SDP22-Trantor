@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Struct Libros
 struct Books: Codable, Identifiable, Hashable {
     let summary: String?
-    let author: String
+    var author: String
     let plot:String?
     let isbn:String?
     let year:Int
@@ -19,20 +19,7 @@ struct Books: Codable, Identifiable, Hashable {
     let title: String
     let pages: Int?
     let rating: Double?
-    
-//    init(summary: String? = "Sumario no disponible", title: String, id: Int, author: String, pages: Int? = 0, cover: URL? = URL (string: "https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png"), plot: String? = "Argumento no disponible", year: Int, isbn: String? = "ISBN no disponible", rating: Double? = 0.0) {
-//            self.summary = summary
-//            self.title = title
-//            self.id = id
-//            self.author = author
-//            self.pages = pages
-//            self.cover = cover
-//            self.plot = plot
-//            self.year = year
-//            self.isbn = isbn
-//            self.rating = rating
-//        }
-    
+       
     init(summary: String? = "Sumario no disponible", title: String, id: Int, author: String, pages: Int? = 0, cover: URL? = nil, plot: String? = "Argumento no disponible", year: Int, isbn: String? = "ISBN no disponible", rating: Double? = 0.0) {
             self.summary = summary
             self.title = title
@@ -45,7 +32,6 @@ struct Books: Codable, Identifiable, Hashable {
             self.isbn = isbn
             self.rating = rating
         }
-
 }
 
 

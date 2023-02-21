@@ -7,6 +7,29 @@
 
 import Foundation
 
+enum APIErrors:Error {
+    case general(Error)
+    case json(Error)
+    case nonHTTP
+    case satus(Int)
+    case invalidData
+    
+    var description:String {
+        switch self {
+        case .general(let error):
+            return "Error General: \(error)"
+        case .json(let error):
+            return "Error JSON: \(error)"
+        case .nonHTTP:
+            return "No es conexión HTTP"
+        case .satus(let code):
+            return "Error estado: Código \(code)"
+        case .invalidData:
+            return "Datos no válidos."
+        }
+    }
+}
+
 enum HTTPMethod:String {
     case get  = "GET"
     case put  = "PUT"
@@ -61,6 +84,14 @@ extension URL {
 
 
 extension URLRequest {
+    static func request(url:URL, method:HTTPMethod = .get) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        return request
+    }
+    
     static func request<T:Codable>(url:URL, method:HTTPMethod, body:T) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue

@@ -13,9 +13,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(vm.books) { book in
-                BookRow(book: book)
+                NavigationLink(value: book) {
+                    BookRow(book: book)
+                }
             }
             .navigationTitle("Libros")
+            .navigationDestination(for: Books.self) { book in
+                BookDetailView(BookDetailVM: BookDetailViewVM(book: book))
+            }
             .refreshable {
                 await vm.getBooks()
             }
