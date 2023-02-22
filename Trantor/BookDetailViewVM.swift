@@ -11,16 +11,16 @@ final class BookDetailViewVM:ObservableObject {
     let persistence = NetworkPersistence.shared
     let book:Books
     
-    //Datos que se vayan a editar
-//    @Published var pages:Int = 0
-//    @Published var year:Int = 0
-//    @Published var isbn:String = ""
-//    @Published var title:String = ""
-    var bookAuthor:String = ""
+    //Se me ha ocurrido tratar los valores opcionales aquí, para que en la vista BookDetailView
+    //no tenga que preocuparme de ello. No sé si es el mejor modo.
+    @Published var summary:String   = "Resumen no disponible"
+    @Published var plot:String      = "Argumento no disponible"
+    @Published var isbn:String      = "ISBN no disponible"
+    @Published var pages:String     = "no disponible"
+    @Published var rating:Double    = 0
     
-    
-    @Published var showError = false
-    @Published var errorMSG  = ""
+    @Published var showError        = false
+    @Published var errorMSG         = ""
     
     init(book:Books) {
         self.book = book
@@ -32,11 +32,11 @@ final class BookDetailViewVM:ObservableObject {
     @MainActor func getBook() async {
         do {
             let _ = try await persistence.getBook(id: book.id)
-            bookAuthor = try await persistence.getAuthor(id: book.author)
-//            pages = book?.pages ?? 0
-//            isbn = book?.isbn ?? "-"
-//            year = book?.year ?? 0
-//            title = book?.title ?? "-"
+            pages   = book.pages?.description ?? pages
+            summary = book.summary ?? summary
+            plot    = book.plot ?? plot
+            isbn    = book.isbn ?? isbn
+            rating  = book.rating ?? rating
         } catch let error as APIErrors {
             errorMSG = error.description
             showError.toggle()

@@ -13,12 +13,13 @@ final class NetworkPersistence {
     //En la misma funcion que recupera libros actualizo campo de autor
     func getBooks() async throws -> [Books] {
         var books = try await queryJSON(request: .request(url: .getBooks), type: [Books].self)
-        //let authors = try await getAuthors()
         //recuperamos array autores y los metemos en diccionario para mejorar la búsqueda que haremos posteriormente.
-        let authors = try await getAuthors().reduce(into: [String: Authors]()) { dict, author in dict[author.id] = author }
+        let authors = try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
+            .reduce(into: [String: Authors]()) { dict, author in dict[author.id] = author }
 
+        //recorro el array de libros y cambio el author por su valor correspondiente de author.name
+        //Si no lo encontrara (situación que no debería ocurrir), el valor books.author se quedaría como está.
         for i in 0..<books.count {
-            //if let author = authors.first(where: {$0.id == books[i].author}) {
             if let author = authors[books[i].author] {
                 books[i].author = author.name
             }
