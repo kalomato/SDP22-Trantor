@@ -35,6 +35,20 @@ final class NetworkPersistence {
         let result = try await getBooks()
         return result.first(where: { $0.id == id })
     }
+
+    func getBooksLatest() async throws -> [Books] {
+        var books = try await queryJSON(request: .request(url: .getBooksLatest), type: [Books].self)
+        let authors = try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
+            .reduce(into: [String: Authors]()) { dict, author in dict[author.id] = author }
+
+        for i in 0..<books.count {
+            if let author = authors[books[i].author] {
+                books[i].author = author.name
+            }
+        }
+        return books
+    }
+
     
     func getAuthors() async throws -> [Authors] {
         //let (data, _) = try await URLSession.shared.data(from: .getAuthors)

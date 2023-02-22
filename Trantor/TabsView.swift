@@ -35,5 +35,6 @@ struct TabsTrantor_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
             .environmentObject(BooksViewModel())
+            .environmentObject(BooksLatestViewModel())
     }
 }

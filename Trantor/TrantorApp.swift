@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
+    @StateObject var booksLatestVM = BooksLatestViewModel()
     
     var body: some Scene {
         WindowGroup {
             TabsView()
                 .environmentObject(booksVM)
+                .environmentObject(booksLatestVM)
         }
     }
 }
