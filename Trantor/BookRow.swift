@@ -16,7 +16,8 @@ struct BookRow: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 50)
+                    .frame(width: 60)
+                    .cornerRadius(10)
                 
             } placeholder: {
                 Image(systemName: "text.book.closed.fill")
@@ -28,11 +29,10 @@ struct BookRow: View {
                 Text(book.title)
                     .font(.headline)
                 Text(book.author)
+                    .font(.subheadline)
+                Text("Año: \(book.year.description)")
                     .font(.caption)
-                Text(book.year.description)
-                    .font(.caption)
-//                Text("Páginas: \(book.pages.description)")
-//                    .font(.caption)
+                    .foregroundStyle(.secondary)
             }
             
         }

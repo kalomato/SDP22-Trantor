@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct BooksView: View {
     @EnvironmentObject var vm:BooksViewModel
     
     var body: some View {
         NavigationStack {
-            List(vm.books) { book in
+            List(vm.filterBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
@@ -21,6 +21,7 @@ struct ContentView: View {
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(BookDetailVM: BookDetailViewVM(book: book))
             }
+            .searchable(text: $vm.search)
             .refreshable {
                 await vm.getBooks()
             }
@@ -38,10 +39,10 @@ struct ContentView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct BooksView_Previews: PreviewProvider {
     static let vm = BooksViewModel()
     static var previews: some View {
-        ContentView()
+        BooksView()
             //.environmentObject(BooksViewModel())
             .environmentObject(vm)
             .task {

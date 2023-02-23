@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BookDetailView: View {
     @ObservedObject var BookDetailVM:BookDetailViewVM
+    @State private var isExpandedSummary = false
+    @State private var isExpandedPlot = false
     
     var body: some View {
         ScrollView {
@@ -88,6 +90,15 @@ struct BookDetailView: View {
                         .multilineTextAlignment(.leading)
                         .lineSpacing(8)
                         .padding(.bottom, 20)
+                        .lineLimit(isExpandedSummary ? nil : 7)
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            isExpandedSummary.toggle()
+                        }, label: {
+                            Text(isExpandedSummary ? "Leer menos" : "Leer más")
+                    })
+                    }
                 }
                 
                 Divider()
@@ -100,6 +111,16 @@ struct BookDetailView: View {
                         .multilineTextAlignment(.leading)
                         .lineSpacing(8)
                         .padding(.bottom, 20)
+                        .lineLimit(isExpandedPlot ? nil : 7)
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            isExpandedPlot.toggle()
+                        }, label: {
+                            Text(isExpandedPlot ? "Leer menos" : "Leer más")
+                    })
+                    }
+                    
                 }
                 
                 

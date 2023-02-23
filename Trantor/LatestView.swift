@@ -12,7 +12,7 @@ struct LatestView: View {
     
     var body: some View {
         NavigationStack {
-            List(vm.booksLatest) { book in
+            List(vm.filterLatestBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
@@ -21,6 +21,7 @@ struct LatestView: View {
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(BookDetailVM: BookDetailViewVM(book: book))
             }
+            .searchable(text: $vm.search)
             .refreshable {
                 await vm.getBooksLatest()
             }

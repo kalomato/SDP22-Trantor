@@ -12,18 +12,27 @@ final class BooksViewModel:ObservableObject {
     
     @Published var books:[Books]        = []
     @Published var authors:[Authors]    = []
+    @Published var search               = ""
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""
     
-    init() {
-        Task {
-            await getBooks()
-            //await getAuthors()
+    var filterBooks:[Books] {
+        if search.isEmpty {
+            return books
+        } else {
+            return books.filter {
+                $0.title.lowercased().contains(search.lowercased())
+            }
         }
     }
     
-    //MainActor para poder tocar valores del hilo principal
+    init() {
+        Task {
+            await getBooks()
+        }
+    }
+    
     @MainActor func getBooks() async {
         do {
             books = try await persistence.getBooks()
@@ -35,15 +44,5 @@ final class BooksViewModel:ObservableObject {
             showAlert.toggle()
         }
     }
-    
-//    @MainActor func getAuthors() async {
-//        do {
-//            authors = try await persistence.getAuthors()
-//        } catch {
-//            errorMSG = error.localizedDescription
-//            showAlert.toggle()
-//        }
-//    }
-
 }
 

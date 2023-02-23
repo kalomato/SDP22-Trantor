@@ -10,7 +10,7 @@ import SwiftUI
 struct TabsView: View {
     var body: some View {
         TabView {
-            ContentView()
+            BooksView()
                 .tabItem {
                     Label("Todos los Libros", systemImage: "book.fill")
                 }
@@ -26,7 +26,6 @@ struct TabsView: View {
                 .tabItem {
                     Label("Pedidos", systemImage: "cart.fill")
                 }
-
         }
     }
 }

@@ -18,15 +18,13 @@
 		CD39D36D29A24F350096AC89 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36C29A24F350096AC89 /* BookDetailView.swift */; };
 		CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */; };
 		CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53FDBE299E52FC005A269C /* NetworkTest.swift */; };
-		CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD843B2F2992E62C008FF645 /* ModelOperations.swift */; };
 		CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64D299028EB0089B537 /* TrantorApp.swift */; };
-		CD8ED650299028EB0089B537 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64F299028EB0089B537 /* ContentView.swift */; };
+		CD8ED650299028EB0089B537 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64F299028EB0089B537 /* BooksView.swift */; };
 		CD8ED652299028EC0089B537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED651299028EC0089B537 /* Assets.xcassets */; };
 		CD8ED655299028EC0089B537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED654299028EC0089B537 /* Preview Assets.xcassets */; };
 		CD8ED65D299034D20089B537 /* trantorAuthorsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65B299034D20089B537 /* trantorAuthorsTest.json */; };
 		CD8ED65E299034D20089B537 /* trantorBooksTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65C299034D20089B537 /* trantorBooksTest.json */; };
 		CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED65F299037AE0089B537 /* ModelDefinition.swift */; };
-		CD8ED66229904D560089B537 /* ModelPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED66129904D560089B537 /* ModelPersistence.swift */; };
 		CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* BooksViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,16 +40,14 @@
 		CD39D36C29A24F350096AC89 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewVM.swift; sourceTree = "<group>"; };
 		CD53FDBE299E52FC005A269C /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
-		CD843B2F2992E62C008FF645 /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
 		CD8ED64A299028EB0089B537 /* Trantor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trantor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8ED64D299028EB0089B537 /* TrantorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrantorApp.swift; sourceTree = "<group>"; };
-		CD8ED64F299028EB0089B537 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD8ED64F299028EB0089B537 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		CD8ED651299028EC0089B537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8ED654299028EC0089B537 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD8ED65B299034D20089B537 /* trantorAuthorsTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorAuthorsTest.json; sourceTree = "<group>"; };
 		CD8ED65C299034D20089B537 /* trantorBooksTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorBooksTest.json; sourceTree = "<group>"; };
 		CD8ED65F299037AE0089B537 /* ModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDefinition.swift; sourceTree = "<group>"; };
-		CD8ED66129904D560089B537 /* ModelPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPersistence.swift; sourceTree = "<group>"; };
 		CD8ED663299050090089B537 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CD39D36129A0C62B0096AC89 /* TabsView.swift */,
-				CD8ED64F299028EB0089B537 /* ContentView.swift */,
+				CD8ED64F299028EB0089B537 /* BooksView.swift */,
 				CD39D36529A0C9E50096AC89 /* LatestView.swift */,
 				CD39D36329A0C71F0096AC89 /* FavoritesView.swift */,
 				CD39D36729A0CA710096AC89 /* OrdersView.swift */,
@@ -161,8 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				CD8ED65F299037AE0089B537 /* ModelDefinition.swift */,
-				CD843B2F2992E62C008FF645 /* ModelOperations.swift */,
-				CD8ED66129904D560089B537 /* ModelPersistence.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -248,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD39D36429A0C71F0096AC89 /* FavoritesView.swift in Sources */,
-				CD8ED650299028EB0089B537 /* ContentView.swift in Sources */,
+				CD8ED650299028EB0089B537 /* BooksView.swift in Sources */,
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
 				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
 				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
@@ -259,8 +253,6 @@
 				CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */,
 				CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */,
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
-				CD8ED66229904D560089B537 /* ModelPersistence.swift in Sources */,
-				CD843B302992E62C008FF645 /* ModelOperations.swift in Sources */,
 				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
 				CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */,
 				CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */,

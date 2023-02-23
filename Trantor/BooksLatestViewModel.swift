@@ -12,9 +12,20 @@ final class BooksLatestViewModel:ObservableObject {
     
     @Published var booksLatest:[Books]  = []
     @Published var authors:[Authors]    = []
+    @Published var search               = ""
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""
+    
+    var filterLatestBooks:[Books] {
+        if search.isEmpty {
+            return booksLatest
+        } else {
+            return booksLatest.filter {
+                $0.title.lowercased().contains(search.lowercased())
+            }
+        }
+    }
     
     init() {
         Task {
