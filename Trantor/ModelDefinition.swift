@@ -19,31 +19,32 @@ struct Books: Codable, Identifiable, Hashable {
     let title: String
     let pages: Int?
     let rating: Double?
+    let price: Double
        
-    init(summary: String? = "Sumario no disponible", title: String, id: Int, author: String, pages: Int? = 0, cover: URL? = nil, plot: String? = "Argumento no disponible", year: Int, isbn: String? = "ISBN no disponible", rating: Double? = 0.0) {
-            self.summary = summary
-            self.title = title
-            self.id = id
-            self.author = author
-            self.pages = pages
-            self.cover = cover
-            self.plot = plot
-            self.year = year
-            self.isbn = isbn
-            self.rating = rating
-        }
+//    init(summary: String? = "Sumario no disponible", title: String, id: Int, author: String, pages: Int? = 0, cover: URL? = nil, plot: String? = "Argumento no disponible", year: Int, isbn: String? = "ISBN no disponible", rating: Double? = 0.0, price: Double) {
+//            self.summary = summary
+//            self.author = author
+//            self.title = title
+//            self.id = id
+//            self.pages = pages
+//            self.cover = cover
+//            self.plot = plot
+//            self.year = year
+//            self.isbn = isbn
+//            self.rating = rating
+//            self.price = price
+//        }
 }
 
 
 extension Books {
-    static let bookTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", title: "The Time Machine", id: 1, author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", pages: 118, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", year: 1985, isbn: "0451528557", rating: 3.87)
+    static let bookTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", isbn: "0451528557", year: 1985, id: 1, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), title: "The Time Machine",  pages: 118, rating: 3.87, price: 26.97)
 }
 
 // MARK: - Struct Autores
 struct Authors: Codable, Identifiable, Hashable {
     let name, id: String
 }
-
 
 extension Authors {
     static let authorTest = Authors(name: "H. G. Wells", id: "531EDFA6-A361-4E15-873F-45E4EA0AF120")

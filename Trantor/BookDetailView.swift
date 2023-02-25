@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct BookDetailView: View {
-    @ObservedObject var BookDetailVM:BookDetailViewVM
+    @ObservedObject var bookDetailVM:BookDetailViewVM
     @State private var isExpandedSummary = false
     @State private var isExpandedPlot = false
     
     var body: some View {
         ScrollView {
             VStack (alignment: .leading, spacing: 15) {
-                if let cover = BookDetailVM.book.cover {
+                if let cover = bookDetailVM.book.cover {
                     AsyncImage(url: cover) { phase in
                         switch phase {
                         case .empty: ProgressView()
@@ -26,6 +26,7 @@ struct BookDetailView: View {
                                 .frame(height: 300)
                                 .cornerRadius(10)
                                 .padding(.bottom, 20)
+                                .shadow(color: Color.gray.opacity(0.8), radius: 5, x: 2, y: 2)
                         case .failure:
                             Image(systemName: "text.book.closed.fill")
                                 .resizable()
@@ -37,18 +38,18 @@ struct BookDetailView: View {
                         }
                     }
                 }
-                Text(BookDetailVM.book.title)
+                Text(bookDetailVM.book.title)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                 
                 Divider()
-                
+
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("AUTOR")
                             .font(.headline)
-                        Text(BookDetailVM.book.author)
+                        Text(bookDetailVM.book.author)
                             .font(.body)
                     }
                     
@@ -57,7 +58,7 @@ struct BookDetailView: View {
                     VStack(alignment: .trailing, spacing: 10) {
                         Text("AÑO")
                             .font(.headline)
-                        Text(String(BookDetailVM.book.year))
+                        Text(String(bookDetailVM.book.year))
                             .font(.body)
                     }
                 }
@@ -66,7 +67,7 @@ struct BookDetailView: View {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("ISBN")
                             .font(.headline)
-                        Text(BookDetailVM.isbn)
+                        Text(bookDetailVM.isbn)
                             .font(.body)
                     }
                     
@@ -75,7 +76,7 @@ struct BookDetailView: View {
                     VStack(alignment: .trailing, spacing: 10) {
                         Text("PÁGINAS")
                             .font(.headline)
-                        Text(BookDetailVM.pages)
+                        Text(bookDetailVM.pages)
                             .font(.body)
                     }
                 }
@@ -85,7 +86,7 @@ struct BookDetailView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("RESUMEN")
                         .font(.headline)
-                    Text(BookDetailVM.summary)
+                    Text(bookDetailVM.summary)
                         .font(.body)
                         .multilineTextAlignment(.leading)
                         .lineSpacing(8)
@@ -93,11 +94,13 @@ struct BookDetailView: View {
                         .lineLimit(isExpandedSummary ? nil : 7)
                     HStack {
                         Spacer()
-                        Button(action: {
-                            isExpandedSummary.toggle()
-                        }, label: {
-                            Text(isExpandedSummary ? "Leer menos" : "Leer más")
-                    })
+                        if bookDetailVM.summary.count > 260 {
+                                    Button(action: {
+                                        isExpandedSummary.toggle()
+                                    }, label: {
+                                        Text(isExpandedSummary ? "Leer menos" : "Leer más")
+                                    })
+                                }
                     }
                 }
                 
@@ -106,28 +109,29 @@ struct BookDetailView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("ARGUMENTO")
                         .font(.headline)
-                    Text(BookDetailVM.plot)
+                    Text(bookDetailVM.plot)
                         .font(.body)
                         .multilineTextAlignment(.leading)
                         .lineSpacing(8)
                         .padding(.bottom, 20)
-                        .lineLimit(isExpandedPlot ? nil : 7)
+                        .lineLimit(isExpandedPlot ? nil : 5)
                     HStack {
                         Spacer()
-                        Button(action: {
-                            isExpandedPlot.toggle()
-                        }, label: {
-                            Text(isExpandedPlot ? "Leer menos" : "Leer más")
-                    })
+                        if bookDetailVM.plot.count > 250 {
+                                    Button(action: {
+                                        isExpandedPlot.toggle()
+                                    }, label: {
+                                        Text(isExpandedPlot ? "Leer menos" : "Leer más")
+                                    })
+                                }
                     }
                     
                 }
                 
-                
 //                VStack(alignment: .leading, spacing: 10) {
 //                    Text("VALORACIÓN")
 //                        .font(.headline)
-//                    Text(String(format: "%.1f", BookDetailVM.rating))
+//                    Text(String(format: "%.1f", bookDetailVM.rating))
 //                        .font(.body)
 //                }
 
@@ -142,6 +146,6 @@ struct BookDetailView: View {
 
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailView(BookDetailVM: BookDetailViewVM(book: .bookTest))
+        BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))
     }
 }

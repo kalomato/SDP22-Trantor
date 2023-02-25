@@ -71,6 +71,7 @@ extension URL {
     static let newOrder          = serverURL.appending(component: "\(shopAPI)").appending(component: "newOrder")        //POST nuevo pedido libros usuario
     static let orders            = serverURL.appending(component: "\(shopAPI)").appending(component: "orders")          //POST pedidos usuario
     static let modifyOrderStatus = serverURL.appending(component: "\(shopAPI)").appending(component: "orderStatus")     //PUT  modificar estado pedido
+    static let allOrders         = serverURL.appending(component: "\(shopAPI)").appending(component: "allOrders")       //PUT  Todos los pedidos
     
     
     static func orderInfo(id:String) -> URL {                                                                           //GET solicitar información de un pedido

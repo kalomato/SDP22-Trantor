@@ -18,6 +18,7 @@ struct BookRow: View {
                     .scaledToFit()
                     .frame(width: 60)
                     .cornerRadius(10)
+                    .shadow(color: Color.gray.opacity(0.8), radius: 5, x: 2, y: 2)
                 
             } placeholder: {
                 Image(systemName: "text.book.closed.fill")

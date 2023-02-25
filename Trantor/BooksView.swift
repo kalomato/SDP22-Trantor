@@ -17,11 +17,11 @@ struct BooksView: View {
                     BookRow(book: book)
                 }
             }
-            .navigationTitle("Libros")
+            .navigationTitle("Todos los Libros")
             .navigationDestination(for: Books.self) { book in
-                BookDetailView(BookDetailVM: BookDetailViewVM(book: book))
+                BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
             }
-            .searchable(text: $vm.search)
+            .searchable(text: $vm.searchText, prompt: "Buscar")
             .refreshable {
                 await vm.getBooks()
             }

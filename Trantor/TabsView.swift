@@ -18,9 +18,9 @@ struct TabsView: View {
                 .tabItem {
                     Label("Novedades", systemImage: "sparkles")
                 }
-            FavoritesView()
+            ReadedView()
                 .tabItem {
-                    Label("Favoritos", systemImage: "bookmark.fill")
+                    Label("Leídos", systemImage: "bookmark.fill")
                 }
             OrdersView()
                 .tabItem {

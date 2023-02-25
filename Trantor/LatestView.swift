@@ -19,7 +19,7 @@ struct LatestView: View {
             }
             .navigationTitle("Novedades")
             .navigationDestination(for: Books.self) { book in
-                BookDetailView(BookDetailVM: BookDetailViewVM(book: book))
+                BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
             }
             .searchable(text: $vm.search)
             .refreshable {

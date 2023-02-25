@@ -12,17 +12,21 @@ final class BooksViewModel:ObservableObject {
     
     @Published var books:[Books]        = []
     @Published var authors:[Authors]    = []
-    @Published var search               = ""
+    @Published var searchText           = ""
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""
     
     var filterBooks:[Books] {
-        if search.isEmpty {
+        if searchText.isEmpty {
             return books
         } else {
             return books.filter {
-                $0.title.lowercased().contains(search.lowercased())
+                $0.title.lowercased().contains(searchText.lowercased()) ||
+                ($0.author.lowercased().contains(searchText.lowercased())) ||
+                ($0.plot?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                ($0.summary?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                ($0.year.description.lowercased().contains(searchText.lowercased()))
             }
         }
     }

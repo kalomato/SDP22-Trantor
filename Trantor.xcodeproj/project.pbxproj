@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05599F299C1144006609D6 /* NetworkPersistence.swift */; };
 		CD0FB5F029A6A6D100FD380F /* BooksLatestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FB5EF29A6A6D100FD380F /* BooksLatestViewModel.swift */; };
+		CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD20018929A8E2E90032E216 /* RatingStars.swift */; };
 		CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2446942993EE6F009E759A /* NetworkInterface.swift */; };
 		CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36129A0C62B0096AC89 /* TabsView.swift */; };
-		CD39D36429A0C71F0096AC89 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36329A0C71F0096AC89 /* FavoritesView.swift */; };
+		CD39D36429A0C71F0096AC89 /* ReadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36329A0C71F0096AC89 /* ReadedView.swift */; };
 		CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36529A0C9E50096AC89 /* LatestView.swift */; };
 		CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36729A0CA710096AC89 /* OrdersView.swift */; };
 		CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36A29A2483B0096AC89 /* BookRow.swift */; };
@@ -31,9 +32,10 @@
 /* Begin PBXFileReference section */
 		CD05599F299C1144006609D6 /* NetworkPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPersistence.swift; sourceTree = "<group>"; };
 		CD0FB5EF29A6A6D100FD380F /* BooksLatestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksLatestViewModel.swift; sourceTree = "<group>"; };
+		CD20018929A8E2E90032E216 /* RatingStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
 		CD2446942993EE6F009E759A /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		CD39D36129A0C62B0096AC89 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
-		CD39D36329A0C71F0096AC89 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		CD39D36329A0C71F0096AC89 /* ReadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedView.swift; sourceTree = "<group>"; };
 		CD39D36529A0C9E50096AC89 /* LatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestView.swift; sourceTree = "<group>"; };
 		CD39D36729A0CA710096AC89 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
 		CD39D36A29A2483B0096AC89 /* BookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRow.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				CD39D36A29A2483B0096AC89 /* BookRow.swift */,
+				CD20018929A8E2E90032E216 /* RatingStars.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -128,7 +131,7 @@
 				CD39D36129A0C62B0096AC89 /* TabsView.swift */,
 				CD8ED64F299028EB0089B537 /* BooksView.swift */,
 				CD39D36529A0C9E50096AC89 /* LatestView.swift */,
-				CD39D36329A0C71F0096AC89 /* FavoritesView.swift */,
+				CD39D36329A0C71F0096AC89 /* ReadedView.swift */,
 				CD39D36729A0CA710096AC89 /* OrdersView.swift */,
 				CD39D36C29A24F350096AC89 /* BookDetailView.swift */,
 			);
@@ -241,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD39D36429A0C71F0096AC89 /* FavoritesView.swift in Sources */,
+				CD39D36429A0C71F0096AC89 /* ReadedView.swift in Sources */,
 				CD8ED650299028EB0089B537 /* BooksView.swift in Sources */,
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
 				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
@@ -255,6 +258,7 @@
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
 				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
 				CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */,
+				CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */,
 				CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
