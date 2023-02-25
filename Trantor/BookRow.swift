@@ -34,6 +34,11 @@ struct BookRow: View {
                 Text("Año: \(book.year.description)")
                     .font(.caption)
                     .foregroundStyle(.secondary)
+                Text("Precio: \(book.price.description)€")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
+                RatingStars(rating: book.rating ?? 0)
             }
             
         }

@@ -37,7 +37,7 @@ final class BooksLatestViewModel:ObservableObject {
                 $0.author.lowercased().contains(searchText.lowercased()) ||
                 ($0.plot?.lowercased().contains(searchText.lowercased()) ?? false) ||
                 ($0.summary?.lowercased().contains(searchText.lowercased()) ?? false) ||
-                ($0.year.description.lowercased().contains(searchText.lowercased()))
+                $0.year.description.lowercased().contains(searchText.lowercased())
             }
         }
     }

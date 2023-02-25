@@ -11,7 +11,7 @@ struct RatingStars: View {
     let rating: Double
 
     var body: some View {
-        HStack(spacing: 5) {
+        HStack(spacing: 0) {
             ForEach(1..<6) { index in
                 if rating >= Double(index) {
                     Image(systemName: "star.fill")
