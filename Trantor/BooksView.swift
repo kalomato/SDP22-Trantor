@@ -9,10 +9,11 @@ import SwiftUI
 
 struct BooksView: View {
     @EnvironmentObject var vm:BooksViewModel
+
     
     var body: some View {
         NavigationStack {
-            List(vm.filterBooks) { book in
+            List(vm.orderedBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
@@ -21,7 +22,24 @@ struct BooksView: View {
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
             }
-            .searchable(text: $vm.searchText, prompt: "Buscar")
+            .searchable(text: $vm.searchText, prompt: "Buscar en todos los libros") {
+                if vm.filterBooks.isEmpty {
+                    NoSearchResult()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu("Ordenar") {
+                        ForEach(BooksViewModel.SortType.allCases, id:\.self) { option in
+                            Button {
+                                vm.sortType = option
+                            } label: {
+                                Text(option.rawValue)
+                            }
+                        }
+                    }
+                }
+            }
             .refreshable {
                 await vm.getBooks()
             }

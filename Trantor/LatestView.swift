@@ -12,7 +12,7 @@ struct LatestView: View {
     
     var body: some View {
         NavigationStack {
-            List(vm.filterLatestBooks) { book in
+            List(vm.orderedLatestBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
@@ -21,7 +21,24 @@ struct LatestView: View {
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
             }
-            .searchable(text: $vm.search)
+            .searchable(text: $vm.searchText, prompt: "Buscar en novedades") {
+                if vm.filterLatestBooks.isEmpty {
+                    NoSearchResult()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu("Ordenar") {
+                        ForEach(BooksLatestViewModel.SortType.allCases, id:\.self) { option in
+                            Button {
+                                vm.sortType = option
+                            } label: {
+                                Text(option.rawValue)
+                            }
+                        }
+                    }
+                }
+            }
             .refreshable {
                 await vm.getBooksLatest()
             }

@@ -65,7 +65,8 @@ extension URL {
     static let markRead         = serverURL.appending(component: "\(clientAPI)").appending(component: "readQuery")      //POST marcar leídos libros de usuario
     static let reportBooksUser  = serverURL.appending(component: "\(clientAPI)").appending(component: "reportBooksUser")//POST libros leídos/comprados usuario
     static let readedBooks      = serverURL.appending(component: "\(clientAPI)").appending(component: "readedBooks")    //POST libros leídos usuario
-
+    static let isReaded         = serverURL.appending(component: "\(clientAPI)").appending(component: "isReaded")       //POST libro ¿está leído por usuario?
+    
     //ENDPOINT compras
     static let shopAPI           = "shop"
     static let newOrder          = serverURL.appending(component: "\(shopAPI)").appending(component: "newOrder")        //POST nuevo pedido libros usuario
