@@ -9,16 +9,16 @@ import SwiftUI
 
 struct RatingStars: View {
     let rating: Double
-    let size: CGFloat = 14
+    let size: CGFloat
 
     var body: some View {
         HStack(spacing: 0) {
-            ForEach(1..<6) { index in
-                if rating >= Double(index) {
+            ForEach(1..<6) { value in
+                if rating >= Double(value) {
                     Image(systemName: "star.fill")
                         .foregroundColor(.yellow)
                         .font(.system(size: size))
-                } else if rating >= Double(index) - 0.5 {
+                } else if rating >= Double(value) - 0.5 {
                     Image(systemName: "star.leadinghalf.fill")
                         .foregroundColor(.yellow)
                         .font(.system(size: size))
@@ -31,9 +31,9 @@ struct RatingStars: View {
         }
     }
 }
-    
+
 struct RatingStars_Previews: PreviewProvider {
     static var previews: some View {
-        RatingStars(rating: 2.5)
+        RatingStars(rating: 2.5, size: 16 )
     }
 }

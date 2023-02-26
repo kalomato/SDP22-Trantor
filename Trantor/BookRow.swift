@@ -38,7 +38,7 @@ struct BookRow: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
-                RatingStars(rating: book.rating ?? 0)
+                RatingStars(rating: book.rating ?? 0, size: 12)
             }
             
         }

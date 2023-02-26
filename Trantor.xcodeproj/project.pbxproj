@@ -105,7 +105,6 @@
 		CD8ED64C299028EB0089B537 /* Trantor */ = {
 			isa = PBXGroup;
 			children = (
-				CD8ED64D299028EB0089B537 /* TrantorApp.swift */,
 				CD8ED6652990536E0089B537 /* Views */,
 				CD39D36929A2474C0096AC89 /* Components */,
 				CD8ED666299053800089B537 /* ViewModels */,
@@ -154,6 +153,7 @@
 		CD8ED667299053A50089B537 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				CD8ED64D299028EB0089B537 /* TrantorApp.swift */,
 				CD8ED651299028EC0089B537 /* Assets.xcassets */,
 			);
 			name = System;
