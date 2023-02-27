@@ -60,6 +60,10 @@ final class NetworkPersistence {
         try await queryJSON(request: .request(url: .getBookAuthor(id: id)), type: String.self)
     }
     
+    func getUser(email: String) async throws -> User {
+        let user = UserQuery(email: email)
+        return try await queryJSON(request: .request(url: .getUser, method: .post, body: user.email), type: User.self)
+    }
     
     //Función genérica para peticiones
     func queryJSON<T:Codable>(request:URLRequest,

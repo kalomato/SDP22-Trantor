@@ -28,6 +28,9 @@
 		CD8ED65E299034D20089B537 /* trantorBooksTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65C299034D20089B537 /* trantorBooksTest.json */; };
 		CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED65F299037AE0089B537 /* ModelDefinition.swift */; };
 		CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* BooksViewModel.swift */; };
+		CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE182F29AD3825003B38BE /* UserViewModel.swift */; };
+		CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE183129AD43C3003B38BE /* ModelOperations.swift */; };
+		CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		CD8ED65C299034D20089B537 /* trantorBooksTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorBooksTest.json; sourceTree = "<group>"; };
 		CD8ED65F299037AE0089B537 /* ModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDefinition.swift; sourceTree = "<group>"; };
 		CD8ED663299050090089B537 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		CDEE182F29AD3825003B38BE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		CDEE183129AD43C3003B38BE /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
+		CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 		CD8ED6652990536E0089B537 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */,
 				CD39D36129A0C62B0096AC89 /* TabsView.swift */,
 				CD8ED64F299028EB0089B537 /* BooksView.swift */,
 				CD39D36529A0C9E50096AC89 /* LatestView.swift */,
@@ -146,6 +153,7 @@
 				CD8ED663299050090089B537 /* BooksViewModel.swift */,
 				CD0FB5EF29A6A6D100FD380F /* BooksLatestViewModel.swift */,
 				CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */,
+				CDEE182F29AD3825003B38BE /* UserViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				CD8ED65F299037AE0089B537 /* ModelDefinition.swift */,
+				CDEE183129AD43C3003B38BE /* ModelOperations.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -252,6 +261,7 @@
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
 				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
 				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
+				CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */,
 				CD0FB5F029A6A6D100FD380F /* BooksLatestViewModel.swift in Sources */,
 				CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */,
 				CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */,
@@ -259,6 +269,8 @@
 				CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */,
 				CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */,
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
+				CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */,
+				CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */,
 				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
 				CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */,
 				CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */,

@@ -50,8 +50,8 @@ extension Authors {
     static let authorTest = Authors(name: "H. G. Wells", id: "531EDFA6-A361-4E15-873F-45E4EA0AF120")
 }
 
-// MARK: - Struct Cliente
-struct Client:Codable, Hashable {
+// MARK: - Struct Usuario
+struct User:Codable, Hashable {
     let location: String
     let name: String
     let role: String
@@ -65,7 +65,7 @@ struct Client:Codable, Hashable {
     }
 }
 
-extension Client {
+extension User {
     static let locationTest = "Mi casa"
     static let nameTest     = "Enrique Suárez Pérez"
     static let roleTest     = "user"

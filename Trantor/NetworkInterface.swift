@@ -61,7 +61,7 @@ extension URL {
     static let clientAPI        = "client"
     static let createUser       = serverURL.appending(component: "\(clientAPI)")                                        //POST crear usuario
     static let updateUser       = serverURL.appending(component: "\(clientAPI)")                                        //PUT  actualizar usuario
-    static let infoUser         = serverURL.appending(component: "\(clientAPI)").appending(component: "query")          //POST información cliente (email)
+    static let getUser          = serverURL.appending(component: "\(clientAPI)").appending(component: "query")          //POST información cliente (email)
     static let markRead         = serverURL.appending(component: "\(clientAPI)").appending(component: "readQuery")      //POST marcar leídos libros de usuario
     static let reportBooksUser  = serverURL.appending(component: "\(clientAPI)").appending(component: "reportBooksUser")//POST libros leídos/comprados usuario
     static let readedBooks      = serverURL.appending(component: "\(clientAPI)").appending(component: "readedBooks")    //POST libros leídos usuario
@@ -111,8 +111,8 @@ extension URLRequest {
         request(url: .updateUser, method: .put, body: body)
     }
 
-    static func infoUser<T:Codable>(body:T) -> URLRequest {
-        request(url: .infoUser, method: .post, body: body)
+    static func getUser<T:Codable>(body:T) -> URLRequest {
+        request(url: .getUser, method: .post, body: body)
     }
 
     static func markRead<T:Codable>(body:T) -> URLRequest {
