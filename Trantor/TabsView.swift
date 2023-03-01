@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct TabsView: View {
+    @StateObject var booksVM = BooksViewModel()
+    @StateObject var booksLatestVM = BooksLatestViewModel()
+    @StateObject var userVM = UserViewModel()
+    
     var body: some View {
         TabView {
             BooksView()
+                .environmentObject(booksVM)
                 .tabItem {
                     Label("Todos los Libros", systemImage: "book.fill")
                 }
             LatestView()
+                .environmentObject(booksLatestVM)
                 .tabItem {
                     Label("Novedades", systemImage: "sparkles")
                 }
@@ -27,13 +33,15 @@ struct TabsView: View {
                     Label("Pedidos", systemImage: "cart.fill")
                 }
         }
+        .navigationBarHidden(true)
     }
 }
 
-struct TabsTrantor_Previews: PreviewProvider {
+struct TabsView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
             .environmentObject(BooksViewModel())
             .environmentObject(BooksLatestViewModel())
+            .environmentObject(UserViewModel())
     }
 }

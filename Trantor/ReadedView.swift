@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ReadedView: View {
+    @EnvironmentObject var vm:BooksLatestViewModel
     var body: some View {
         Text("Leídos")
     }

@@ -57,18 +57,18 @@ struct User:Codable, Hashable {
     let role: String
     let email: String
     
-    init (location:String, name:String, role:String = "user", email:String) {
-        self.location = location
-        self.name = name
-        self.role = role
-        self.email = email
-    }
+//    init (location:String, name:String, role:String = "user", email:String) {
+//        self.location = location
+//        self.name = name
+//        self.role = role
+//        self.email = email
+//    }
 }
 
 extension User {
     static let locationTest = "Mi casa"
     static let nameTest     = "Enrique Suárez Pérez"
-    static let roleTest     = "user"
+    static let roleTest     = "admin"
     static let rmailTest    = "enrique@tizona.net"
 }
 
