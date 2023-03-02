@@ -66,10 +66,11 @@ struct User:Codable, Hashable {
 }
 
 extension User {
-    static let locationTest = "Mi casa"
-    static let nameTest     = "Enrique Suárez Pérez"
-    static let roleTest     = "admin"
-    static let rmailTest    = "enrique@tizona.net"
+    static let userTest = User(location: "Home test", name: "User Test", role: "usuario", email: "email@test.com")
+//    static let locationTest = "Mi casa"
+//    static let nameTest     = "Enrique Suárez Pérez"
+//    static let roleTest     = "admin"
+//    static let rmailTest    = "enrique@tizona.net"
 }
 
 // MARK: - Struct Libros Leídos/Comprados

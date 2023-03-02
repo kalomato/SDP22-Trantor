@@ -10,7 +10,8 @@ import SwiftUI
 struct TabsView: View {
     @StateObject var booksVM = BooksViewModel()
     @StateObject var booksLatestVM = BooksLatestViewModel()
-    @StateObject var userVM = UserViewModel()
+    @EnvironmentObject var userVM:UserViewModel
+    //@StateObject var userVM = UserViewModel()
     
     var body: some View {
         TabView {

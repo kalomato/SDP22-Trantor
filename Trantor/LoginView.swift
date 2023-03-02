@@ -15,10 +15,13 @@ struct LoginView: View {
     @State private var validPassword = false
     @State private var isLogged = false
     
+    @State var showError    = false
+    @State var errorMSG     = ""
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                Image(systemName: "person.circle.fill")
+                Image(systemName: "person.badge.key.fill")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
@@ -32,13 +35,14 @@ struct LoginView: View {
                 VStack(spacing: 16) {
                     TextField("Correo electrónico", text: $email)
                         .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
                         .autocapitalization(.none)
+                        .disableAutocorrection(true)
                     
                     SecureField("Contraseña", text: $password)
                         .padding()
-                        .background(Color.gray.opacity(0.1))
+                        .background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
                 }
                 
@@ -46,12 +50,18 @@ struct LoginView: View {
                     validEmail = userVM.validaEmail(email)
                     validPassword = userVM.validaPassword(password)
                     if validEmail && validPassword {
-                        userVM.doLogin(email: email, pass: password)
-                        print("Usuario correcto")
-                        print("Correo: \(userVM.usuario.email)")
-                        isLogged = true
+                        Task {
+                            isLogged = await userVM.login(email: email, pass: password)
+                            if !isLogged {
+                                errorMSG = "Autenticación incorrecta"
+                                showError = true
+                            }
+                        }
                     } else {
-                        
+                        errorMSG = ""
+                        validEmail ? () : (errorMSG += "Formato de correo incorrecto. \n")
+                        validPassword ? () : (errorMSG += "Contraseña demasiado corta. \n")
+                        showError = true
                     }
                 }) {
                     Text("Iniciar sesión")
@@ -61,9 +71,19 @@ struct LoginView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
-                NavigationLink(destination: TabsView(), isActive: $isLogged, label: { EmptyView() })
+                NavigationLink(destination: TabsView().environmentObject(userVM), isActive: $isLogged, label: { EmptyView() })
+//                NavigationLink {
+//                    if isLogged {
+//                        TabsView().environmentObject(userVM)
+//                    }
+//                } label: {
+//                    EmptyView()
+//                }
             }
             .padding()
+            .alert(isPresented: $showError) {
+                Alert(title: Text("Error"), message: Text(errorMSG), dismissButton: .default(Text("Aceptar")))
+            }
         }
     }
 }
@@ -71,5 +91,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(UserViewModel())
     }
 }

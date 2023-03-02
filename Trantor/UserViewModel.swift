@@ -9,33 +9,31 @@ import SwiftUI
 
 final class UserViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
-    let email: String = ""
-    let pass: String = ""
 
-    @Published var usuario: User = User(location: "", name: "", role: "", email: "")
-    @Published var validEmail: Bool     = true
-    @Published var validPassword: Bool  = true
+    @Published var usuario             = User(location: "", name: "Sin usuario", role: "", email: "")
+    @Published var validEmail:Bool     = true
+    @Published var validPassword:Bool  = true
     
     @Published var showError    = false
     @Published var errorMSG     = ""
     
-    init() {
-        Task {
-            await getUser(email: email)
-        }
-    }
+//    init() {
+//        Task {
+//            await getUser(email: email)
+//        }
+//    }
     
-    @MainActor func doLogin(email: String, pass: String) {
-        
-        Task {
-            let _ = await getUser(email: email)
-        }
-        
-    }
+//    func doLogin(email: String, pass: String) {
+//        Task {
+//            let _ = await getUser(email: email)
+//        }
+//    }
     
-    @MainActor func getUser(email: String) async {        
+    @MainActor func login(email: String, pass: String) async -> Bool {
         do {
-            usuario  = try await persistence.getUser(email: email)
+            self.usuario = try await persistence.getUser(email: email)
+            //print (self.usuario.self)
+            return true
         } catch let error as APIErrors {
             errorMSG = error.description
             showError.toggle()
@@ -43,6 +41,7 @@ final class UserViewModel:ObservableObject {
             errorMSG = error.localizedDescription
             showError.toggle()
         }
+        return false
     }
     
     func validaPassword(_ pass: String) -> Bool {
@@ -53,6 +52,10 @@ final class UserViewModel:ObservableObject {
         let expresionRegular = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let predicado = NSPredicate(format:"SELF MATCHES %@", expresionRegular)
         return predicado.evaluate(with: email)
+    }
+    
+    func logout() {
+        self.usuario = User(location: "", name: "Logged out", role: "", email: "")
     }
 
 }

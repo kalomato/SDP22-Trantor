@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct TrantorApp: App {
-//    @StateObject var booksVM = BooksViewModel()
-//    @StateObject var booksLatestVM = BooksLatestViewModel()
+    @StateObject var booksVM = BooksViewModel()
+    @StateObject var booksLatestVM = BooksLatestViewModel()
     @StateObject var userVM = UserViewModel()
 //
 //    var body: some Scene {
@@ -25,6 +25,8 @@ struct TrantorApp: App {
         WindowGroup {
             LoginView()
                 .environmentObject(userVM)
+                .environmentObject(booksVM)
+                .environmentObject(booksLatestVM)
         }
     }
 }

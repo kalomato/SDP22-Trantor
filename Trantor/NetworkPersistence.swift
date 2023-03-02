@@ -61,8 +61,8 @@ final class NetworkPersistence {
     }
     
     func getUser(email: String) async throws -> User {
-        let user = UserQuery(email: email)
-        return try await queryJSON(request: .request(url: .getUser, method: .post, body: user.email), type: User.self)
+        let userToQuery = UserQuery(email: email)
+        return try await queryJSON(request: .request(url: .getUser, method: .post, body: userToQuery), type: User.self)
     }
     
     //Función genérica para peticiones

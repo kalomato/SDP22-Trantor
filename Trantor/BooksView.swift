@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BooksView: View {
     @EnvironmentObject var vm:BooksViewModel
-
+    @EnvironmentObject var userVM:UserViewModel
     
     var body: some View {
         NavigationStack {
@@ -39,6 +39,9 @@ struct BooksView: View {
                         }
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    UserMenu(user: userVM.usuario)
+                }
             }
             .refreshable {
                 await vm.getBooks()
@@ -59,10 +62,12 @@ struct BooksView: View {
 
 struct BooksView_Previews: PreviewProvider {
     static let vm = BooksViewModel()
+    static let userVM = UserViewModel()
     static var previews: some View {
         BooksView()
             //.environmentObject(BooksViewModel())
             .environmentObject(vm)
+            .environmentObject(userVM)
             .task {
                 await vm.getBooks()
             }

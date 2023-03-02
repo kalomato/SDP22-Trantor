@@ -28,6 +28,7 @@
 		CD8ED65E299034D20089B537 /* trantorBooksTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65C299034D20089B537 /* trantorBooksTest.json */; };
 		CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED65F299037AE0089B537 /* ModelDefinition.swift */; };
 		CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* BooksViewModel.swift */; };
+		CD9EE52D29B0E6BD00C33ADD /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */; };
 		CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE182F29AD3825003B38BE /* UserViewModel.swift */; };
 		CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE183129AD43C3003B38BE /* ModelOperations.swift */; };
 		CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */; };
@@ -56,6 +57,7 @@
 		CD8ED65C299034D20089B537 /* trantorBooksTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorBooksTest.json; sourceTree = "<group>"; };
 		CD8ED65F299037AE0089B537 /* ModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDefinition.swift; sourceTree = "<group>"; };
 		CD8ED663299050090089B537 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
 		CDEE182F29AD3825003B38BE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		CDEE183129AD43C3003B38BE /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
 		CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				CD39D36A29A2483B0096AC89 /* BookRow.swift */,
 				CD20018929A8E2E90032E216 /* RatingStars.swift */,
 				CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */,
+				CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				CD39D36D29A24F350096AC89 /* BookDetailView.swift in Sources */,
 				CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */,
 				CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */,
+				CD9EE52D29B0E6BD00C33ADD /* UserMenu.swift in Sources */,
 				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
 				CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */,
 				CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */,
