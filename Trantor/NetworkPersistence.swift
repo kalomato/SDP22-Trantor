@@ -10,7 +10,7 @@ import SwiftUI
 final class NetworkPersistence {
     static let shared = NetworkPersistence()
     
-    //En la misma funcion que recupera libros actualizo campo de autor
+    //En la misma funcion que recupera libros y actualiza campo de autor
     func getBooks() async throws -> [Books] {
         var books = try await queryJSON(request: .request(url: .getBooks), type: [Books].self)
         //recuperamos array autores y los metemos en diccionario para mejorar la búsqueda que haremos posteriormente.
@@ -28,14 +28,15 @@ final class NetworkPersistence {
     }
     
     //A costa de más consultas a la API, garantizo la información volviendo a consultar
-    //por si el dato hubiera cambiado cuando se solicita sólo un libro.
+    //por si el dato hubiera cambiado cuando se solicita sólo un libro (p.e. al visualizar detalle)
     //La API sólo da opción de búsqueda por título, pero no me garantiza un resultado sea único
-    //(por ejemplo, título "The fisrt man" y "The fist man in the moon" devolvería dos resultados)
+    //(por ejemplo, título "The fisrt man" y "The fist man in the moon" devolvería dos resultados con la búsqueda "first man")
     func getBook(id: Int) async throws -> Books? {
         let result = try await getBooks()
         return result.first(where: { $0.id == id })
     }
 
+    //Obtiene novedades de libros
     func getBooksLatest() async throws -> [Books] {
         var books = try await queryJSON(request: .request(url: .getBooksLatest), type: [Books].self)
         let authors = try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
@@ -49,20 +50,47 @@ final class NetworkPersistence {
         return books
     }
 
-    
+    //Listadod e todos los autores
     func getAuthors() async throws -> [Authors] {
-        //let (data, _) = try await URLSession.shared.data(from: .getAuthors)
-        //return try JSONDecoder().decode([Authors].self, from: data)
         try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
     }
-    
+
+    //Obtiene autor a partir de un id
     func getAuthor(id: String) async throws -> String {
         try await queryJSON(request: .request(url: .getBookAuthor(id: id)), type: String.self)
     }
     
+    //Obtiene usuario a partir de un email
     func getUser(email: String) async throws -> User {
         let userToQuery = UserQuery(email: email)
         return try await queryJSON(request: .request(url: .getUser, method: .post, body: userToQuery), type: User.self)
+    }
+    
+    //A partir de un email, obtiene los libros leídos por el usuairo, elimina los duplicados,
+    //y devuelve array de libros con autor incluido.
+    func getReadedBooks(email: String) async throws -> [Books] {
+        let userToQuery = UserQuery(email: email)
+        var books = [Books]()
+        let readedBooks = try await queryJSON(request: .request(url: .readedBooks, method: .post, body: userToQuery), type: ReadedBooks.self)
+
+        if readedBooks.books.count > 0 {
+            let uniqueReadedBooks = Array(Set(readedBooks.books))
+            let authors = try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
+                .reduce(into: [String: Authors]()) { dict, author in dict[author.id] = author }
+
+            for i in 0..<uniqueReadedBooks.count {
+                if let bookTemp = try await getBook(id: uniqueReadedBooks[i]) {
+                    books.append(bookTemp)
+                }
+            }
+
+            for i in 0..<books.count {
+                if let author = authors[books[i].author] {
+                    books[i].author = author.name
+                }
+            }
+        }
+        return books
     }
     
     //Función genérica para peticiones
@@ -89,5 +117,4 @@ final class NetworkPersistence {
         }
     }
 
-    
 }

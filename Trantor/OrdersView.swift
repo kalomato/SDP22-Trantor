@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OrdersView: View {
+    @EnvironmentObject var userVM:UserViewModel
+    
     var body: some View {
         Text("Pedidos")
     }

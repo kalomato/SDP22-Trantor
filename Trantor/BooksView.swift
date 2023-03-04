@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct BooksView: View {
-    @EnvironmentObject var vm:BooksViewModel
+    @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
     
     var body: some View {
         NavigationStack {
-            List(vm.orderedBooks) { book in
+            List(booksVM.orderedBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
@@ -22,8 +22,8 @@ struct BooksView: View {
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
             }
-            .searchable(text: $vm.searchText, prompt: "Buscar en todos los libros") {
-                if vm.filterBooks.isEmpty {
+            .searchable(text: $booksVM.searchText, prompt: "Buscar en todos los libros") {
+                if booksVM.filterBooks.isEmpty {
                     NoSearchResult()
                 }
             }
@@ -32,7 +32,7 @@ struct BooksView: View {
                     Menu("Ordenar") {
                         ForEach(BooksViewModel.SortType.allCases, id:\.self) { option in
                             Button {
-                                vm.sortType = option
+                                booksVM.sortType = option
                             } label: {
                                 Text(option.rawValue)
                             }
@@ -44,34 +44,29 @@ struct BooksView: View {
                 }
             }
             .refreshable {
-                await vm.getBooks()
+                await booksVM.getBooks()
             }
         }
-        .alert("ERROR",
-               isPresented: $vm.showAlert) {
+        .alert("ERROR", isPresented: $booksVM.showAlert) {
             Button(action: {}) {
                 Text("OK")
             }
         } message: {
-            Text(vm.errorMSG)
+            Text(booksVM.errorMSG)
         }
     }
-
 }
 
 
 struct BooksView_Previews: PreviewProvider {
-    static let vm = BooksViewModel()
+    static let booksVM = BooksViewModel()
     static let userVM = UserViewModel()
     static var previews: some View {
         BooksView()
-            //.environmentObject(BooksViewModel())
-            .environmentObject(vm)
+            .environmentObject(booksVM)
             .environmentObject(userVM)
             .task {
-                await vm.getBooks()
+                await booksVM.getBooks()
             }
     }
 }
-
-

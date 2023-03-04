@@ -9,14 +9,15 @@ import SwiftUI
 
 final class BooksViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
+    @EnvironmentObject var userVM:UserViewModel
     
     @Published var books:[Books]        = []
-    @Published var authors:[Authors]    = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""
+    @State var booksLoading             = true
     
     enum SortType:String, CaseIterable {
         case titleAscending   = "Por título ascendente"
@@ -62,9 +63,11 @@ final class BooksViewModel:ObservableObject {
     }
     
     init() {
+        booksLoading = true
         Task {
             await getBooks()
         }
+        booksLoading = false
     }
     
     @MainActor func getBooks() async {
@@ -78,5 +81,11 @@ final class BooksViewModel:ObservableObject {
             showAlert.toggle()
         }
     }
+    
+    func reset() {
+        self.books = []
+    }
+    
+
 }
 

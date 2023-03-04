@@ -1,17 +1,17 @@
 //
-//  BooksLatestViewModel.swift
+//  ReadedViewModel.swift
 //  Trantor
 //
-//  Created by Enrique on 22/2/23.
+//  Created by Enrique Suárez on 3/3/23.
 //
 
 import SwiftUI
 
-final class BooksLatestViewModel:ObservableObject {
+final class ReadedViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
-    
-    @Published var booksLatest:[Books]  = []
-    @Published var authors:[Authors]    = []
+    @EnvironmentObject var userVM:UserViewModel
+
+    @Published var readedBooks:[Books]  = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
     
@@ -28,11 +28,11 @@ final class BooksLatestViewModel:ObservableObject {
         case noSort           = "Por defecto"
     }
     
-    var filterLatestBooks:[Books] {
+    var filterReadedBooks:[Books] {
         if searchText.isEmpty {
-            return booksLatest.sorted { $0.id < $1.id }
+            return readedBooks.sorted { $0.id < $1.id }
         } else {
-            return booksLatest.filter {
+            return readedBooks.filter {
                 $0.title.lowercased().contains(searchText.lowercased()) ||
                 $0.author.lowercased().contains(searchText.lowercased()) ||
                 ($0.plot?.lowercased().contains(searchText.lowercased()) ?? false) ||
@@ -42,34 +42,41 @@ final class BooksLatestViewModel:ObservableObject {
         }
     }
     
-    var orderedLatestBooks:[Books] {
+    var orderedReadedBooks:[Books] {
         switch sortType {
         case .titleAscending:
-            return filterLatestBooks.sorted { $0.title < $1.title }
+            return filterReadedBooks.sorted { $0.title < $1.title }
         case .titleDescending:
-            return filterLatestBooks.sorted { $0.title > $1.title }
+            return filterReadedBooks.sorted { $0.title > $1.title }
         case .authorAscending:
-            return filterLatestBooks.sorted { $0.author < $1.author }
+            return filterReadedBooks.sorted { $0.author < $1.author }
         case .authorDescending:
-            return filterLatestBooks.sorted { $0.author > $1.author }
+            return filterReadedBooks.sorted { $0.author > $1.author }
         case .yearAscending:
-            return filterLatestBooks.sorted { $0.year < $1.year }
+            return filterReadedBooks.sorted { $0.year < $1.year }
         case .yearDescending:
-            return filterLatestBooks.sorted { $0.year > $1.year }
+            return filterReadedBooks.sorted { $0.year > $1.year }
         case .noSort:
-            return filterLatestBooks
+            return filterReadedBooks
         }
     }
     
-    init() {
-        Task {
-            await getBooksLatest()
-        }
-    }
+//    init(email:String) {
+//        Task {
+//            await getReadedBooks(email:email)
+//        }
+//    }
     
-    @MainActor func getBooksLatest() async {
+    
+    @MainActor func getReadedBooks(email:String) async {
         do {
-            booksLatest = try await persistence.getBooksLatest()
+            if email.isEmpty || email == "Sin email" {
+                return
+            }
+            //guard let user = userVM.usuario else { return }
+            //print ("Usuario en ReadedViewModel: \(userVM.usuario.email)")
+            readedBooks = try await persistence.getReadedBooks(email: email)
+            self.readedBooks = readedBooks
         } catch let error as APIErrors {
             errorMSG = error.description
             showAlert.toggle()
@@ -80,7 +87,8 @@ final class BooksLatestViewModel:ObservableObject {
     }
     
     func reset() {
-        self.booksLatest = []
+        self.readedBooks = []
     }
-    
 }
+
+

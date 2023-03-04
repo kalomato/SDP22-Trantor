@@ -9,11 +9,11 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var userVM:UserViewModel
+    @EnvironmentObject var readedVM:ReadedViewModel
     @State private var email = ""
     @State private var password = ""
     @State private var validEmail = false
     @State private var validPassword = false
-    @State private var isLogged = false
     
     @State var showError    = false
     @State var errorMSG     = ""
@@ -39,11 +39,16 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
+                        .keyboardType(.emailAddress)
                     
                     SecureField("Contraseña", text: $password)
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(10)
+                }
+                .onAppear {
+                    email = ""
+                    password = ""
                 }
                 
                 Button(action: {
@@ -51,8 +56,8 @@ struct LoginView: View {
                     validPassword = userVM.validaPassword(password)
                     if validEmail && validPassword {
                         Task {
-                            isLogged = await userVM.login(email: email, pass: password)
-                            if !isLogged {
+                            userVM.logged = await userVM.login(email: email, pass: password)
+                            if !userVM.logged {
                                 errorMSG = "Autenticación incorrecta"
                                 showError = true
                             }
@@ -71,20 +76,15 @@ struct LoginView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
-                NavigationLink(destination: TabsView().environmentObject(userVM), isActive: $isLogged, label: { EmptyView() })
-//                NavigationLink {
-//                    if isLogged {
-//                        TabsView().environmentObject(userVM)
-//                    }
-//                } label: {
-//                    EmptyView()
-//                }
+                //No he conseguido cambiar esta llamada de forma que no me avise de que está "deprecado"
+                NavigationLink(destination: TabsView().environmentObject(userVM), isActive: $userVM.logged, label: { EmptyView() })
             }
             .padding()
             .alert(isPresented: $showError) {
                 Alert(title: Text("Error"), message: Text(errorMSG), dismissButton: .default(Text("Aceptar")))
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

@@ -20,22 +20,7 @@ struct Books: Codable, Identifiable, Hashable {
     let pages: Int?
     let rating: Double?
     let price: Double
-       
-//    init(summary: String? = "Sumario no disponible", title: String, id: Int, author: String, pages: Int? = 0, cover: URL? = nil, plot: String? = "Argumento no disponible", year: Int, isbn: String? = "ISBN no disponible", rating: Double? = 0.0, price: Double) {
-//            self.summary = summary
-//            self.author = author
-//            self.title = title
-//            self.id = id
-//            self.pages = pages
-//            self.cover = cover
-//            self.plot = plot
-//            self.year = year
-//            self.isbn = isbn
-//            self.rating = rating
-//            self.price = price
-//        }
 }
-
 
 extension Books {
     static let bookTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", isbn: "0451528557", year: 1985, id: 1, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), title: "The Time Machine",  pages: 118, rating: 3.87, price: 26.97)
@@ -56,21 +41,10 @@ struct User:Codable, Hashable {
     let name: String
     let role: String
     let email: String
-    
-//    init (location:String, name:String, role:String = "user", email:String) {
-//        self.location = location
-//        self.name = name
-//        self.role = role
-//        self.email = email
-//    }
 }
 
 extension User {
-    static let userTest = User(location: "Home test", name: "User Test", role: "usuario", email: "email@test.com")
-//    static let locationTest = "Mi casa"
-//    static let nameTest     = "Enrique Suárez Pérez"
-//    static let roleTest     = "admin"
-//    static let rmailTest    = "enrique@tizona.net"
+    static let userTest = User(location: "Home test", name: "User Test", role: "usuario", email: "enrique@tizona.net")
 }
 
 // MARK: - Struct Libros Leídos/Comprados
@@ -88,13 +62,14 @@ extension OrderedReadedBooks {
 
 // MARK: - Struct Libros Leídos
 struct ReadedBooks:Codable, Hashable {
-    let readed: [Books.ID]
+    let books: [Books.ID]
     let email: String
+//    var id: UUID = UUID()
 }
 
 extension ReadedBooks {
-    static let readedTest = [566, 626]
-    static let email      = "enrique@tizona.net"
+    static let booksTest  = [566, 626]
+    static let emailTest  = "enrique@tizona.net"
 }
 
 // MARK: - Struct Nuevo Pedido

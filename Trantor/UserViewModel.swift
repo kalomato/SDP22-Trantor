@@ -10,29 +10,24 @@ import SwiftUI
 final class UserViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
 
-    @Published var usuario             = User(location: "", name: "Sin usuario", role: "", email: "")
+    @Published var usuario             = User(location: "Sin dirección", name: "Sin usuario", role: "usuario", email: "Sin email")
     @Published var validEmail:Bool     = true
     @Published var validPassword:Bool  = true
+    @Published var logged:Bool         = false
     
-    @Published var showError    = false
-    @Published var errorMSG     = ""
+    @Published var showError           = false
+    @Published var errorMSG            = ""
     
-//    init() {
+//    init(usuario: User) {
 //        Task {
-//            await getUser(email: email)
-//        }
-//    }
-    
-//    func doLogin(email: String, pass: String) {
-//        Task {
-//            let _ = await getUser(email: email)
+//            self.usuario = usuario
 //        }
 //    }
     
     @MainActor func login(email: String, pass: String) async -> Bool {
         do {
             self.usuario = try await persistence.getUser(email: email)
-            //print (self.usuario.self)
+            logged = true
             return true
         } catch let error as APIErrors {
             errorMSG = error.description
@@ -55,7 +50,8 @@ final class UserViewModel:ObservableObject {
     }
     
     func logout() {
-        self.usuario = User(location: "", name: "Logged out", role: "", email: "")
+        self.usuario = User(location: "Logged out", name: "Logged out", role: "logged out", email: "Logged out")
+        self.logged = false
     }
-
+    
 }

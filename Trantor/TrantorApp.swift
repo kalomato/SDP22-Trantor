@@ -12,15 +12,7 @@ struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
     @StateObject var booksLatestVM = BooksLatestViewModel()
     @StateObject var userVM = UserViewModel()
-//
-//    var body: some Scene {
-//        WindowGroup {
-//            TabsView()
-//                .environmentObject(booksVM)
-//                .environmentObject(booksLatestVM)
-//                .environmentObject(userVM)
-//        }
-//    }
+
     var body: some Scene {
         WindowGroup {
             LoginView()

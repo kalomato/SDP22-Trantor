@@ -10,14 +10,14 @@ import SwiftUI
 struct UserMenu: View {
     let user:User
     @EnvironmentObject var userVM:UserViewModel
+    @EnvironmentObject var booksVM:BooksViewModel
+    @EnvironmentObject var latestVM:BooksLatestViewModel
+    
     var body: some View {
-//        Button {
-//            ()
-//        } label: {
-//            Text (user.name)
-//        }
-        Menu(user.name) {
+        Menu(user.email) {
             Button {
+                booksVM.reset()
+                latestVM.reset()
                 userVM.logout()
             } label: {
                 Text("Cerrar sesión")
