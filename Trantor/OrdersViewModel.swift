@@ -9,14 +9,13 @@ import SwiftUI
 
 final class OrdersViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
-
-    @Published var usuario             = User(location: "Sin dirección", name: "Sin usuario", role: "usuario", email: "Sin email")
-    @Published var validEmail:Bool     = true
-    @Published var validPassword:Bool  = true
-    @Published var logged:Bool         = false
+    @EnvironmentObject var userVM:UserViewModel
     
-    @Published var showError           = false
-    @Published var errorMSG            = ""
+    @Published var orders:[Order2]      = []
+    @Published var searchText           = ""
+    @Published var sortType:SortType    = .noSort
+    @Published var showAlert            = false
+    @Published var errorMSG             = ""
     
 //    init(usuario: User) {
 //        Task {
@@ -24,34 +23,72 @@ final class OrdersViewModel:ObservableObject {
 //        }
 //    }
     
-    @MainActor func login(email: String, pass: String) async -> Bool {
+    enum SortType:String, CaseIterable {
+        case dateDescending    = "Por fecha descendente"
+        case dateAscending     = "Por fecha ascendente"
+        case estadoAscending   = "Por estado ascendente"
+        case estadoDescending  = "Por estado descendente"
+        case npedidoAscending  = "Por núm. pedido ascendente"
+        case npedidoDescending = "Por núm. pedido descendente"
+        case noSort            = "Por defecto"
+    }
+    
+    var filterOrders:[Order2] {
+        if searchText.isEmpty {
+            return orders.sorted { $0.date > $1.date }
+//            return orders
+        } else {
+            return orders.filter {
+                $0.estado.lowercased().contains(searchText.lowercased()) ||
+                $0.npedido.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+    
+    var orderedOrders:[Order2] {
+        switch sortType {
+        case .dateAscending:
+            return filterOrders.sorted { $0.date < $1.date }
+        case .dateDescending:
+            return filterOrders.sorted { $0.date > $1.date }
+        case .estadoAscending:
+            return filterOrders.sorted { $0.estado < $1.estado }
+        case .estadoDescending:
+            return filterOrders.sorted { $0.estado > $1.estado }
+        case .npedidoAscending:
+            return filterOrders.sorted { $0.npedido < $1.npedido }
+        case .npedidoDescending:
+            return filterOrders.sorted { $0.npedido > $1.npedido }
+        case .noSort:
+            return filterOrders
+        }
+    }
+    
+//    init(email:String) {
+//        Task {
+//            await getReadedBooks(email:email)
+//        }
+//    }
+    
+    
+    @MainActor func getOrders(email:String) async {
         do {
-            self.usuario = try await persistence.getUser(email: email)
-            logged = true
-            return true
+            if email.isEmpty || email == "Sin email" {
+                return
+            }
+            orders = try await persistence.getOrder(email: email)
+            self.orders = orders
         } catch let error as APIErrors {
             errorMSG = error.description
-            showError.toggle()
+            showAlert.toggle()
         } catch {
             errorMSG = error.localizedDescription
-            showError.toggle()
+            showAlert.toggle()
         }
-        return false
     }
     
-    func validaPassword(_ pass: String) -> Bool {
-        pass.count >= 6 ? true: false
-    }
-    
-    func validaEmail(_ email: String) -> Bool {
-        let expresionRegular = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let predicado = NSPredicate(format:"SELF MATCHES %@", expresionRegular)
-        return predicado.evaluate(with: email)
-    }
-    
-    func logout() {
-        self.usuario = User(location: "Logged out", name: "Logged out", role: "logged out", email: "Logged out")
-        self.logged = false
+    func reset() {
+        self.orders = []
     }
     
 }

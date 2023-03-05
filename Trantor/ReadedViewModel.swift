@@ -14,7 +14,6 @@ final class ReadedViewModel:ObservableObject {
     @Published var readedBooks:[Books]  = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
-    
     @Published var showAlert            = false
     @Published var errorMSG             = ""
     

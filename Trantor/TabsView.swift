@@ -12,6 +12,7 @@ struct TabsView: View {
     @StateObject var booksVM       = BooksViewModel()
     @StateObject var booksLatestVM = BooksLatestViewModel()
     @StateObject var readedVM      = ReadedViewModel()
+    @StateObject var ordersVM      = OrdersViewModel()
 
     var body: some View {
         TabView {
@@ -36,6 +37,7 @@ struct TabsView: View {
                 }
             OrdersView()
                 .environmentObject(userVM)
+                .environmentObject(ordersVM)
                 .tabItem {
                     Label("Pedidos", systemImage: "cart.fill")
                 }
@@ -51,5 +53,6 @@ struct TabsView_Previews: PreviewProvider {
             .environmentObject(BooksLatestViewModel())
             .environmentObject(UserViewModel())
             .environmentObject(ReadedViewModel())
+            .environmentObject(OrdersViewModel())
     }
 }

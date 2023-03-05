@@ -70,7 +70,7 @@ extension URL {
     //ENDPOINT compras
     static let shopAPI           = "shop"
     static let newOrder          = serverURL.appending(component: "\(shopAPI)").appending(component: "newOrder")        //POST nuevo pedido libros usuario
-    static let orders            = serverURL.appending(component: "\(shopAPI)").appending(component: "orders")          //POST pedidos usuario
+    static let getOrders         = serverURL.appending(component: "\(shopAPI)").appending(component: "orders")          //POST pedidos usuario
     static let modifyOrderStatus = serverURL.appending(component: "\(shopAPI)").appending(component: "orderStatus")     //PUT  modificar estado pedido
     static let allOrders         = serverURL.appending(component: "\(shopAPI)").appending(component: "allOrders")       //PUT  Todos los pedidos
     
@@ -131,8 +131,8 @@ extension URLRequest {
         request(url: .newOrder, method: .post, body: body)
     }
 
-    static func orders<T:Codable>(body:T) -> URLRequest {
-        request(url: .orders, method: .post, body: body)
+    static func getOrders<T:Codable>(body:T) -> URLRequest {
+        request(url: .getOrders, method: .post, body: body)
     }
 
     static func modifyOrderStatus<T:Codable>(body:T) -> URLRequest {

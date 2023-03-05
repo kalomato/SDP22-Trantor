@@ -8,13 +8,38 @@
 import SwiftUI
 
 struct OrderRow: View {
+    let order:Order2
+    @Binding var selectedBook: Books?
+    
     var body: some View {
-        Text("Order Row")
-    }
+            VStack(alignment: .leading) {
+                Text("Pedido número")
+                    .font(.headline)
+                Text(order.npedido)
+                    .font(.headline)
+                Text("Estado: \(order.estado)")
+                    .font(.subheadline)
+                Text("Fecha de pedido: \(order.date)")
+                    .font(.subheadline)
+                Divider()
+                ForEach(order.booksFull, id: \.id) { book in
+                    Button(action: {
+                        selectedBook = book
+                    }) {
+                        BookRow(book: book)//, selectedBook: $selectedBook)
+                    }
+                }
+
+            }
+            .padding()
+            .background(Color.secondary.opacity(0.1))
+            .cornerRadius(10)
+        }
+
 }
 
-struct OrderRow_Previews: PreviewProvider {
-    static var previews: some View {
-        OrderRow()
-    }
-}
+//struct OrderRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OrderRow(order: .order2Test)
+//    }
+//}

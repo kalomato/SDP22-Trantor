@@ -93,10 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				CD39D36A29A2483B0096AC89 /* BookRow.swift */,
+				CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */,
 				CD20018929A8E2E90032E216 /* RatingStars.swift */,
 				CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */,
 				CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */,
-				CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";

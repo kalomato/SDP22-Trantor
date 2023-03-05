@@ -12,6 +12,7 @@ struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
     @StateObject var booksLatestVM = BooksLatestViewModel()
     @StateObject var userVM = UserViewModel()
+    @StateObject var ordersVM = OrdersViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -19,6 +20,7 @@ struct TrantorApp: App {
                 .environmentObject(userVM)
                 .environmentObject(booksVM)
                 .environmentObject(booksLatestVM)
+                .environmentObject(ordersVM)
         }
     }
 }

@@ -12,6 +12,7 @@ struct UserMenu: View {
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var latestVM:BooksLatestViewModel
+    @EnvironmentObject var ordersVM:OrdersViewModel
     
     var body: some View {
         Menu(user.email) {
@@ -19,6 +20,7 @@ struct UserMenu: View {
                 booksVM.reset()
                 latestVM.reset()
                 userVM.logout()
+                ordersVM.reset()
             } label: {
                 Text("Cerrar sesión")
             }

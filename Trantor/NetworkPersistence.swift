@@ -50,14 +50,14 @@ final class NetworkPersistence {
         return books
     }
 
-    //Listadod e todos los autores
+    //Listado de todos los autores
     func getAuthors() async throws -> [Authors] {
         try await queryJSON(request: .request(url: .getAuthors), type: [Authors].self)
     }
 
     //Obtiene autor a partir de un id
-    func getAuthor(id: String) async throws -> String {
-        try await queryJSON(request: .request(url: .getBookAuthor(id: id)), type: String.self)
+    func getAuthor(id: String) async throws -> Authors {
+        try await queryJSON(request: .request(url: .getBookAuthor(id: id)), type: Authors.self)
     }
     
     //Obtiene usuario a partir de un email
@@ -91,6 +91,36 @@ final class NetworkPersistence {
             }
         }
         return books
+    }
+    
+    //Obtiene array de pedidos de un usuario a partir de un email
+    //Utilizo un struct "orders2" que contiene información adicional de los libros incluidos en el pedido.
+    func getOrder(email: String) async throws -> [Order2] {
+        let userToQuery = UserQuery(email: email)
+        let pedidos = try await queryJSON(request: .request(url: .getOrders, method: .post, body: userToQuery), type: [Order].self)
+        //Copio los valores de pedidos:[Orders] a pedidos2:[Orders2]
+        var pedidos2 = pedidos.map { order -> Order2 in
+            return Order2(estado: order.estado,
+                          npedido: order.npedido,
+                          date: order.date,
+                          books: order.books,
+                          booksFull: [],
+                          email: order.email)
+        }
+        //Relleno la propiedad booksFull con los libros referenciados en books
+        if pedidos2.count > 0 {
+            for i in 0..<pedidos2.count {
+                for x in 0..<pedidos2[i].books.count {
+                    if let book = try await getBook(id: pedidos2[i].books[x]) {
+                        pedidos2[i].booksFull.append(book)
+                    } else {
+                        // si no se pudo obtener el libro, agregamos un libro "no disponible"
+                        pedidos2[i].booksFull.append(Order2.bookNA)
+                    }
+                }
+            }
+        }
+        return pedidos2
     }
     
     //Función genérica para peticiones
