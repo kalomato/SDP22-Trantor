@@ -30,6 +30,8 @@
 		CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED65F299037AE0089B537 /* ModelDefinition.swift */; };
 		CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* BooksViewModel.swift */; };
 		CD9EE52D29B0E6BD00C33ADD /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */; };
+		CDCE8A8A29B48CF80000DCD4 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE8A8929B48CF80000DCD4 /* OrdersViewModel.swift */; };
+		CDCE8A8C29B48DBA0000DCD4 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */; };
 		CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE182F29AD3825003B38BE /* UserViewModel.swift */; };
 		CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE183129AD43C3003B38BE /* ModelOperations.swift */; };
 		CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */; };
@@ -60,6 +62,8 @@
 		CD8ED65F299037AE0089B537 /* ModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDefinition.swift; sourceTree = "<group>"; };
 		CD8ED663299050090089B537 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
+		CDCE8A8929B48CF80000DCD4 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
 		CDEE182F29AD3825003B38BE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		CDEE183129AD43C3003B38BE /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
 		CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				CD20018929A8E2E90032E216 /* RatingStars.swift */,
 				CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */,
 				CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */,
+				CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */,
 				CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */,
 				CDEE182F29AD3825003B38BE /* UserViewModel.swift */,
+				CDCE8A8929B48CF80000DCD4 /* OrdersViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 				CD39D36429A0C71F0096AC89 /* ReadedView.swift in Sources */,
 				CD8ED650299028EB0089B537 /* BooksView.swift in Sources */,
 				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
+				CDCE8A8A29B48CF80000DCD4 /* OrdersViewModel.swift in Sources */,
 				CD3BE51E29B20AF700103E55 /* ReadedViewModel.swift in Sources */,
 				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
 				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
@@ -282,6 +289,7 @@
 				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
 				CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */,
 				CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */,
+				CDCE8A8C29B48DBA0000DCD4 /* OrderRow.swift in Sources */,
 				CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */,
 				CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */,
 			);

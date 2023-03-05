@@ -17,7 +17,7 @@ struct BooksView: View {
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
-            }
+            }            
             .navigationTitle("Todos los Libros")
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(bookDetailVM: BookDetailViewVM(book: book))

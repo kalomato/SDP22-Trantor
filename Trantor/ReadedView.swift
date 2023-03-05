@@ -18,6 +18,8 @@ struct ReadedView: View {
         NavigationStack {
             if isLoading {
                 ProgressView()
+            } else if readedVM.orderedReadedBooks.count == 0 {
+                Text ("No hay libros leídos por \(userVM.usuario.name)")
             }
             List(readedVM.orderedReadedBooks) { book in
                 NavigationLink(value: book) {
