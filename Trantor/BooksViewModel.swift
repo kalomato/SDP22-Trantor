@@ -62,6 +62,7 @@ final class BooksViewModel:ObservableObject {
         }
     }
     
+    
     init() {
         booksLoading = true
         Task {
@@ -82,10 +83,26 @@ final class BooksViewModel:ObservableObject {
         }
     }
     
+    func toggleReaded() {
+        ()
+    }
+    
+    func isReaded(email:String, bookID:Int) async -> Bool {
+        var readed:Bool = false
+            do {
+                readed = try await persistence.isReaded(email: email, bookID: bookID).readed
+            } catch let error as APIErrors {
+                errorMSG = error.description
+                showAlert.toggle()
+            } catch {
+                errorMSG = error.localizedDescription
+                showAlert.toggle()
+            }
+        return readed
+    }
+    
     func reset() {
         self.books = []
     }
     
-
 }
-

@@ -16,31 +16,25 @@ final class OrdersViewModel:ObservableObject {
     @Published var sortType:SortType    = .noSort
     @Published var showAlert            = false
     @Published var errorMSG             = ""
-    
-//    init(usuario: User) {
-//        Task {
-//            self.usuario = usuario
-//        }
-//    }
-    
+        
     enum SortType:String, CaseIterable {
-        case dateDescending    = "Por fecha descendente"
         case dateAscending     = "Por fecha ascendente"
         case estadoAscending   = "Por estado ascendente"
         case estadoDescending  = "Por estado descendente"
-        case npedidoAscending  = "Por núm. pedido ascendente"
-        case npedidoDescending = "Por núm. pedido descendente"
-        case noSort            = "Por defecto"
+        case npedidoAscending  = "Por núm. pedido asc."
+        case npedidoDescending = "Por núm. pedido desc."
+        case noSort            = "Por defecto (fecha desc.)"
     }
     
     var filterOrders:[Order2] {
         if searchText.isEmpty {
             return orders.sorted { $0.date > $1.date }
-//            return orders
         } else {
             return orders.filter {
                 $0.estado.lowercased().contains(searchText.lowercased()) ||
-                $0.npedido.lowercased().contains(searchText.lowercased())
+                $0.npedido.lowercased().contains(searchText.lowercased()) ||
+                $0.booksFull.contains { $0.title.contains(searchText.lowercased()) } ||
+                $0.booksFull.contains { $0.author.contains(searchText.lowercased()) }
             }
         }
     }
@@ -49,8 +43,6 @@ final class OrdersViewModel:ObservableObject {
         switch sortType {
         case .dateAscending:
             return filterOrders.sorted { $0.date < $1.date }
-        case .dateDescending:
-            return filterOrders.sorted { $0.date > $1.date }
         case .estadoAscending:
             return filterOrders.sorted { $0.estado < $1.estado }
         case .estadoDescending:
@@ -84,6 +76,16 @@ final class OrdersViewModel:ObservableObject {
         } catch {
             errorMSG = error.localizedDescription
             showAlert.toggle()
+        }
+    }
+    
+    func stringDateConverter (string:String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = dateFormatter.date(from: string) {
+            return date
+        } else {
+            return nil
         }
     }
     

@@ -13,7 +13,6 @@ struct OrdersView: View {
     @EnvironmentObject var ordersVM:OrdersViewModel
     
     @State private var selectedBook: Books?
-    
     @State var isLoading = true
     
     var body: some View {
@@ -21,10 +20,12 @@ struct OrdersView: View {
             if isLoading {
                 ProgressView()
             } else if ordersVM.orderedOrders.count == 0 {
-                Text ("No hay pedidos para \(userVM.usuario.name)")
+                Text ("No se encontraron pedidos")
             }
             List(ordersVM.orderedOrders) { order in
-                OrderRow(order: order, selectedBook: $selectedBook)
+                OrderRow(order: order,
+                         date: ordersVM.stringDateConverter(string: order.date)!,
+                         selectedBook: $selectedBook)
             }
             .navigationTitle("Pedidos")
             .searchable(text: $ordersVM.searchText, prompt: "Buscar en Pedidos") {

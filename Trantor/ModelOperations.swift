@@ -10,3 +10,8 @@ import Foundation
 struct UserQuery:Codable {
     var email:String
 }
+
+struct UserReaded:Codable {
+    var email:String
+    var book:Int
+}

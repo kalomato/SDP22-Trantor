@@ -75,6 +75,7 @@ struct ReadedView: View {
     
 }
 
+
 struct ReadedView_Previews: PreviewProvider {
     static let booksVM = BooksViewModel()
     static let readedVM = ReadedViewModel()

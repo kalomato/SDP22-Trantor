@@ -10,13 +10,13 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var readedVM:ReadedViewModel
-    @State private var email = ""
-    @State private var password = ""
-    @State private var validEmail = false
+    @State private var email         = ""
+    @State private var password      = ""
+    @State private var validEmail    = false
     @State private var validPassword = false
     
-    @State var showError    = false
-    @State var errorMSG     = ""
+    @State var showError = false
+    @State var errorMSG  = ""
     
     var body: some View {
         NavigationView {

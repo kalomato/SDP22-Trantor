@@ -58,6 +58,7 @@ struct LatestView: View {
     }
 }
 
+
 struct LatestView_Previews: PreviewProvider {
     static let booksLatestVM = BooksLatestViewModel()
     static let userVM = UserViewModel()

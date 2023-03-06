@@ -23,7 +23,7 @@ struct Books: Codable, Identifiable, Hashable {
 }
 
 extension Books {
-    static let bookTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", isbn: "0451528557", year: 1985, id: 1, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), title: "The Time Machine",  pages: 118, rating: 3.87, price: 26.97)
+    static let bookTest = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", author: "H. G. Wells", plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", isbn: "0451528557", year: 1985, id: 1, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), title: "The Time Machine",  pages: 118, rating: 3.87, price: 26.97)
 }
 
 // MARK: - Struct Autores
@@ -95,22 +95,12 @@ struct Order2:Codable, Hashable, Identifiable {
     var booksFull: [Books] = []
     let email: String
     var id = UUID()
-    
-//    init(from order: Order) {
-//            self.estado = order.estado
-//            self.npedido = order.npedido
-//            self.date = order.date
-//            self.books = order.books
-//            self.email = order.email
-//        self.booksFull = []
-//        self.id = UUID()
-//        }
 }
 
 extension Order2 {
-    static let bookTest1 = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", isbn: "0451528557", year: 1985, id: 1, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), title: "The Time Machine",  pages: 118, rating: 3.87, price: 26.97)
+    static let bookTest1 = Books(summary: "The Time Machine is a science fiction novel by H. G. Wells", author: "H. G. Wells", plot: "The book's protagonist is an English scientist and gentleman inventor living in Richmond...", isbn: "0451528557", year: 1985, id: 1, cover: URL (string: "https://images.gr-assets.com/books/1327942880l/2493.jpg"), title: "The Time Machine",  pages: 118, rating: 3.87, price: 26.97)
     
-    static let bookTest2 = Books(summary: "A Princess of Mars is a science fantasy novel...", author: "531EDFA6-A361-4E15-873F-45E4EA0AF120", plot: "John Carter, a Confederate veteran of the American Civil War...", isbn: "0143104888", year: 1912, id: 3, cover: URL (string: "https://images.gr-assets.com/books/1332272118l/40395.jpg"), title: "A Princess of Mars",  pages: 186, rating: 3.8, price: 26.97)
+    static let bookTest2 = Books(summary: "A Princess of Mars is a science fantasy novel...", author: "Edgar Rice", plot: "John Carter, a Confederate veteran of the American Civil War...", isbn: "0143104888", year: 1912, id: 3, cover: URL (string: "https://images.gr-assets.com/books/1332272118l/40395.jpg"), title: "A Princess of Mars",  pages: 186, rating: 3.8, price: 26.97)
     
     static let bookNA = Books(summary: "No disopnible", author: "No disopnible", plot: "No disopnible", isbn: "No disopnible", year: 0, id: 0, cover: URL (string: ""), title: "Este Título ya no está disopnible",  pages: 0, rating: 0, price: 0)
     
@@ -131,4 +121,9 @@ func setupDateFormatter() -> DateFormatter {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     return dateFormatter
+}
+
+
+struct IsReaded:Codable {
+    let readed:Bool
 }

@@ -114,6 +114,10 @@ extension URLRequest {
     static func getUser<T:Codable>(body:T) -> URLRequest {
         request(url: .getUser, method: .post, body: body)
     }
+    
+    static func isReaded<T:Codable>(body:T) -> URLRequest {
+        request(url: .isReaded, method: .post, body: body)
+    }
 
     static func markRead<T:Codable>(body:T) -> URLRequest {
         request(url: .markRead, method: .post, body: body)

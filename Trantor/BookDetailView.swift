@@ -145,6 +145,7 @@ struct BookDetailView: View {
     }
 }
 
+
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
         BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))

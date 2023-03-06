@@ -28,6 +28,7 @@ struct UserMenu: View {
     }
 }
 
+
 struct UserMenu_Previews: PreviewProvider {
     static var previews: some View {
         UserMenu(user: .userTest)

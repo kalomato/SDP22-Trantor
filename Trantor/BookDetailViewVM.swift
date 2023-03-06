@@ -45,4 +45,5 @@ final class BookDetailViewVM:ObservableObject {
             showError.toggle()
         }
     }
+        
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OrderRow: View {
     let order:Order2
+    let date:Date
     @Binding var selectedBook: Books?
     
     var body: some View {
@@ -19,14 +20,14 @@ struct OrderRow: View {
                     .font(.headline)
                 Text("Estado: \(order.estado)")
                     .font(.subheadline)
-                Text("Fecha de pedido: \(order.date)")
+                Text("Fecha de pedido: \(DateFormatter.localizedString(from: date, dateStyle: .short, timeStyle: .short))")
                     .font(.subheadline)
                 Divider()
                 ForEach(order.booksFull, id: \.id) { book in
                     Button(action: {
                         selectedBook = book
                     }) {
-                        BookRow(book: book)//, selectedBook: $selectedBook)
+                        BookRow(book: book) //, selectedBook: $selectedBook)
                     }
                 }
 
@@ -38,8 +39,9 @@ struct OrderRow: View {
 
 }
 
-//struct OrderRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OrderRow(order: .order2Test)
-//    }
-//}
+
+struct OrderRow_Previews: PreviewProvider {
+    static var previews: some View {
+        OrderRow(order: .order2Test, date: Date(), selectedBook: .constant(nil))
+    }
+}

@@ -60,12 +60,6 @@ final class ReadedViewModel:ObservableObject {
         }
     }
     
-//    init(email:String) {
-//        Task {
-//            await getReadedBooks(email:email)
-//        }
-//    }
-    
     
     @MainActor func getReadedBooks(email:String) async {
         do {

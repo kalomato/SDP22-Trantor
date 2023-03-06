@@ -24,6 +24,7 @@ struct NoSearchResult: View {
     }
 }
 
+
 struct NoSearchResult_Previews: PreviewProvider {
     static var previews: some View {
         NoSearchResult()

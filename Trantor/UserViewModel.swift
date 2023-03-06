@@ -18,11 +18,6 @@ final class UserViewModel:ObservableObject {
     @Published var showError           = false
     @Published var errorMSG            = ""
     
-//    init(usuario: User) {
-//        Task {
-//            self.usuario = usuario
-//        }
-//    }
     
     @MainActor func login(email: String, pass: String) async -> Bool {
         do {

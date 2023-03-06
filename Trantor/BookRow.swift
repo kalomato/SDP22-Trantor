@@ -9,7 +9,6 @@ import SwiftUI
 
 struct BookRow: View {
     let book:Books
-
     
     var body: some View {
         HStack {
@@ -41,10 +40,10 @@ struct BookRow: View {
 
                 RatingStars(rating: book.rating ?? 0, size: 12)
             }
-            
         }
     }
 }
+
 
 struct BookRow_Previews: PreviewProvider {
     static var previews: some View {
