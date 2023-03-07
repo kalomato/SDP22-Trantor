@@ -16,9 +16,7 @@ struct ReadedView: View {
     
     var body: some View {
         NavigationStack {
-            if isLoading {
-                ProgressView()
-            } else if readedVM.orderedReadedBooks.count == 0 {
+            if readedVM.orderedReadedBooks.count == 0 && !isLoading && readedVM.searchText.count == 0 {
                 Text ("No hay libros leídos por \(userVM.usuario.name)")
             }
             List(readedVM.orderedReadedBooks) { book in
@@ -52,15 +50,22 @@ struct ReadedView: View {
                 }
             }
             .onAppear {
-                isLoading = true
+                //isLoading = true
                 Task {
                     await readedVM.getReadedBooks(email: userVM.usuario.email)
                     isLoading = false
                 }
             }
-            
             .refreshable {
+                isLoading = true
                 await readedVM.getReadedBooks(email: userVM.usuario.email)
+                isLoading = false
+            }
+            .overlay {
+                if isLoading {
+                    LoadingView()
+                        .transition(.opacity)
+                }
             }
         }
         .alert("ERROR",

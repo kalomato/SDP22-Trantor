@@ -55,13 +55,7 @@ final class OrdersViewModel:ObservableObject {
             return filterOrders
         }
     }
-    
-//    init(email:String) {
-//        Task {
-//            await getReadedBooks(email:email)
-//        }
-//    }
-    
+        
     
     @MainActor func getOrders(email:String) async {
         do {

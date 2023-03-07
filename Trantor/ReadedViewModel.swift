@@ -66,8 +66,6 @@ final class ReadedViewModel:ObservableObject {
             if email.isEmpty || email == "Sin email" {
                 return
             }
-            //guard let user = userVM.usuario else { return }
-            //print ("Usuario en ReadedViewModel: \(userVM.usuario.email)")
             readedBooks = try await persistence.getReadedBooks(email: email)
             self.readedBooks = readedBooks
         } catch let error as APIErrors {

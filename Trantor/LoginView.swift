@@ -31,6 +31,10 @@ struct LoginView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.black)
+                Text("Nota: La contraseña no se valida")
+                    .font(.footnote)
+                    .italic()
+                    .foregroundColor(.gray)
                 
                 VStack(spacing: 16) {
                     TextField("Correo electrónico", text: $email)

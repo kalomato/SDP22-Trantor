@@ -47,7 +47,7 @@ struct BookDetailView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             Text ("PRECIO")
                                 .font(.headline)
-                            Text("\(bookDetailVM.book.price.description)€")
+                            Text("\(bookDetailVM.book.price, specifier: "%.2f")€")
                                 .bold()
                         }
                         Spacer()

@@ -14,6 +14,7 @@ final class BooksLatestViewModel:ObservableObject {
     @Published var authors:[Authors]    = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
+    @Published var readedBooks:[Int]    = []
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""
@@ -70,6 +71,18 @@ final class BooksLatestViewModel:ObservableObject {
     @MainActor func getBooksLatest() async {
         do {
             booksLatest = try await persistence.getBooksLatest()
+        } catch let error as APIErrors {
+            errorMSG = error.description
+            showAlert.toggle()
+        } catch {
+            errorMSG = error.localizedDescription
+            showAlert.toggle()
+        }
+    }
+    
+    @MainActor func getReaded(email: String) async {
+        do {
+            readedBooks = try await persistence.readedBooks(email: email)
         } catch let error as APIErrors {
             errorMSG = error.description
             showAlert.toggle()

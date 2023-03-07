@@ -71,6 +71,12 @@ final class NetworkPersistence {
         return try await queryJSON(request: .request(url: .isReaded, method: .post, body: userReaded), type: IsReaded.self)
     }
     
+    //Devuelve array con IDs de libros leídos
+    func readedBooks(email: String) async throws -> [Int] {
+        let userToQuery = UserQuery(email: email)
+        return try await queryJSON(request: .request(url: .readedBooks, method: .post, body: userToQuery), type: [Int].self)
+    }
+    
     //A partir de un email, obtiene los libros leídos por el usuairo, elimina los duplicados,
     //y devuelve array de libros con autor incluido.
     func getReadedBooks(email: String) async throws -> [Books] {

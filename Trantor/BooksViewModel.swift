@@ -14,6 +14,7 @@ final class BooksViewModel:ObservableObject {
     @Published var books:[Books]        = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
+    @Published var readedBooks:[Int]    = []
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""
@@ -85,6 +86,18 @@ final class BooksViewModel:ObservableObject {
     
     func toggleReaded() {
         ()
+    }
+    
+    func getReaded(email: String) async {
+        do {
+            readedBooks = try await persistence.readedBooks(email: email)
+        } catch let error as APIErrors {
+            errorMSG = error.description
+            showAlert.toggle()
+        } catch {
+            errorMSG = error.localizedDescription
+            showAlert.toggle()
+        }
     }
     
     func isReaded(email:String, bookID:Int) async -> Bool {

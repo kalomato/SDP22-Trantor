@@ -13,11 +13,12 @@ final class BookDetailViewVM:ObservableObject {
     
     //Se me ha ocurrido tratar los valores opcionales aquí, para que en la vista BookDetailView
     //no tenga que preocuparme de ello. No sé si es el mejor modo.
-    @Published var summary:String   = "Resumen no disponible"
-    @Published var plot:String      = "Argumento no disponible"
-    @Published var isbn:String      = "ISBN no disponible"
-    @Published var pages:String     = "no disponible"
-    @Published var rating:Double    = 0
+    @Published var summary:String    = "Resumen no disponible"
+    @Published var plot:String       = "Argumento no disponible"
+    @Published var isbn:String       = "ISBN no disponible"
+    @Published var pages:String      = "no disponible"
+    @Published var rating:Double     = 0
+    @Published var readedBooks:[Int] = []
     
     @Published var showError        = false
     @Published var errorMSG         = ""
@@ -37,6 +38,18 @@ final class BookDetailViewVM:ObservableObject {
             plot    = book.plot ?? plot
             isbn    = book.isbn ?? isbn
             rating  = book.rating ?? rating
+        } catch let error as APIErrors {
+            errorMSG = error.description
+            showError.toggle()
+        } catch {
+            errorMSG = error.localizedDescription
+            showError.toggle()
+        }
+    }
+    
+    @MainActor func getReaded(email: String) async {
+        do {
+            readedBooks = try await persistence.readedBooks(email: email)
         } catch let error as APIErrors {
             errorMSG = error.description
             showError.toggle()

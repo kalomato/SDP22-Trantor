@@ -17,10 +17,8 @@ struct OrdersView: View {
     
     var body: some View {
         NavigationStack {
-            if isLoading {
-                ProgressView()
-            } else if ordersVM.orderedOrders.count == 0 {
-                Text ("No se encontraron pedidos")
+            if ordersVM.orderedOrders.count == 0 && !isLoading && ordersVM.searchText.count == 0 {
+                Text ("No hay pedidos")
             }
             List(ordersVM.orderedOrders) { order in
                 OrderRow(order: order,
@@ -50,14 +48,22 @@ struct OrdersView: View {
                 }
             }
             .onAppear {
-                isLoading = true
+                //isLoading = true
                 Task {
                     await ordersVM.getOrders(email: userVM.usuario.email)
                     isLoading = false
                 }
             }
             .refreshable {
+                isLoading = true
                 await ordersVM.getOrders(email: userVM.usuario.email)
+                isLoading = false
+            }
+            .overlay {
+                if isLoading {
+                    LoadingView()
+                        .transition(.opacity)
+                }
             }
         }
         .sheet(item: $selectedBook) { book in
