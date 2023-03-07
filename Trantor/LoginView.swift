@@ -30,7 +30,7 @@ struct LoginView: View {
                 Text("Iniciar sesión")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                 Text("Nota: La contraseña no se valida")
                     .font(.footnote)
                     .italic()
