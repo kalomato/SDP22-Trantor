@@ -11,6 +11,9 @@ struct BooksView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
     
+    @State var showAlert = false
+    @State var alertMsg = ""
+    
     var body: some View {
         NavigationStack {
             List(booksVM.orderedBooks) { book in
@@ -46,6 +49,13 @@ struct BooksView: View {
             .refreshable {
                 await booksVM.getBooks()
             }
+//            .onAppear {
+//                Task {
+//                    do {
+//                        await booksVM.getReaded(email: userVM.usuario.email)
+//                    }
+//                }
+//            }
         }
         .alert("ERROR", isPresented: $booksVM.showAlert) {
             Button(action: {}) {

@@ -51,8 +51,8 @@ struct LoginView: View {
                         .cornerRadius(10)
                 }
                 .onAppear {
-                    email = ""
-                    password = ""
+                    email = "enrique@tizona.net"
+                    password = "123456"
                 }
                 
                 Button(action: {

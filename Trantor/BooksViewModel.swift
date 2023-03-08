@@ -11,14 +11,15 @@ final class BooksViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
     @EnvironmentObject var userVM:UserViewModel
     
-    @Published var books:[Books]        = []
-    @Published var searchText           = ""
-    @Published var sortType:SortType    = .noSort
-    @Published var readedBooks:[Int]    = []
+    @Published var books:[Books]           = []
+    @Published var booksLatest:[Books]     = []
+    @Published var searchText              = ""
+    @Published var sortType:SortType       = .noSort
+    @Published var readedBooks:ReadedBooks = ReadedBooks(books: [], email: "")
     
-    @Published var showAlert            = false
-    @Published var errorMSG             = ""
-    @State var booksLoading             = true
+    @Published var showAlert    = false
+    @Published var errorMSG     = ""
+    @State var booksLoading     = true
     
     enum SortType:String, CaseIterable {
         case titleAscending   = "Por título ascendente"
@@ -68,8 +69,9 @@ final class BooksViewModel:ObservableObject {
         booksLoading = true
         Task {
             await getBooks()
+            await getBooksLatest()
+            booksLoading = false
         }
-        booksLoading = false
     }
     
     @MainActor func getBooks() async {
@@ -84,7 +86,19 @@ final class BooksViewModel:ObservableObject {
         }
     }
     
-    func toggleReaded() {
+    @MainActor func getBooksLatest() async {
+        do {
+            booksLatest = try await persistence.getBooksLatest()
+        } catch let error as APIErrors {
+            errorMSG = error.description
+            showAlert.toggle()
+        } catch {
+            errorMSG = error.localizedDescription
+            showAlert.toggle()
+        }
+    }
+    
+    func toggleReaded(email:String, bookID:Int) {
         ()
     }
     
@@ -115,7 +129,8 @@ final class BooksViewModel:ObservableObject {
     }
     
     func reset() {
-        self.books = []
+        self.books       = []
+        self.booksLatest = []
     }
     
 }

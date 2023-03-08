@@ -14,7 +14,7 @@ final class BooksLatestViewModel:ObservableObject {
     @Published var authors:[Authors]    = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
-    @Published var readedBooks:[Int]    = []
+    @Published var readedBooks:ReadedBooks    = ReadedBooks(books: [], email: "")
     
     @Published var showAlert            = false
     @Published var errorMSG             = ""

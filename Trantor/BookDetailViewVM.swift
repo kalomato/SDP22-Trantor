@@ -18,7 +18,7 @@ final class BookDetailViewVM:ObservableObject {
     @Published var isbn:String       = "ISBN no disponible"
     @Published var pages:String      = "no disponible"
     @Published var rating:Double     = 0
-    @Published var readedBooks:[Int] = []
+    @Published var readedBooks:ReadedBooks = ReadedBooks(books: [], email: "")
     
     @Published var showError        = false
     @Published var errorMSG         = ""

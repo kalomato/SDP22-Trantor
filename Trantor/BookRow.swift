@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct BookRow: View {
+    @EnvironmentObject var booksVM:BooksViewModel
+    @EnvironmentObject var userVM:UserViewModel
+    
     let book:Books
     
     var body: some View {
@@ -26,20 +29,42 @@ struct BookRow: View {
                     .scaledToFit()
                     .frame(width: 50)
             }
+            
             VStack(alignment: .leading) {
-                Text(book.title)
-                    .font(.headline)
-                Text(book.author)
-                    .font(.subheadline)
-                Text("Año: \(book.year.description)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(book.title)
+                            .font(.headline)
+                        Text(book.author)
+                            .font(.subheadline)
+                        Text("Año: \(book.year.description)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer()
+                    if booksVM.readedBooks.books.contains(book.id) {
+                        Image(systemName: "bookmark.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 15)
+                            .foregroundColor(.green)
+                            .padding(.trailing)
+
+                    }
+                }
                 HStack {
                     RatingStars(rating: book.rating ?? 0, size: 12)
                     Spacer()
                     Text("\(book.price, specifier: "%.2f")€")
                         .font(.title3)
                         .foregroundStyle(.secondary)
+                }
+            }
+            .onAppear {
+                Task {
+                    do {
+                        await booksVM.getReaded(email: userVM.usuario.email)
+                    }
                 }
             }
         }
@@ -49,6 +74,11 @@ struct BookRow: View {
 
 struct BookRow_Previews: PreviewProvider {
     static var previews: some View {
-        BookRow(book: .bookTest)
+        let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
+        var userVM = UserViewModel()
+        userVM.usuario = user
+        return BookRow(book: .bookTest)
+            .environmentObject(BooksViewModel())
+            .environmentObject(userVM)
     }
 }
