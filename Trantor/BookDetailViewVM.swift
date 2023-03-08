@@ -13,15 +13,15 @@ final class BookDetailViewVM:ObservableObject {
     
     //Se me ha ocurrido tratar los valores opcionales aquí, para que en la vista BookDetailView
     //no tenga que preocuparme de ello. No sé si es el mejor modo.
-    @Published var summary:String    = "Resumen no disponible"
-    @Published var plot:String       = "Argumento no disponible"
-    @Published var isbn:String       = "ISBN no disponible"
-    @Published var pages:String      = "no disponible"
-    @Published var rating:Double     = 0
+    @Published var summary:String          = "Resumen no disponible"
+    @Published var plot:String             = "Argumento no disponible"
+    @Published var isbn:String             = "ISBN no disponible"
+    @Published var pages:String            = "no disponible"
+    @Published var rating:Double           = 0
     @Published var readedBooks:ReadedBooks = ReadedBooks(books: [], email: "")
     
-    @Published var showError        = false
-    @Published var errorMSG         = ""
+    @Published var showError = false
+    @Published var errorMSG  = ""
     
     init(book:Books) {
         self.book = book

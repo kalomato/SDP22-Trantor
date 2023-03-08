@@ -11,14 +11,12 @@ struct UserMenu: View {
     let user:User
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var booksVM:BooksViewModel
-    @EnvironmentObject var latestVM:BooksLatestViewModel
     @EnvironmentObject var ordersVM:OrdersViewModel
     
     var body: some View {
         Menu(user.email) {
             Button {
                 booksVM.reset()
-                latestVM.reset()
                 userVM.logout()
                 ordersVM.reset()
             } label: {

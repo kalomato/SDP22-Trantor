@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
-    @StateObject var booksLatestVM = BooksLatestViewModel()
     @StateObject var userVM = UserViewModel()
     @StateObject var ordersVM = OrdersViewModel()
 
@@ -19,7 +18,6 @@ struct TrantorApp: App {
             LoginView()
                 .environmentObject(userVM)
                 .environmentObject(booksVM)
-                .environmentObject(booksLatestVM)
                 .environmentObject(ordersVM)
         }
     }

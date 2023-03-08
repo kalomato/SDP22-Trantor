@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05599F299C1144006609D6 /* NetworkPersistence.swift */; };
-		CD0FB5F029A6A6D100FD380F /* BooksLatestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FB5EF29A6A6D100FD380F /* BooksLatestViewModel.swift */; };
 		CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD20018929A8E2E90032E216 /* RatingStars.swift */; };
 		CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2446942993EE6F009E759A /* NetworkInterface.swift */; };
 		CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36129A0C62B0096AC89 /* TabsView.swift */; };
@@ -40,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		CD05599F299C1144006609D6 /* NetworkPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPersistence.swift; sourceTree = "<group>"; };
-		CD0FB5EF29A6A6D100FD380F /* BooksLatestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksLatestViewModel.swift; sourceTree = "<group>"; };
 		CD20018929A8E2E90032E216 /* RatingStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
 		CD2446942993EE6F009E759A /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		CD39D36129A0C62B0096AC89 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				CD8ED663299050090089B537 /* BooksViewModel.swift */,
-				CD0FB5EF29A6A6D100FD380F /* BooksLatestViewModel.swift */,
 				CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */,
 				CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */,
 				CDEE182F29AD3825003B38BE /* UserViewModel.swift */,
@@ -279,7 +276,6 @@
 				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
 				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
 				CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */,
-				CD0FB5F029A6A6D100FD380F /* BooksLatestViewModel.swift in Sources */,
 				CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */,
 				CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */,
 				CD39D36D29A24F350096AC89 /* BookDetailView.swift in Sources */,

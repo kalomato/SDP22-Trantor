@@ -10,7 +10,6 @@ import SwiftUI
 struct TabsView: View {
     @EnvironmentObject var userVM:UserViewModel
     @StateObject var booksVM       = BooksViewModel()
-    @StateObject var booksLatestVM = BooksLatestViewModel()
     @StateObject var readedVM      = ReadedViewModel()
     @StateObject var ordersVM      = OrdersViewModel()
 
@@ -23,7 +22,7 @@ struct TabsView: View {
                     Label("Todos los Libros", systemImage: "book.fill")
                 }
             LatestView()
-                .environmentObject(booksLatestVM)
+                .environmentObject(booksVM)
                 .environmentObject(userVM)
                 .tabItem {
                     Label("Novedades", systemImage: "sparkles")
@@ -50,7 +49,6 @@ struct TabsView_Previews: PreviewProvider {
     static var previews: some View {
         TabsView()
             .environmentObject(BooksViewModel())
-            .environmentObject(BooksLatestViewModel())
             .environmentObject(UserViewModel())
             .environmentObject(ReadedViewModel())
             .environmentObject(OrdersViewModel())

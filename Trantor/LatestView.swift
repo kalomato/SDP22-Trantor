@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct LatestView: View {
-    @EnvironmentObject var booksLatestVM:BooksLatestViewModel
+    @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
     
     var body: some View {
         NavigationStack {
-            List(booksLatestVM.orderedLatestBooks) { book in
+            List(booksVM.orderedLatestBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
                 }
@@ -22,17 +22,17 @@ struct LatestView: View {
             .navigationDestination(for: Books.self) { book in
                 BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
             }
-            .searchable(text: $booksLatestVM.searchText, prompt: "Buscar en novedades") {
-                if booksLatestVM.filterLatestBooks.isEmpty {
+            .searchable(text: $booksVM.searchText, prompt: "Buscar en novedades") {
+                if booksVM.filterLatestBooks.isEmpty {
                     NoSearchResult()
                 }
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu("Ordenar") {
-                        ForEach(BooksLatestViewModel.SortType.allCases, id:\.self) { option in
+                        ForEach(BooksViewModel.SortType.allCases, id:\.self) { option in
                             Button {
-                                booksLatestVM.sortType = option
+                                booksVM.sortType = option
                             } label: {
                                 Text(option.rawValue)
                             }
@@ -44,30 +44,32 @@ struct LatestView: View {
                 }
             }
             .refreshable {
-                await booksLatestVM.getBooksLatest()
+                await booksVM.getBooksLatest()
             }
         }
         .alert("ERROR",
-               isPresented: $booksLatestVM.showAlert) {
+               isPresented: $booksVM.showAlert) {
             Button(action: {}) {
                 Text("OK")
             }
         } message: {
-            Text(booksLatestVM.errorMSG)
+            Text(booksVM.errorMSG)
         }
     }
 }
 
 
 struct LatestView_Previews: PreviewProvider {
-    static let booksLatestVM = BooksLatestViewModel()
-    static let userVM = UserViewModel()
     static var previews: some View {
-        LatestView()
-            .environmentObject(booksLatestVM)
+        let user = User.userTest
+        let userVM = UserViewModel()
+        userVM.usuario = user
+        let booksVM = BooksViewModel()
+        return LatestView()
+            .environmentObject(booksVM)
             .environmentObject(userVM)
             .task {
-                await booksLatestVM.getBooksLatest()
+                await booksVM.getBooksLatest()
             }
     }
 }

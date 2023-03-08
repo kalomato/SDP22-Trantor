@@ -64,6 +64,39 @@ final class BooksViewModel:ObservableObject {
         }
     }
     
+    var filterLatestBooks:[Books] {
+        if searchText.isEmpty {
+            return booksLatest.sorted { $0.id < $1.id }
+        } else {
+            return booksLatest.filter {
+                $0.title.lowercased().contains(searchText.lowercased()) ||
+                $0.author.lowercased().contains(searchText.lowercased()) ||
+                ($0.plot?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                ($0.summary?.lowercased().contains(searchText.lowercased()) ?? false) ||
+                $0.year.description.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+    
+    var orderedLatestBooks:[Books] {
+        switch sortType {
+        case .titleAscending:
+            return filterLatestBooks.sorted { $0.title < $1.title }
+        case .titleDescending:
+            return filterLatestBooks.sorted { $0.title > $1.title }
+        case .authorAscending:
+            return filterLatestBooks.sorted { $0.author < $1.author }
+        case .authorDescending:
+            return filterLatestBooks.sorted { $0.author > $1.author }
+        case .yearAscending:
+            return filterLatestBooks.sorted { $0.year < $1.year }
+        case .yearDescending:
+            return filterLatestBooks.sorted { $0.year > $1.year }
+        case .noSort:
+            return filterLatestBooks
+        }
+    }
+    
     
     init() {
         booksLoading = true

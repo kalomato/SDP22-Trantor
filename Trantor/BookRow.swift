@@ -75,7 +75,7 @@ struct BookRow: View {
 struct BookRow_Previews: PreviewProvider {
     static var previews: some View {
         let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
-        var userVM = UserViewModel()
+        let userVM = UserViewModel()
         userVM.usuario = user
         return BookRow(book: .bookTest)
             .environmentObject(BooksViewModel())

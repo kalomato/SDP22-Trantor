@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BookDetailView: View {
+    @EnvironmentObject var booksVM:BooksViewModel
+    @EnvironmentObject var userVM:UserViewModel
     @ObservedObject var bookDetailVM:BookDetailViewVM
     @State private var isExpandedSummary = false
     @State private var isExpandedPlot = false
@@ -16,33 +18,57 @@ struct BookDetailView: View {
         ScrollView {
             VStack (alignment: .leading, spacing: 15) {
                 Group {
-                    if let cover = bookDetailVM.book.cover {
-                        AsyncImage(url: cover) { phase in
-                            switch phase {
-                            case .empty: ProgressView()
-                            case .success(let image):
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(height: 300)
-                                    .cornerRadius(10)
-                                    .padding(.bottom, 20)
-                                    .shadow(color: Color.gray.opacity(0.8), radius: 5, x: 2, y: 2)
-                            case .failure:
-                                Image(systemName: "text.book.closed.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(height: 300)
-                                    .cornerRadius(10)
-                                    .padding(.bottom, 20)
-                            default: EmptyView()
-                            }
-                        }
-                    }
                     Text(bookDetailVM.book.title)
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
+                    HStack {
+                        if let cover = bookDetailVM.book.cover {
+                            AsyncImage(url: cover) { phase in
+                                switch phase {
+                                case .empty: ProgressView()
+                                case .success(let image):
+                                    image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 140)
+                                        .cornerRadius(10)
+                                        .padding(.bottom, 20)
+                                        .shadow(color: Color.gray.opacity(0.8), radius: 5, x: 2, y: 2)
+                                case .failure:
+                                    Image(systemName: "text.book.closed.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 140)
+                                        .cornerRadius(10)
+                                        .padding(.bottom, 20)
+                                default: EmptyView()
+                                }
+                            }
+                        }
+                        Spacer()
+                        VStack (alignment: .trailing) {
+                            Text(bookDetailVM.book.author)
+                                .font(.title)
+                            //ESP: Cambiar por botón
+                            if booksVM.readedBooks.books.contains(bookDetailVM.book.id) {
+                                Image(systemName: "bookmark.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20)
+                                    .foregroundColor(.green)
+                                    .padding()
+                            } else {
+                                Image(systemName: "bookmark.slash")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 20)
+                                    .foregroundColor(.primary)
+                                    .padding()
+                            }
+                            RatingStars(rating: bookDetailVM.book.rating ?? 0, size: 16)
+                        }
+                    }
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
                             Text ("PRECIO")
@@ -142,12 +168,24 @@ struct BookDetailView: View {
             .padding(.top, 20)
             .padding(.bottom, 40)
         }
+        .onAppear {
+            Task {
+                do {
+                    await booksVM.getReaded(email: userVM.usuario.email)
+                }
+            }
+        }
     }
 }
 
 
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))
+        let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
+        let userVM = UserViewModel()
+        userVM.usuario = user
+        return BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))
+            .environmentObject(BooksViewModel())
+            .environmentObject(userVM)
     }
 }

@@ -69,10 +69,12 @@ struct BooksView: View {
 
 
 struct BooksView_Previews: PreviewProvider {
-    static let booksVM = BooksViewModel()
-    static let userVM = UserViewModel()
     static var previews: some View {
-        BooksView()
+        let user = User.userTest
+        let userVM = UserViewModel()
+        userVM.usuario = user
+        let booksVM = BooksViewModel()
+        return BooksView()
             .environmentObject(booksVM)
             .environmentObject(userVM)
             .task {
