@@ -52,6 +52,7 @@ struct BookDetailView: View {
                         VStack (alignment: .trailing) {
                             Text(bookDetailVM.book.author)
                                 .font(.title)
+                                .italic()
                             Spacer()
                             HStack {
                                 ReadedButton(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
@@ -60,10 +61,8 @@ struct BookDetailView: View {
                             Spacer()
                             PriceButton(price: bookDetailVM.book.price, color: Color.orange)
                                 .padding(.bottom,10)
-                            //Spacer()
                             RatingStars(rating: bookDetailVM.book.rating ?? 0, size: 16)
                                 .padding(.bottom, 10)
-                            //Spacer()
                         }
                     }
                     
