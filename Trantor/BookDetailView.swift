@@ -52,11 +52,14 @@ struct BookDetailView: View {
                         VStack (alignment: .trailing) {
                             Text(bookDetailVM.book.author)
                                 .font(.title)
-                            Text(String(bookDetailVM.book.year))
-                                .font(.headline)
-                            ReadedButton(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
+                            Spacer()
+                            HStack {
+                                ReadedButton(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
+                                BuyButton()
+                            }
                             Spacer()
                             PriceButton(price: bookDetailVM.book.price, color: Color.orange)
+                                .padding(.bottom,10)
                             //Spacer()
                             RatingStars(rating: bookDetailVM.book.rating ?? 0, size: 16)
                                 .padding(.bottom, 10)
@@ -77,6 +80,13 @@ struct BookDetailView: View {
                         
                         Spacer()
                         
+                        VStack(alignment: .trailing, spacing: 10) {
+                            Text("AÑO")
+                                .font(.headline)
+                            Text(String(bookDetailVM.book.year))
+                                .font(.body)
+                        }
+                        Spacer()
                         VStack(alignment: .trailing, spacing: 10) {
                             Text("PÁGINAS")
                                 .font(.headline)

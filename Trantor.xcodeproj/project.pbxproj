@@ -19,6 +19,7 @@
 		CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */; };
 		CD3BE51E29B20AF700103E55 /* ReadedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */; };
 		CD41926829B74009006BEA4D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41926729B74009006BEA4D /* LoadingView.swift */; };
+		CD4A5E4D29BA9F3C00BA04C3 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */; };
 		CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53FDBE299E52FC005A269C /* NetworkTest.swift */; };
 		CD7A7E4B29BA21680092A4E3 /* ReadedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7A7E4A29BA21680092A4E3 /* ReadedButton.swift */; };
 		CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */; };
@@ -52,6 +53,7 @@
 		CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewVM.swift; sourceTree = "<group>"; };
 		CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedViewModel.swift; sourceTree = "<group>"; };
 		CD41926729B74009006BEA4D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
 		CD53FDBE299E52FC005A269C /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
 		CD7A7E4A29BA21680092A4E3 /* ReadedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedButton.swift; sourceTree = "<group>"; };
 		CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResult.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				CD41926729B74009006BEA4D /* LoadingView.swift */,
 				CDED43F629B94BA80067F063 /* PriceButton.swift */,
 				CD7A7E4A29BA21680092A4E3 /* ReadedButton.swift */,
+				CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
 				CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */,
 				CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */,
+				CD4A5E4D29BA9F3C00BA04C3 /* BuyButton.swift in Sources */,
 				CDCE8A8C29B48DBA0000DCD4 /* OrderRow.swift in Sources */,
 				CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */,
 				CD7A7E4B29BA21680092A4E3 /* ReadedButton.swift in Sources */,
