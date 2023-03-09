@@ -23,6 +23,7 @@ struct BookDetailView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.leading)
+                    
                     HStack {
                         if let cover = bookDetailVM.book.cover {
                             AsyncImage(url: cover) { phase in
@@ -32,17 +33,17 @@ struct BookDetailView: View {
                                     image
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 140)
+                                        .frame(width: 150)
                                         .cornerRadius(10)
-                                        .padding(.bottom, 20)
+                                        .padding(.bottom, 10)
                                         .shadow(color: Color.gray.opacity(0.8), radius: 5, x: 2, y: 2)
                                 case .failure:
                                     Image(systemName: "text.book.closed.fill")
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(width: 140)
+                                        .frame(width: 150)
                                         .cornerRadius(10)
-                                        .padding(.bottom, 20)
+                                        .padding(.bottom, 10)
                                 default: EmptyView()
                                 }
                             }
@@ -54,12 +55,15 @@ struct BookDetailView: View {
                             Text(String(bookDetailVM.book.year))
                                 .font(.headline)
                             ReadedButton(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
+                            Spacer()
                             PriceButton(price: bookDetailVM.book.price, color: Color.orange)
-                            Spacer()
+                            //Spacer()
                             RatingStars(rating: bookDetailVM.book.rating ?? 0, size: 16)
-                            Spacer()
+                                .padding(.bottom, 10)
+                            //Spacer()
                         }
                     }
+                    
                     Divider()
                 }
                 Group {
