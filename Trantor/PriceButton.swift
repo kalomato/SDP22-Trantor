@@ -13,19 +13,19 @@ struct PriceButton: View {
     let color:Color
     
     var body: some View {
-            Button(action: {
-                // Aquí puedes agregar la acción que quieras que ocurra cuando se presiona el botón
-            }) {
-                Text("\(price, specifier: "%.2f") €")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, 5)
-                    .background(color)
-                    .cornerRadius(8)
-            }
+        Button(action: {
+            // Aquí puedes agregar la acción que quieras que ocurra cuando se presiona el botón
+        }) {
+            Text("\(price, specifier: "%.2f") €")
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .padding(.horizontal, 5)
+                .padding(.vertical, 5)
+                .background(color)
+                .cornerRadius(8)
         }
+    }
 }
 
 struct PriceButton_Previews: PreviewProvider {

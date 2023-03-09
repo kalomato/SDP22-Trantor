@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct BooksView: View {
-    @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
+    @EnvironmentObject var booksVM:BooksViewModel
     
     @State var showAlert = false
     @State var alertMsg = ""
@@ -75,7 +75,7 @@ struct BooksView_Previews: PreviewProvider {
         userVM.usuario = user
         let booksVM = BooksViewModel()
         return BooksView()
-            .environmentObject(booksVM)
+            .environmentObject(BooksViewModel())
             .environmentObject(userVM)
             .task {
                 await booksVM.getBooks()

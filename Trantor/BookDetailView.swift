@@ -11,8 +11,9 @@ struct BookDetailView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
     @ObservedObject var bookDetailVM:BookDetailViewVM
+    
     @State private var isExpandedSummary = false
-    @State private var isExpandedPlot = false
+    @State private var isExpandedPlot    = false
     
     var body: some View {
         ScrollView {
@@ -45,65 +46,23 @@ struct BookDetailView: View {
                                 default: EmptyView()
                                 }
                             }
-                            
-
                         }
                         Spacer()
                         VStack (alignment: .trailing) {
                             Text(bookDetailVM.book.author)
                                 .font(.title)
-                            //ESP: Cambiar por botón
-                            if booksVM.readedBooks.books.contains(bookDetailVM.book.id) {
-                                Image(systemName: "bookmark.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                    .foregroundColor(.green)
-                                    .padding()
-                            } else {
-                                Image(systemName: "bookmark.slash")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                    .foregroundColor(.primary)
-                                    .padding()
-                            }
-                            RatingStars(rating: bookDetailVM.book.rating ?? 0, size: 16)
-                        }
-                    }
-                    HStack {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text ("PRECIO")
+                            Text(String(bookDetailVM.book.year))
                                 .font(.headline)
-                            Text("\(bookDetailVM.book.price, specifier: "%.2f")€")
-                                .bold()
-                        }
-                        Spacer()
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text ("VALORACIÓN")
-                                .font(.headline)
+                            ReadedButton(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
+                            PriceButton(price: bookDetailVM.book.price, color: Color.orange)
+                            Spacer()
                             RatingStars(rating: bookDetailVM.book.rating ?? 0, size: 16)
+                            Spacer()
                         }
                     }
                     Divider()
                 }
                 Group {
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("AUTOR")
-                                .font(.headline)
-                            Text(bookDetailVM.book.author)
-                                .font(.body)
-                        }
-                        Spacer()
-                        VStack(alignment: .trailing, spacing: 10) {
-                            Text("AÑO")
-                                .font(.headline)
-                            Text(String(bookDetailVM.book.year))
-                                .font(.body)
-                        }
-                    }
-                    Divider()
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 10) {
                             Text("ISBN")

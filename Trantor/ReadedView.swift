@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ReadedView: View {
+    @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var readedVM:ReadedViewModel
-    @EnvironmentObject var userVM:UserViewModel
     
     @State var isLoading = true
     

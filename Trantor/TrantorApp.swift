@@ -11,14 +11,15 @@ import SwiftUI
 struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
     @StateObject var userVM = UserViewModel()
-    @StateObject var ordersVM = OrdersViewModel()
+    //Este creo que no debería ser State. Revisar
+    //@StateObject var ordersVM = OrdersViewModel()
 
     var body: some Scene {
         WindowGroup {
             LoginView()
                 .environmentObject(userVM)
                 .environmentObject(booksVM)
-                .environmentObject(ordersVM)
+                //.environmentObject(ordersVM)
         }
     }
 }
