@@ -12,6 +12,7 @@ struct BookRow: View {
     @EnvironmentObject var userVM:UserViewModel
     
     let book:Books
+    static let color = Color.gray.opacity(0.8)
     
     var body: some View {
         HStack {
@@ -55,16 +56,8 @@ struct BookRow: View {
                 HStack {
                     RatingStars(rating: book.rating ?? 0, size: 12)
                     Spacer()
-                    Text("\(book.price, specifier: "%.2f")€")
+                    Text("\(book.price, specifier: "%.2f") €")
                         .font(.title3)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .onAppear {
-                Task {
-                    do {
-                        await booksVM.getReaded(email: userVM.usuario.email)
-                    }
                 }
             }
         }

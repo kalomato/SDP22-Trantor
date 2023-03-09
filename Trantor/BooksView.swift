@@ -49,13 +49,13 @@ struct BooksView: View {
             .refreshable {
                 await booksVM.getBooks()
             }
-//            .onAppear {
-//                Task {
-//                    do {
-//                        await booksVM.getReaded(email: userVM.usuario.email)
-//                    }
-//                }
-//            }
+            .onAppear {
+                Task {
+                    do {
+                        await booksVM.getReaded(email: userVM.usuario.email)
+                    }
+                }
+            }
         }
         .alert("ERROR", isPresented: $booksVM.showAlert) {
             Button(action: {}) {

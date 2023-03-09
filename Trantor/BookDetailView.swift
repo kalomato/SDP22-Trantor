@@ -45,6 +45,8 @@ struct BookDetailView: View {
                                 default: EmptyView()
                                 }
                             }
+                            
+
                         }
                         Spacer()
                         VStack (alignment: .trailing) {

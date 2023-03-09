@@ -46,6 +46,13 @@ struct LatestView: View {
             .refreshable {
                 await booksVM.getBooksLatest()
             }
+            .onAppear {
+                Task {
+                    do {
+                        await booksVM.getReaded(email: userVM.usuario.email)
+                    }
+                }
+            }
         }
         .alert("ERROR",
                isPresented: $booksVM.showAlert) {

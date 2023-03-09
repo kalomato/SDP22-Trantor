@@ -47,9 +47,12 @@ struct TabsView: View {
 
 struct TabsView_Previews: PreviewProvider {
     static var previews: some View {
-        TabsView()
+        let user = User.userTest
+        let userVM = UserViewModel()
+        userVM.usuario = user
+        return TabsView()
             .environmentObject(BooksViewModel())
-            .environmentObject(UserViewModel())
+            .environmentObject(userVM)
             .environmentObject(ReadedViewModel())
             .environmentObject(OrdersViewModel())
     }
