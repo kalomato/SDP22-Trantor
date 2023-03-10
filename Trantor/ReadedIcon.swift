@@ -7,13 +7,10 @@
 
 import SwiftUI
 
-struct ReadedButton: View {
+struct ReadedIcon: View {
     let readed:Bool
     
     var body: some View {
-            Button(action: {
-                // llamar a la función toggleReaded
-            }) {
                 if readed {
                     Image(systemName: "bookmark.fill")
                         .resizable()
@@ -25,17 +22,15 @@ struct ReadedButton: View {
                     Image(systemName: "bookmark.slash")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 20)
+                        .frame(width: 25)
                         .foregroundColor(.primary)
                         .padding()
                 }
             }
-            .background(Color.clear)
     }
-}
 
-struct ReadedButton_Previews: PreviewProvider {
+struct ReadedIcon_Previews: PreviewProvider {
     static var previews: some View {
-        ReadedButton(readed: true)
+        ReadedIcon(readed: true)
     }
 }

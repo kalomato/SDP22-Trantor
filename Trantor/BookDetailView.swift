@@ -12,6 +12,8 @@ struct BookDetailView: View {
     @EnvironmentObject var userVM:UserViewModel
     @ObservedObject var bookDetailVM:BookDetailViewVM
     
+    @State var showAlert = false
+    @State var alertMsg  = ""
     @State private var isExpandedSummary = false
     @State private var isExpandedPlot    = false
     
@@ -55,7 +57,19 @@ struct BookDetailView: View {
                                 .italic()
                             Spacer()
                             HStack {
-                                ReadedButton(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
+                                Button(action: {
+                                    Task {
+                                        if (await booksVM.toggleReaded(email: userVM.usuario.email, bookID: [bookDetailVM.book.id])) {
+                                            await booksVM.getReaded(email: userVM.usuario.email)
+                                        } else {
+                                              showAlert = true
+                                                alertMsg = "Error, intente de nuevo"
+                                        }
+                                        
+                                    }
+                                }) {
+                                    ReadedIcon(readed: booksVM.readedBooks.books.contains(bookDetailVM.book.id))
+                                }
                                 BuyButton()
                             }
                             Spacer()

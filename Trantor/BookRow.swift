@@ -49,8 +49,8 @@ struct BookRow: View {
                             .scaledToFit()
                             .frame(width: 15)
                             .foregroundColor(.green)
+                            .opacity(0.8)
                             .padding(.trailing)
-
                     }
                 }
                 HStack {

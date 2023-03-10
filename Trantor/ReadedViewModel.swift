@@ -16,6 +16,13 @@ final class ReadedViewModel:ObservableObject {
     @Published var sortType:SortType    = .noSort
     @Published var showAlert            = false
     @Published var errorMSG             = ""
+//    @Binding var email = LoginView().$email
+//    
+//    init(readedBooks:[Books]) {
+//        Task {
+//            await getReadedBooks(email: email)
+//        }
+//    }
     
     enum SortType:String, CaseIterable {
         case titleAscending   = "Por título ascendente"

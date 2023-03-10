@@ -18,7 +18,7 @@ struct UserMenu: View {
             Button {
                 booksVM.reset()
                 userVM.logout()
-                ordersVM.reset()
+                //ordersVM.reset()
             } label: {
                 Text("Cerrar sesión")
             }

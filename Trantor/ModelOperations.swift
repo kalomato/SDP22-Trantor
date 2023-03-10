@@ -15,3 +15,8 @@ struct UserReaded:Codable {
     var email:String
     var book:Int
 }
+
+//struct MarkReaded:Codable {
+//    var email:String
+//    var books:[Int]
+//}

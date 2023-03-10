@@ -66,15 +66,22 @@ final class NetworkPersistence {
         return try await queryJSON(request: .request(url: .getUser, method: .post, body: userToQuery), type: User.self)
     }
     
+    //Devuelve Bool si libro léido/no leído
     func isReaded(email:String, bookID:Int) async throws -> IsReaded {
         let userReaded = UserReaded(email: email, book: bookID)
         return try await queryJSON(request: .request(url: .isReaded, method: .post, body: userReaded), type: IsReaded.self)
     }
     
-    //Devuelve array con IDs de libros leídos
+    //Devuelve struct con email y array de IDs de libros leídos
     func readedBooks(email: String) async throws -> ReadedBooks {
         let userToQuery = UserQuery(email: email)
         return try await queryJSON(request: .request(url: .readedBooks, method: .post, body: userToQuery), type: ReadedBooks.self)
+    }
+    
+    //Marca libros como leídos/no leídos (tipo togle)
+    func markRead(email:String, booksID:[Int]) async throws -> Bool {
+        let markReaded = ReadedBooks(books: booksID, email: email)
+        return try await queryJSON(request: .request(url: .markRead, method: .post, body: markReaded))
     }
     
     //A partir de un email, obtiene los libros leídos por el usuairo, elimina los duplicados,
@@ -134,7 +141,7 @@ final class NetworkPersistence {
         return pedidos2
     }
     
-    //Función genérica para peticiones
+    //Función genérica para peticiones con devolución de datos.
     func queryJSON<T:Codable>(request:URLRequest,
                               type:T.Type,
                               decoder:JSONDecoder = JSONDecoder(),
@@ -148,6 +155,23 @@ final class NetworkPersistence {
                 } catch {
                     throw APIErrors.json(error)
                 }
+            } else {
+                throw APIErrors.satus(response.statusCode)
+            }
+        } catch let error as APIErrors {
+            throw error
+        } catch {
+            throw APIErrors.general(error)
+        }
+    }
+    
+    //Función genérica para peticiones sin devolución de datos.
+    func queryJSON(request:URLRequest, statusOK:Int = 200) async throws -> Bool {
+        do {
+            let (_, response) = try await URLSession.shared.data(for: request)
+            guard let response = response as? HTTPURLResponse else { throw APIErrors.nonHTTP }
+            if response.statusCode == statusOK {
+                return true
             } else {
                 throw APIErrors.satus(response.statusCode)
             }

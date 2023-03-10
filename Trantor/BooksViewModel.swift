@@ -131,8 +131,17 @@ final class BooksViewModel:ObservableObject {
         }
     }
     
-    func toggleReaded(email:String, bookID:Int) {
-        ()
+    func toggleReaded(email:String, bookID:[Int]) async -> Bool {
+        do {
+            return try await persistence.markRead(email: email, booksID: bookID)
+        } catch let error as APIErrors {
+            errorMSG = error.description
+            showAlert.toggle()
+        } catch {
+            errorMSG = error.localizedDescription
+            showAlert.toggle()
+        }
+        return false
     }
     
     func getReaded(email: String) async {

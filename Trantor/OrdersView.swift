@@ -13,7 +13,10 @@ struct OrdersView: View {
     @EnvironmentObject var ordersVM:OrdersViewModel
     
     @State private var selectedBook: Books?
-    @State var isLoading = true
+    @State var showAlert = false
+    @State var alertMsg  = ""
+    @State private var isLoading = true
+    @State private var firstLoad = true
     
     var body: some View {
         NavigationStack {
@@ -50,8 +53,11 @@ struct OrdersView: View {
             .onAppear {
                 //isLoading = true
                 Task {
-                    await ordersVM.getOrders(email: userVM.usuario.email)
-                    isLoading = false
+                    if firstLoad {
+                        await ordersVM.getOrders(email: userVM.usuario.email)
+                        firstLoad = false
+                        isLoading = false
+                    }
                 }
             }
             .refreshable {

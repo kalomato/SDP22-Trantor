@@ -12,7 +12,10 @@ struct ReadedView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var readedVM:ReadedViewModel
     
-    @State var isLoading = true
+    @State var showAlert = false
+    @State var alertMsg  = ""
+    @State private var isLoading = true
+    @State private var firstLoad = true
     
     var body: some View {
         NavigationStack {
@@ -22,6 +25,24 @@ struct ReadedView: View {
             List(readedVM.orderedReadedBooks) { book in
                 NavigationLink(value: book) {
                     BookRow(book: book)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                            Button {
+                                Task {
+                                    if (await booksVM.toggleReaded(email: userVM.usuario.email, bookID: [book.id])) {
+                                        await booksVM.getReaded(email: userVM.usuario.email)
+                                        await readedVM.getReadedBooks(email: userVM.usuario.email)
+                                    } else {
+                                        showAlert = true
+                                        alertMsg = "Error, intente de nuevo"
+                                    }
+                                }
+                            } label: {
+                                !booksVM.readedBooks.books.contains(book.id) ?
+                                    Label("Marcar Leído", systemImage: "bookmark") :
+                                    Label("Quitar Leído", systemImage: "bookmark.slash")
+                            }
+                            .tint(booksVM.readedBooks.books.contains(book.id) ? .red : .green)
+                        }
                 }
             }
             .navigationTitle("Libros leídos")
@@ -52,8 +73,10 @@ struct ReadedView: View {
             .onAppear {
                 //isLoading = true
                 Task {
-                    await readedVM.getReadedBooks(email: userVM.usuario.email)
-                    isLoading = false
+                    if firstLoad {
+                        await readedVM.getReadedBooks(email: userVM.usuario.email)
+                        isLoading = false
+                    }
                 }
             }
             .refreshable {

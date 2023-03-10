@@ -21,7 +21,7 @@
 		CD41926829B74009006BEA4D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41926729B74009006BEA4D /* LoadingView.swift */; };
 		CD4A5E4D29BA9F3C00BA04C3 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */; };
 		CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53FDBE299E52FC005A269C /* NetworkTest.swift */; };
-		CD7A7E4B29BA21680092A4E3 /* ReadedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7A7E4A29BA21680092A4E3 /* ReadedButton.swift */; };
+		CD7A7E4B29BA21680092A4E3 /* ReadedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7A7E4A29BA21680092A4E3 /* ReadedIcon.swift */; };
 		CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */; };
 		CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64D299028EB0089B537 /* TrantorApp.swift */; };
 		CD8ED650299028EB0089B537 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64F299028EB0089B537 /* BooksView.swift */; };
@@ -55,7 +55,7 @@
 		CD41926729B74009006BEA4D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
 		CD53FDBE299E52FC005A269C /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
-		CD7A7E4A29BA21680092A4E3 /* ReadedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedButton.swift; sourceTree = "<group>"; };
+		CD7A7E4A29BA21680092A4E3 /* ReadedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedIcon.swift; sourceTree = "<group>"; };
 		CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResult.swift; sourceTree = "<group>"; };
 		CD8ED64A299028EB0089B537 /* Trantor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trantor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8ED64D299028EB0089B537 /* TrantorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrantorApp.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */,
 				CD41926729B74009006BEA4D /* LoadingView.swift */,
 				CDED43F629B94BA80067F063 /* PriceButton.swift */,
-				CD7A7E4A29BA21680092A4E3 /* ReadedButton.swift */,
+				CD7A7E4A29BA21680092A4E3 /* ReadedIcon.swift */,
 				CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */,
 			);
 			name = Components;
@@ -302,7 +302,7 @@
 				CD4A5E4D29BA9F3C00BA04C3 /* BuyButton.swift in Sources */,
 				CDCE8A8C29B48DBA0000DCD4 /* OrderRow.swift in Sources */,
 				CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */,
-				CD7A7E4B29BA21680092A4E3 /* ReadedButton.swift in Sources */,
+				CD7A7E4B29BA21680092A4E3 /* ReadedIcon.swift in Sources */,
 				CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
