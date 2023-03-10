@@ -91,12 +91,11 @@ struct LatestView_Previews: PreviewProvider {
         let user = User.userTest
         let userVM = UserViewModel()
         userVM.usuario = user
-        let booksVM = BooksViewModel()
         return LatestView()
-            .environmentObject(booksVM)
+            .environmentObject(BooksViewModel())
             .environmentObject(userVM)
             .task {
-                await booksVM.getBooksLatest()
+                await BooksViewModel().getBooksLatest()
             }
     }
 }

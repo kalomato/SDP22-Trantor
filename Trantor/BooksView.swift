@@ -90,12 +90,11 @@ struct BooksView_Previews: PreviewProvider {
         let user = User.userTest
         let userVM = UserViewModel()
         userVM.usuario = user
-        let booksVM = BooksViewModel()
         return BooksView()
             .environmentObject(BooksViewModel())
             .environmentObject(userVM)
             .task {
-                await booksVM.getBooks()
+                await BooksViewModel().getBooks()
             }
     }
 }

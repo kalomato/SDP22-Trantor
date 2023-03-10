@@ -13,10 +13,10 @@ struct OrdersView: View {
     @EnvironmentObject var ordersVM:OrdersViewModel
     
     @State private var selectedBook: Books?
-    @State var showAlert = false
-    @State var alertMsg  = ""
     @State private var isLoading = true
     @State private var firstLoad = true
+    @State var showAlert = false
+    @State var alertMsg  = ""
     
     var body: some View {
         NavigationStack {
@@ -51,7 +51,6 @@ struct OrdersView: View {
                 }
             }
             .onAppear {
-                //isLoading = true
                 Task {
                     if firstLoad {
                         await ordersVM.getOrders(email: userVM.usuario.email)
@@ -86,15 +85,14 @@ struct OrdersView: View {
     }
 }
 
+
 struct OrdersView_Previews: PreviewProvider {
-    static let ordersVM = OrdersViewModel()
-    static let userVM = UserViewModel()
     static var previews: some View {
         OrdersView()
-            .environmentObject(ordersVM)
-            .environmentObject(userVM)
+            .environmentObject(OrdersViewModel())
+            .environmentObject(UserViewModel())
             .task {
-                await ordersVM.getOrders(email: "enrique@tizona.net")
+                await OrdersViewModel().getOrders(email: "enrique@tizona.net")
             }
     }
 }

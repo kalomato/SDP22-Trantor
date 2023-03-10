@@ -11,7 +11,7 @@ import SwiftUI
 struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
     @StateObject var userVM = UserViewModel()
-    //Este creo que no debería ser State. Revisar
+    //ESP: Este creo que no debería ser State. Revisar
     //@StateObject var ordersVM = OrdersViewModel()
 
     var body: some Scene {

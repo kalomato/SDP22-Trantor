@@ -42,6 +42,6 @@ struct OrderRow: View {
 
 struct OrderRow_Previews: PreviewProvider {
     static var previews: some View {
-        OrderRow(order: .order2Test, date: Date(), selectedBook: .constant(nil))
+        OrderRow(order: .order2Test, date: Date(), selectedBook: .constant(.bookTest))
     }
 }

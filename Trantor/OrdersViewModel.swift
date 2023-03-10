@@ -10,7 +10,6 @@ import SwiftUI
 final class OrdersViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
     @EnvironmentObject var userVM:UserViewModel
-    
     @Published var orders:[Order2]      = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort

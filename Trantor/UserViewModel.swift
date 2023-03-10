@@ -14,7 +14,6 @@ final class UserViewModel:ObservableObject {
     @Published var validEmail:Bool     = true
     @Published var validPassword:Bool  = true
     @Published var logged:Bool         = false
-    
     @Published var showError           = false
     @Published var errorMSG            = ""
     

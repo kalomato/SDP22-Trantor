@@ -82,7 +82,6 @@ struct Order:Codable, Hashable {
 }
 
 extension Order {
-//    static let orderTest = Order(estado: "recibido", npedido: "CCB8F7E5-1B60-40E4-9514-CD65FE5138E1", date: setupDateFormatter().date(from:"2023-02-27T18:45:31Z")!, books: [810, 338, 873, 1], email: "enrique@tizona.net")
     static let orderTest = Order(estado: "recibido", npedido: "CCB8F7E5-1B60-40E4-9514-CD65FE5138E1", date: "2023-02-27T18:45:31Z", books: [810, 338, 873, 1], email: "enrique@tizona.net")
 }
 

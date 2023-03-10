@@ -71,7 +71,6 @@ struct ReadedView: View {
                 }
             }
             .onAppear {
-                //isLoading = true
                 Task {
                     if firstLoad {
                         await readedVM.getReadedBooks(email: userVM.usuario.email)
@@ -105,16 +104,13 @@ struct ReadedView: View {
 
 
 struct ReadedView_Previews: PreviewProvider {
-    static let booksVM = BooksViewModel()
-    static let readedVM = ReadedViewModel()
-    static let userVM = UserViewModel()
     static var previews: some View {
         ReadedView()
-            .environmentObject(readedVM)
-            .environmentObject(userVM)
-            .environmentObject(booksVM)
+            .environmentObject(ReadedViewModel())
+            .environmentObject(UserViewModel())
+            .environmentObject(BooksViewModel())
             .task {
-                await readedVM.getReadedBooks(email: "enrique@tizona.net")
+                await ReadedViewModel().getReadedBooks(email: "enrique@tizona.net")
             }
     }
 }
