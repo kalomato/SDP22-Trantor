@@ -13,9 +13,8 @@ struct LoginView: View {
     @State private var password      = ""
     @State private var validEmail    = false
     @State private var validPassword = false
-    
-    @State var showError = false
-    @State var errorMSG  = ""
+    @State var showError             = false
+    @State var errorMSG              = ""
     
     var body: some View {
         NavigationView {
