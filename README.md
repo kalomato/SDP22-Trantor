@@ -1,5 +1,5 @@
 # SDP22-Trantor
-Proyecto final SDP 2022
+Proyecto final SDP 2022 - Enrique
 
 NOTAS DE LA APLICACIÓN
 La contraseña no se valida. Sólo verifica que tenga más de 6 caracteres.
