@@ -10,7 +10,8 @@ import SwiftUI
 struct LatestView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
-    
+    @State private var firstLoad = true
+    @State private var isLoading = true
     @State var showAlert = false
     @State var alertMsg  = ""
     
@@ -68,10 +69,18 @@ struct LatestView: View {
             }
             .onAppear {
                 Task {
-                    do {
+                    if firstLoad {
                         await booksVM.getBooksLatest()
-                        await booksVM.getReaded(email: userVM.usuario.email)
+                        firstLoad = false
+                        isLoading = false
                     }
+                    await booksVM.getReaded(email: userVM.usuario.email)
+                }
+            }
+            .overlay {
+                if isLoading {
+                    LoadingView()
+                        .transition(.opacity)
                 }
             }
         }

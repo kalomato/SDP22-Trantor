@@ -71,8 +71,8 @@ struct ReadedView: View {
                 }
             }
             .onAppear {
-                Task {
-                    if firstLoad {
+                if firstLoad {
+                    Task {
                         await readedVM.getReadedBooks(email: userVM.usuario.email)
                         isLoading = false
                     }

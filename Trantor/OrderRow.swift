@@ -12,6 +12,8 @@ struct OrderRow: View {
     let date:Date
     @Binding var selectedBook: Books?
     
+    @State private var showSheet = false
+    
     var body: some View {
             VStack(alignment: .leading) {
                 Text("Pedido número")
@@ -24,11 +26,14 @@ struct OrderRow: View {
                     .font(.subheadline)
                 Divider()
                 ForEach(order.booksFull, id: \.id) { book in
-                    Button(action: {
-                        selectedBook = book
-                    }) {
+                    //Button(action: {
+                    //    selectedBook = book
+                    //}) {
                         BookRow(book: book) //, selectedBook: $selectedBook)
-                    }
+                            .sheet(item: $selectedBook) { book in
+                                BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
+                            }
+                    //}
                 }
 
             }

@@ -15,7 +15,7 @@ struct LoadingView: View {
                 .ignoresSafeArea()
                 .opacity(0.95)
             VStack {
-                Text("Cargando...")
+                Text("Cargando datos")
                     .font(.callout)
                 ProgressView()
             }

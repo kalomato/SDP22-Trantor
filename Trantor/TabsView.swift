@@ -38,7 +38,13 @@ struct TabsView: View {
                 .environmentObject(userVM)
                 .environmentObject(ordersVM)
                 .tabItem {
-                    Label("Pedidos", systemImage: "basket.fill")
+                    Label("Historial Pedidos", systemImage: "basket.fill")
+                }
+            CartView()
+                .environmentObject(userVM)
+                .environmentObject(booksVM)
+                .tabItem {
+                    Label("Cesta", systemImage: "cart.fill")
                 }
         }
         .navigationBarHidden(true)

@@ -12,7 +12,7 @@ struct OrdersView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var ordersVM:OrdersViewModel
     
-    @State private var selectedBook: Books?
+    @State var selectedBook: Books?
     @State private var isLoading = true
     @State private var firstLoad = true
     @State var showAlert = false
@@ -71,9 +71,9 @@ struct OrdersView: View {
                 }
             }
         }
-        .sheet(item: $selectedBook) { book in
-                    BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
-                }
+//        .sheet(item: $selectedBook) { book in
+//                    BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
+//                }
         .alert("ERROR",
                isPresented: $ordersVM.showAlert) {
             Button(action: {}) {
