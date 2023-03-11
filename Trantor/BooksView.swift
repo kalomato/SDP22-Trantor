@@ -70,6 +70,7 @@ struct BooksView: View {
                 Task {
                     do {
                         await booksVM.getBooks()
+                        await booksVM.getReaded(email: userVM.usuario.email)
                     }
                 }
             }
