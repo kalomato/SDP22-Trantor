@@ -10,7 +10,7 @@ import SwiftUI
 struct OrderRow: View {
     let order:Order2
     let date:Date
-    @Binding var selectedBook: Books?
+    //@Binding var selectedBook: Books?
     
     @State private var showSheet = false
     
@@ -30,9 +30,9 @@ struct OrderRow: View {
                     //    selectedBook = book
                     //}) {
                         BookRow(book: book) //, selectedBook: $selectedBook)
-                            .sheet(item: $selectedBook) { book in
-                                BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
-                            }
+                            //.sheet(item: $selectedBook) { book in
+                            //    BookDetailView(bookDetailVM: BookDetailViewVM(book: book))
+                            //}
                     //}
                 }
 
@@ -47,6 +47,6 @@ struct OrderRow: View {
 
 struct OrderRow_Previews: PreviewProvider {
     static var previews: some View {
-        OrderRow(order: .order2Test, date: Date(), selectedBook: .constant(.bookTest))
+        OrderRow(order: .order2Test, date: Date()) //, selectedBook: .constant(.bookTest))
     }
 }

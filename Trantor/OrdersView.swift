@@ -12,7 +12,7 @@ struct OrdersView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var ordersVM:OrdersViewModel
     
-    @State var selectedBook: Books?
+    //@State var selectedBook: Books?
     @State private var isLoading = true
     @State private var firstLoad = true
     @State var showAlert = false
@@ -25,8 +25,7 @@ struct OrdersView: View {
             }
             List(ordersVM.orderedOrders) { order in
                 OrderRow(order: order,
-                         date: ordersVM.stringDateConverter(string: order.date)!,
-                         selectedBook: $selectedBook)
+                         date: ordersVM.stringDateConverter(string: order.date)!)
             }
             .navigationTitle("Pedidos")
             .searchable(text: $ordersVM.searchText, prompt: "Buscar en Pedidos") {

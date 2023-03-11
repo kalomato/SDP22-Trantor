@@ -11,7 +11,6 @@ struct LatestView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
     @State private var firstLoad = true
-    @State private var isLoading = true
     @State var showAlert = false
     @State var alertMsg  = ""
     
@@ -72,15 +71,8 @@ struct LatestView: View {
                     if firstLoad {
                         await booksVM.getBooksLatest()
                         firstLoad = false
-                        isLoading = false
                     }
                     await booksVM.getReaded(email: userVM.usuario.email)
-                }
-            }
-            .overlay {
-                if isLoading {
-                    LoadingView()
-                        .transition(.opacity)
                 }
             }
         }

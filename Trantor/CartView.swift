@@ -12,7 +12,7 @@ struct CartView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     
     var body: some View {
-        Text("Cesta de la compra")
+        Text("Pendiente de implementar")
     }
 }
 
