@@ -3,12 +3,14 @@ https://github.com/kalomato/SDP22-Trantor.git
 ================================================
 
 
-NOTAS DE LA APLICACIÓN
+NOTAS DE LA APLICACIÓN:
+
 La contraseña no se valida. Sólo verifica que tenga más de 6 caracteres.
 Por defecto pongo un valor en el formulario de login por comodidad, pero lógicamente se puede poner cualquier otro usuario. 
 
 
-NOTAS: 
+NOTAS:
+
 En la vista LoginView, utilizo NavigationLink para cargar la vista TabsView una vez validado el usuario. Me da el aviso de que estoy usando funcionalidad "deprecada". Pero es que no he logrado modificarlo para que utilice la nueva forma. 
 
 
