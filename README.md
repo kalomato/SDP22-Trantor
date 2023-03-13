@@ -1,5 +1,7 @@
-# SDP22-Trantor
-Proyecto final SDP 2022 - Enrique
+DISPONIBLE EN EL REPOSITORIO:
+https://github.com/kalomato/SDP22-Trantor.git
+================================================
+
 
 NOTAS DE LA APLICACIÓN
 La contraseña no se valida. Sólo verifica que tenga más de 6 caracteres.
@@ -12,11 +14,9 @@ En la vista LoginView, utilizo NavigationLink para cargar la vista TabsView una 
 
 FALLOS CONOCIDOS SIN RESOLVER AL MOMENTO DE LA ENTREGA:
 
-*Cuando un pedido tiene más de un libro, al tocar sobre un libro se abre el sheet del último libro del pedido.
+*Vista Pedidos: Debería buscar pedidos por estado, npedido, y también título y autor de los libros que estén en algún pedido. Pero solo busca por estado y npedido. (Búsqueda definida en OrdersViewModel.swift, líneas 35 y 36)
 
-*Vista Pedidos: Debería buscar pedidos por estado, npedido, y también título y autor de los libros que estén en algún pedido. Pero solo busca por estado y npedido. (Búsqueda definida en OrdersViewModel.swift, líneas 36 y 37)
-
-*Vista OrderRow: La preview "crashes".
+*Preview en OrderRow y OrderView: Fallan.
 
 
 
@@ -27,3 +27,4 @@ Valorar libros.
 Crear usuario.
 Modificar usuario
 Funcionalidad de admin para gestión de usuarios y pedidos.
+
