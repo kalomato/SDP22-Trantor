@@ -16,7 +16,7 @@ struct OrderRow: View {
     let order:Order2
     let date:Date
    
-    @State private var showBookDetail = false
+    @State private var showBookDetail     = false
     @StateObject private var selectedBook = SelectedBook()
     
     var body: some View {

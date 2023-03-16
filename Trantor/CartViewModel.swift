@@ -9,13 +9,14 @@ import SwiftUI
 
 final class CartViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
+    
     @Published var pendingOrder:Order?
     @Published var booksIDToShop:[Int] = []
     @Published var booksToShop:[Books] = []
     @Published var orderPlaced         = Order(estado: "", npedido: "", date: "", books: [], email: "")
     @Published var orderPlacedDetails  = Order2(estado: "", npedido: "", date: "", books: [], email: "")
-    @Published var showError = false
-    @Published var errorMSG  = ""
+    @Published var showError           = false
+    @Published var errorMSG            = ""
     
     func addToCart(bookID:Int) {
         booksIDToShop.append(bookID)

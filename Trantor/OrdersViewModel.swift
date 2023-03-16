@@ -10,6 +10,7 @@ import SwiftUI
 final class OrdersViewModel:ObservableObject {
     let persistence = NetworkPersistence.shared
     @EnvironmentObject var userVM:UserViewModel
+    
     @Published var orders:[Order2]      = []
     @Published var searchText           = ""
     @Published var sortType:SortType    = .noSort
@@ -32,8 +33,8 @@ final class OrdersViewModel:ObservableObject {
             return orders.filter {
                 $0.estado.lowercased().contains(searchText.lowercased()) ||
                 $0.npedido.lowercased().contains(searchText.lowercased()) ||
-                $0.booksFull.contains { $0.title.contains(searchText.lowercased()) } ||
-                $0.booksFull.contains { $0.author.contains(searchText.lowercased()) }
+                $0.booksFull.contains { $0.title.localizedStandardContains(searchText) } ||
+                $0.booksFull.contains { $0.author.localizedStandardContains(searchText) }
             }
         }
     }

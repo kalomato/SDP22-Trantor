@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var userVM:UserViewModel
+    
     @State private var email         = ""
     @State private var password      = ""
     @State private var validEmail    = false
@@ -90,6 +91,7 @@ struct LoginView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

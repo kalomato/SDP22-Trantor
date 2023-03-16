@@ -13,10 +13,11 @@ struct OrdersView: View {
     @EnvironmentObject var ordersVM:OrdersViewModel
     @EnvironmentObject var cartVM:CartViewModel
     
-    @State private var isLoading = true
-    @State private var firstLoad = true
-    @State var showAlert = false
-    @State var alertMsg  = ""
+    @State private var isLoading     = true
+    @State private var firstLoad     = true
+    @State private var scale:CGFloat = 0.0001
+    @State var showAlert             = false
+    @State var alertMsg              = ""
     
     var body: some View {
         NavigationStack {
@@ -26,6 +27,12 @@ struct OrdersView: View {
             List(ordersVM.orderedOrders) { order in
                 OrderRow(order: order,
                          date: ordersVM.stringDateConverter(string: order.date)!)
+                .scaleEffect(scale)
+                .onAppear {
+                    withAnimation(.spring()) {
+                        scale = 1.0
+                    }
+                }
             }
             .navigationTitle("Pedidos")
             .searchable(text: $ordersVM.searchText, prompt: "Buscar en Pedidos") {

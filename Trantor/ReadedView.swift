@@ -15,8 +15,9 @@ struct ReadedView: View {
     
     @State var showAlert = false
     @State var alertMsg  = ""
-    @State private var isLoading = true
-    @State private var firstLoad = true
+    @State private var isLoading     = true
+    @State private var firstLoad     = true
+    @State private var scale:CGFloat = 0.0001
     
     var body: some View {
         NavigationStack {
@@ -28,6 +29,12 @@ struct ReadedView: View {
                     BookRow(book: book)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             CommonSwipeActions.swipeActions(book: book, booksVM: booksVM, userVM: userVM, cartVM: cartVM, readedVM: readedVM)
+                        }
+                        .scaleEffect(scale)
+                        .onAppear {
+                            withAnimation(.spring()) {
+                                scale = 1
+                            }
                         }
                 }
             }
@@ -63,6 +70,7 @@ struct ReadedView: View {
                     Task {
                         await readedVM.getReadedBooks(email: userVM.usuario.email)
                         isLoading = false
+                        firstLoad = false
                     }
                 }
             }

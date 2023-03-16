@@ -23,6 +23,7 @@ struct CartEmptyView: View {
     }
 }
 
+
 struct CartEmptyView_Previews: PreviewProvider {
     static var previews: some View {
         CartEmptyView()

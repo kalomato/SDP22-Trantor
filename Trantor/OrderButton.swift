@@ -10,6 +10,7 @@ import SwiftUI
 struct OrderButton: View {
     @EnvironmentObject var cartVM:CartViewModel
     @EnvironmentObject var userVM:UserViewModel
+    
     @State private var showConfirm          = false
     @State private var showOrderConfirmView = false
     @State private var isLoading            = false
@@ -54,9 +55,6 @@ struct OrderButton: View {
                     .scaleEffect(3, anchor: .center)
                     .opacity(1)
                     .frame(width: 60, height: 60)
-                    //.foregroundColor(.yellow)
-                    //.background(Color.primary.opacity(1))
-                    //.cornerRadius(10)
                     .padding(.bottom)
             }
         }

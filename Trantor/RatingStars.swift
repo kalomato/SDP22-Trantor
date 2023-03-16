@@ -32,6 +32,7 @@ struct RatingStars: View {
     }
 }
 
+
 struct RatingStars_Previews: PreviewProvider {
     static var previews: some View {
         RatingStars(rating: 2.5, size: 16 )

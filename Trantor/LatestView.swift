@@ -12,9 +12,11 @@ struct LatestView: View {
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var cartVM:CartViewModel
     @EnvironmentObject var readedVM:ReadedViewModel
-    @State private var firstLoad = true
-    @State var showAlert = false
-    @State var alertMsg  = ""
+    
+    @State private var firstLoad     = true
+    @State var showAlert             = false
+    @State var alertMsg              = ""
+    @State private var scale:CGFloat = 0.0001
     
     var body: some View {
         NavigationStack {
@@ -23,6 +25,12 @@ struct LatestView: View {
                     BookRow(book: book)
                         .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                             CommonSwipeActions.swipeActions(book: book, booksVM: booksVM, userVM: userVM, cartVM: cartVM, readedVM: readedVM)
+                        }
+                        .scaleEffect(scale)
+                        .onAppear {
+                            withAnimation(.spring()) {
+                                scale = 1
+                            }
                         }
                 }
             }

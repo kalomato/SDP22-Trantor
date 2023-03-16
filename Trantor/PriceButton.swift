@@ -14,7 +14,7 @@ struct PriceButton: View {
     
     var body: some View {
         Button(action: {
-            // Aquí puedes agregar la acción que quieras que ocurra cuando se presiona el botón
+            
         }) {
             Text("\(price, specifier: "%.2f") €")
                 .font(.title3)
@@ -27,6 +27,7 @@ struct PriceButton: View {
         }
     }
 }
+
 
 struct PriceButton_Previews: PreviewProvider {
     static let price = 29.99

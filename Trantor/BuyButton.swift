@@ -13,7 +13,7 @@ struct BuyButtonStyle: ButtonStyle {
             .foregroundColor(configuration.isPressed ? .white : .blue)
             .background(configuration.isPressed ? Color.orange : Color.clear)
             .cornerRadius(8)
-            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+            .scaleEffect(configuration.isPressed ? 0.8 : 1.0)
 //            .onTapGesture {
 //                let haptic = UIImpactFeedbackGenerator(style: .medium)
 //                haptic.impactOccurred()
@@ -24,6 +24,7 @@ struct BuyButtonStyle: ButtonStyle {
 
 struct BuyButton: View {
     @EnvironmentObject var cartVM:CartViewModel
+    
     let book:Books
     
     var body: some View {
@@ -37,7 +38,6 @@ struct BuyButton: View {
                 .foregroundColor(.blue)
                 .padding()
         }
-        //.background(Color.clear)
         .buttonStyle(BuyButtonStyle())
     }
 }

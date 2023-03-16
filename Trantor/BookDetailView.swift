@@ -13,8 +13,8 @@ struct BookDetailView: View {
     @EnvironmentObject var cartVM:CartViewModel
     @ObservedObject var bookDetailVM:BookDetailViewVM
     
-    @State var showAlert = false
-    @State var alertMsg  = ""
+    @State var showAlert                 = false
+    @State var alertMsg                  = ""
     @State private var isExpandedSummary = false
     @State private var isExpandedPlot    = false
     

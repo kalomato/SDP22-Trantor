@@ -10,6 +10,7 @@ import SwiftUI
 struct TabsView: View {
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var booksVM:BooksViewModel
+    
     @StateObject var readedVM = ReadedViewModel()
     @StateObject var ordersVM = OrdersViewModel()
     @StateObject var cartVM   = CartViewModel()
