@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4C996F95-4C8B-4655-A055-43BA5AD72AAD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9779892A-3FEE-4694-A288-62870EC0A7F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/BooksViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "getBooks()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9779892A-3FEE-4694-A288-62870EC0A7F6 - 8784ac76ebefed53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Trantor.BooksViewModel.getBooks() async -&gt; ()"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "9779892A-3FEE-4694-A288-62870EC0A7F6 - 5425c070eac2347e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Trantor.BooksViewModel.getBooks() async -&gt; ()"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "9779892A-3FEE-4694-A288-62870EC0A7F6 - 102c2253bf394b51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Trantor.BooksViewModel.getBooks() async -&gt; ()"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  uuid = "9779892A-3FEE-4694-A288-62870EC0A7F6 - 5ae79d42d4ade46e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Trantor.BooksViewModel.getBooks() async -&gt; ()"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F18CEDC-E3BB-4771-907D-CD9BDCA20BAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/NetworkPersistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "getBooks()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6F18CEDC-E3BB-4771-907D-CD9BDCA20BAB - 379e58c0332807f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Trantor.NetworkPersistence.getBooks() async throws -&gt; Swift.Array&lt;Trantor.Books&gt;"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "71">
+               </Location>
+               <Location
+                  uuid = "6F18CEDC-E3BB-4771-907D-CD9BDCA20BAB - 10121a5b9fc5c594"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Trantor.NetworkPersistence.getBooks() async throws -&gt; Swift.Array&lt;Trantor.Books&gt;"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "6F18CEDC-E3BB-4771-907D-CD9BDCA20BAB - 8a7d7da190cf440a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Trantor.NetworkPersistence.getBooks() async throws -&gt; Swift.Array&lt;Trantor.Books&gt;"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "6F18CEDC-E3BB-4771-907D-CD9BDCA20BAB - a4130c312ee2ea09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Trantor.NetworkPersistence.getBooks() async throws -&gt; Swift.Array&lt;Trantor.Books&gt;"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C31D9D1D-A769-424C-997E-BDE117916E89"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/BookDetailViewVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getBook()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D132FDB-E2CA-46AD-8F76-97FD6D65FE4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "validaPassword(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CF44F1A-0A19-4427-ADE0-237B173D0379"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3ED5EA08-10D9-40D4-A52A-098DF9638C9A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/NetworkPersistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "getUser(email:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3ED5EA08-10D9-40D4-A52A-098DF9638C9A - c2feaf55990ea867"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Trantor.NetworkPersistence.getUser(email: Swift.String) async throws -&gt; Trantor.User"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "244">
+               </Location>
+               <Location
+                  uuid = "3ED5EA08-10D9-40D4-A52A-098DF9638C9A - c67c72037539fb41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Trantor.NetworkPersistence.getUser(email: Swift.String) async throws -&gt; Trantor.User"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  uuid = "3ED5EA08-10D9-40D4-A52A-098DF9638C9A - a4ea073164d5ec61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Trantor.NetworkPersistence.getUser(email: Swift.String) async throws -&gt; Trantor.User"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "3ED5EA08-10D9-40D4-A52A-098DF9638C9A - 579fcb00a1c88e60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Trantor.NetworkPersistence.getUser(email: Swift.String) async throws -&gt; Trantor.User"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "122">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5ED3893C-7559-4A23-AB66-E24BA2F97EBB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/NetworkPersistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getUser(email:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5ED3893C-7559-4A23-AB66-E24BA2F97EBB - e366354c137a456f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Trantor.NetworkPersistence.getUser(email: Swift.String) async throws -&gt; Trantor.User"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "278">
+               </Location>
+               <Location
+                  uuid = "5ED3893C-7559-4A23-AB66-E24BA2F97EBB - c2feaf55990ea821"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Trantor.NetworkPersistence.getUser(email: Swift.String) async throws -&gt; Trantor.User"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "157">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54FAFC85-DFB1-4078-9063-D63725FBC8C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/UserViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "login(email:pass:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "54FAFC85-DFB1-4078-9063-D63725FBC8C4 - 66c012c6c869bcc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Trantor.UserViewModel.doLogin(email: Swift.String, pass: Swift.String) async -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "107">
+               </Location>
+               <Location
+                  uuid = "54FAFC85-DFB1-4078-9063-D63725FBC8C4 - 7ebb1ff625f5013e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Trantor.UserViewModel.doLogin(email: Swift.String, pass: Swift.String) async -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "54FAFC85-DFB1-4078-9063-D63725FBC8C4 - 3dad0e770b2868dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Trantor.UserViewModel.doLogin(email: Swift.String, pass: Swift.String) async -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  uuid = "54FAFC85-DFB1-4078-9063-D63725FBC8C4 - 50e4b1cfa48b02d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Trantor.UserViewModel.doLogin(email: Swift.String, pass: Swift.String) async -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/UserViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "208">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3E96FDA-986C-45BA-846A-B3E90839E7DE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/OrdersView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "E3E96FDA-986C-45BA-846A-B3E90839E7DE - f75b8af3b22155ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ProgressView&lt;SwiftUI.EmptyView, SwiftUI.EmptyView&gt;, SwiftUI.Text&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in Trantor.OrdersView.body.getter : some"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/OrdersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "E3E96FDA-986C-45BA-846A-B3E90839E7DE - d1aa0158fb0de1b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ProgressView&lt;SwiftUI.EmptyView, SwiftUI.EmptyView&gt;, SwiftUI.Text&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in Trantor.OrdersView.body.getter : some"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/OrdersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "E3E96FDA-986C-45BA-846A-B3E90839E7DE - bb11f367c93669af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI._ConditionalContent&lt;SwiftUI.ProgressView&lt;SwiftUI.EmptyView, SwiftUI.EmptyView&gt;, SwiftUI.Text&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0)&gt; in Trantor.OrdersView.body.getter : some"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/OrdersView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4968DE5D-32E7-4687-B7B9-CD7C612DD27E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/BooksViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "isReaded(email:bookID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4968DE5D-32E7-4687-B7B9-CD7C612DD27E - f5d478202cc2a5a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Trantor.BooksViewModel.isReaded(email: Swift.String, bookID: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "4968DE5D-32E7-4687-B7B9-CD7C612DD27E - f110a9338c81db2d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in Trantor.BooksViewModel.isReaded(email: Swift.String, bookID: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "4968DE5D-32E7-4687-B7B9-CD7C612DD27E - 46f33a8720502985"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Trantor.BooksViewModel.isReaded(email: Swift.String, bookID: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "4968DE5D-32E7-4687-B7B9-CD7C612DD27E - e89e9baba6196876"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Trantor.BooksViewModel.isReaded(email: Swift.String, bookID: Swift.Int) -&gt; Swift.Bool"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Desktop/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/BooksViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F81D408-51BE-4208-9F9D-120337ED4C61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/NetworkPersistence.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "isReaded(email:bookID:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F81D408-51BE-4208-9F9D-120337ED4C61 - eb864e604888df08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Trantor.NetworkPersistence.isReaded(email: Swift.String, bookID: Swift.Int) async throws -&gt; Trantor.IsReaded"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Documents/Formacio%CC%81n/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "2F81D408-51BE-4208-9F9D-120337ED4C61 - a66fae0b73b1c747"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Trantor.NetworkPersistence.isReaded(email: Swift.String, bookID: Swift.Int) async throws -&gt; Trantor.IsReaded"
+                  moduleName = "Trantor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/enrique/Documents/Formacio%CC%81n/Swift%20Developer%20Program%202022/7-%20Proyecto%20Fin%20SDP%202022/Enrique%20Sua%CC%81rez%20-%20Proyecto/Trantor/Trantor/NetworkPersistence.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DC6BAB4-FDBB-4420-AEDC-5C4B5706873C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Trantor/ReadedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "filterReadedBooks"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

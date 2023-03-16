@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD05599F299C1144006609D6 /* NetworkPersistence.swift */; };
+		CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD20018929A8E2E90032E216 /* RatingStars.swift */; };
+		CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2446942993EE6F009E759A /* NetworkInterface.swift */; };
+		CD2BEDDB29BF5294004EB184 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2BEDDA29BF5294004EB184 /* CartViewModel.swift */; };
+		CD3398F229C2637D00BF88BE /* CommonSwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3398F129C2637D00BF88BE /* CommonSwipeActions.swift */; };
+		CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36129A0C62B0096AC89 /* TabsView.swift */; };
+		CD39D36429A0C71F0096AC89 /* ReadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36329A0C71F0096AC89 /* ReadedView.swift */; };
+		CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36529A0C9E50096AC89 /* LatestView.swift */; };
+		CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36729A0CA710096AC89 /* OrdersView.swift */; };
+		CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36A29A2483B0096AC89 /* BookRow.swift */; };
+		CD39D36D29A24F350096AC89 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36C29A24F350096AC89 /* BookDetailView.swift */; };
+		CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */; };
+		CD3BE51E29B20AF700103E55 /* ReadedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */; };
+		CD41926829B74009006BEA4D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD41926729B74009006BEA4D /* LoadingView.swift */; };
+		CD4A5E4D29BA9F3C00BA04C3 /* BuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */; };
+		CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53FDBE299E52FC005A269C /* NetworkTest.swift */; };
+		CD64002529BFDE350072B208 /* CartBookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD64002429BFDE350072B208 /* CartBookRow.swift */; };
+		CD66870829C0B9F90042ABEE /* OrderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66870729C0B9F90042ABEE /* OrderButton.swift */; };
+		CD66870A29C0CB490042ABEE /* OrderConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD66870929C0CB490042ABEE /* OrderConfirmView.swift */; };
+		CD7A7E4B29BA21680092A4E3 /* ReadedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7A7E4A29BA21680092A4E3 /* ReadedIcon.swift */; };
+		CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */; };
+		CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64D299028EB0089B537 /* TrantorApp.swift */; };
+		CD8ED650299028EB0089B537 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED64F299028EB0089B537 /* BooksView.swift */; };
+		CD8ED652299028EC0089B537 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED651299028EC0089B537 /* Assets.xcassets */; };
+		CD8ED655299028EC0089B537 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED654299028EC0089B537 /* Preview Assets.xcassets */; };
+		CD8ED65D299034D20089B537 /* trantorAuthorsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65B299034D20089B537 /* trantorAuthorsTest.json */; };
+		CD8ED65E299034D20089B537 /* trantorBooksTest.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8ED65C299034D20089B537 /* trantorBooksTest.json */; };
+		CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED65F299037AE0089B537 /* ModelDefinition.swift */; };
+		CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8ED663299050090089B537 /* BooksViewModel.swift */; };
+		CD9EE52D29B0E6BD00C33ADD /* UserMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */; };
+		CDA61CB329BFD20000240573 /* CartEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA61CB229BFD20000240573 /* CartEmptyView.swift */; };
+		CDCE8A8A29B48CF80000DCD4 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE8A8929B48CF80000DCD4 /* OrdersViewModel.swift */; };
+		CDCE8A8C29B48DBA0000DCD4 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */; };
+		CDE26B9929BC9014003080EA /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE26B9829BC9014003080EA /* CartView.swift */; };
+		CDED43F729B94BA80067F063 /* PriceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDED43F629B94BA80067F063 /* PriceButton.swift */; };
+		CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE182F29AD3825003B38BE /* UserViewModel.swift */; };
+		CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEE183129AD43C3003B38BE /* ModelOperations.swift */; };
+		CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CD05599F299C1144006609D6 /* NetworkPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPersistence.swift; sourceTree = "<group>"; };
+		CD20018929A8E2E90032E216 /* RatingStars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingStars.swift; sourceTree = "<group>"; };
+		CD2446942993EE6F009E759A /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
+		CD2BEDDA29BF5294004EB184 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		CD3398F129C2637D00BF88BE /* CommonSwipeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSwipeActions.swift; sourceTree = "<group>"; };
+		CD39D36129A0C62B0096AC89 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		CD39D36329A0C71F0096AC89 /* ReadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedView.swift; sourceTree = "<group>"; };
+		CD39D36529A0C9E50096AC89 /* LatestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestView.swift; sourceTree = "<group>"; };
+		CD39D36729A0CA710096AC89 /* OrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersView.swift; sourceTree = "<group>"; };
+		CD39D36A29A2483B0096AC89 /* BookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRow.swift; sourceTree = "<group>"; };
+		CD39D36C29A24F350096AC89 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewVM.swift; sourceTree = "<group>"; };
+		CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedViewModel.swift; sourceTree = "<group>"; };
+		CD41926729B74009006BEA4D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButton.swift; sourceTree = "<group>"; };
+		CD53FDBE299E52FC005A269C /* NetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTest.swift; sourceTree = "<group>"; };
+		CD64002429BFDE350072B208 /* CartBookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartBookRow.swift; sourceTree = "<group>"; };
+		CD66870729C0B9F90042ABEE /* OrderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderButton.swift; sourceTree = "<group>"; };
+		CD66870929C0CB490042ABEE /* OrderConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmView.swift; sourceTree = "<group>"; };
+		CD7A7E4A29BA21680092A4E3 /* ReadedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadedIcon.swift; sourceTree = "<group>"; };
+		CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResult.swift; sourceTree = "<group>"; };
+		CD8ED64A299028EB0089B537 /* Trantor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trantor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8ED64D299028EB0089B537 /* TrantorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrantorApp.swift; sourceTree = "<group>"; };
+		CD8ED64F299028EB0089B537 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
+		CD8ED651299028EC0089B537 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD8ED654299028EC0089B537 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD8ED65B299034D20089B537 /* trantorAuthorsTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorAuthorsTest.json; sourceTree = "<group>"; };
+		CD8ED65C299034D20089B537 /* trantorBooksTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trantorBooksTest.json; sourceTree = "<group>"; };
+		CD8ED65F299037AE0089B537 /* ModelDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDefinition.swift; sourceTree = "<group>"; };
+		CD8ED663299050090089B537 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
+		CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMenu.swift; sourceTree = "<group>"; };
+		CDA61CB229BFD20000240573 /* CartEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEmptyView.swift; sourceTree = "<group>"; };
+		CDCE8A8929B48CF80000DCD4 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
+		CDE26B9829BC9014003080EA /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		CDED43F629B94BA80067F063 /* PriceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceButton.swift; sourceTree = "<group>"; };
+		CDEE182F29AD3825003B38BE /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		CDEE183129AD43C3003B38BE /* ModelOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelOperations.swift; sourceTree = "<group>"; };
+		CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD8ED647299028EB0089B537 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD2446932993EE36009E759A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CD2446942993EE6F009E759A /* NetworkInterface.swift */,
+				CD05599F299C1144006609D6 /* NetworkPersistence.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		CD39D36929A2474C0096AC89 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CD39D36A29A2483B0096AC89 /* BookRow.swift */,
+				CDCE8A8B29B48DBA0000DCD4 /* OrderRow.swift */,
+				CD20018929A8E2E90032E216 /* RatingStars.swift */,
+				CD8DB18029AA9D8E007B26BB /* NoSearchResult.swift */,
+				CD9EE52C29B0E6BD00C33ADD /* UserMenu.swift */,
+				CD41926729B74009006BEA4D /* LoadingView.swift */,
+				CDED43F629B94BA80067F063 /* PriceButton.swift */,
+				CD7A7E4A29BA21680092A4E3 /* ReadedIcon.swift */,
+				CD4A5E4C29BA9F3C00BA04C3 /* BuyButton.swift */,
+				CDA61CB229BFD20000240573 /* CartEmptyView.swift */,
+				CD64002429BFDE350072B208 /* CartBookRow.swift */,
+				CD66870729C0B9F90042ABEE /* OrderButton.swift */,
+				CD3398F129C2637D00BF88BE /* CommonSwipeActions.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		CD8ED641299028EA0089B537 = {
+			isa = PBXGroup;
+			children = (
+				CD8ED64C299028EB0089B537 /* Trantor */,
+				CD8ED6692990542A0089B537 /* TrantorTests */,
+				CD8ED64B299028EB0089B537 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD8ED64B299028EB0089B537 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED64A299028EB0089B537 /* Trantor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD8ED64C299028EB0089B537 /* Trantor */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED6652990536E0089B537 /* Views */,
+				CD39D36929A2474C0096AC89 /* Components */,
+				CD8ED666299053800089B537 /* ViewModels */,
+				CD8ED668299053D80089B537 /* Model */,
+				CD2446932993EE36009E759A /* Network */,
+				CD8ED667299053A50089B537 /* System */,
+				CD8ED653299028EC0089B537 /* Preview Content */,
+			);
+			path = Trantor;
+			sourceTree = "<group>";
+		};
+		CD8ED653299028EC0089B537 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED65B299034D20089B537 /* trantorAuthorsTest.json */,
+				CD8ED65C299034D20089B537 /* trantorBooksTest.json */,
+				CD53FDBE299E52FC005A269C /* NetworkTest.swift */,
+				CD8ED654299028EC0089B537 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD8ED6652990536E0089B537 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CDFB1EA329AD0E78009A9DC2 /* LoginView.swift */,
+				CD39D36129A0C62B0096AC89 /* TabsView.swift */,
+				CD8ED64F299028EB0089B537 /* BooksView.swift */,
+				CD39D36529A0C9E50096AC89 /* LatestView.swift */,
+				CD39D36329A0C71F0096AC89 /* ReadedView.swift */,
+				CD39D36729A0CA710096AC89 /* OrdersView.swift */,
+				CDE26B9829BC9014003080EA /* CartView.swift */,
+				CD39D36C29A24F350096AC89 /* BookDetailView.swift */,
+				CD66870929C0CB490042ABEE /* OrderConfirmView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CD8ED666299053800089B537 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED663299050090089B537 /* BooksViewModel.swift */,
+				CD39D36E29A250150096AC89 /* BookDetailViewVM.swift */,
+				CD3BE51D29B20AF700103E55 /* ReadedViewModel.swift */,
+				CDEE182F29AD3825003B38BE /* UserViewModel.swift */,
+				CDCE8A8929B48CF80000DCD4 /* OrdersViewModel.swift */,
+				CD2BEDDA29BF5294004EB184 /* CartViewModel.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		CD8ED667299053A50089B537 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED64D299028EB0089B537 /* TrantorApp.swift */,
+				CD8ED651299028EC0089B537 /* Assets.xcassets */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+		CD8ED668299053D80089B537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD8ED65F299037AE0089B537 /* ModelDefinition.swift */,
+				CDEE183129AD43C3003B38BE /* ModelOperations.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CD8ED6692990542A0089B537 /* TrantorTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TrantorTests;
+			path = Trantor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD8ED649299028EB0089B537 /* Trantor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD8ED658299028EC0089B537 /* Build configuration list for PBXNativeTarget "Trantor" */;
+			buildPhases = (
+				CD8ED646299028EB0089B537 /* Sources */,
+				CD8ED647299028EB0089B537 /* Frameworks */,
+				CD8ED648299028EB0089B537 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Trantor;
+			productName = Trantor;
+			productReference = CD8ED64A299028EB0089B537 /* Trantor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD8ED642299028EA0089B537 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CD8ED649299028EB0089B537 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = CD8ED645299028EA0089B537 /* Build configuration list for PBXProject "Trantor" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD8ED641299028EA0089B537;
+			productRefGroup = CD8ED64B299028EB0089B537 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD8ED649299028EB0089B537 /* Trantor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD8ED648299028EB0089B537 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD8ED655299028EC0089B537 /* Preview Assets.xcassets in Resources */,
+				CD8ED65E299034D20089B537 /* trantorBooksTest.json in Resources */,
+				CD8ED65D299034D20089B537 /* trantorAuthorsTest.json in Resources */,
+				CD8ED652299028EC0089B537 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD8ED646299028EB0089B537 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD39D36429A0C71F0096AC89 /* ReadedView.swift in Sources */,
+				CD8ED650299028EB0089B537 /* BooksView.swift in Sources */,
+				CD8ED660299037AE0089B537 /* ModelDefinition.swift in Sources */,
+				CDCE8A8A29B48CF80000DCD4 /* OrdersViewModel.swift in Sources */,
+				CD66870829C0B9F90042ABEE /* OrderButton.swift in Sources */,
+				CD3BE51E29B20AF700103E55 /* ReadedViewModel.swift in Sources */,
+				CD0559A0299C1144006609D6 /* NetworkPersistence.swift in Sources */,
+				CD8ED664299050090089B537 /* BooksViewModel.swift in Sources */,
+				CDED43F729B94BA80067F063 /* PriceButton.swift in Sources */,
+				CDEE183229AD43C3003B38BE /* ModelOperations.swift in Sources */,
+				CD53FDBF299E52FC005A269C /* NetworkTest.swift in Sources */,
+				CD2446952993EE6F009E759A /* NetworkInterface.swift in Sources */,
+				CD2BEDDB29BF5294004EB184 /* CartViewModel.swift in Sources */,
+				CDA61CB329BFD20000240573 /* CartEmptyView.swift in Sources */,
+				CD64002529BFDE350072B208 /* CartBookRow.swift in Sources */,
+				CD39D36D29A24F350096AC89 /* BookDetailView.swift in Sources */,
+				CD39D36229A0C62B0096AC89 /* TabsView.swift in Sources */,
+				CD39D36829A0CA710096AC89 /* OrdersView.swift in Sources */,
+				CD9EE52D29B0E6BD00C33ADD /* UserMenu.swift in Sources */,
+				CD8ED64E299028EB0089B537 /* TrantorApp.swift in Sources */,
+				CDFB1EA429AD0E78009A9DC2 /* LoginView.swift in Sources */,
+				CDEE183029AD3825003B38BE /* UserViewModel.swift in Sources */,
+				CD41926829B74009006BEA4D /* LoadingView.swift in Sources */,
+				CD3398F229C2637D00BF88BE /* CommonSwipeActions.swift in Sources */,
+				CD39D36629A0C9E50096AC89 /* LatestView.swift in Sources */,
+				CD39D36F29A250150096AC89 /* BookDetailViewVM.swift in Sources */,
+				CD20018A29A8E2E90032E216 /* RatingStars.swift in Sources */,
+				CDE26B9929BC9014003080EA /* CartView.swift in Sources */,
+				CD4A5E4D29BA9F3C00BA04C3 /* BuyButton.swift in Sources */,
+				CDCE8A8C29B48DBA0000DCD4 /* OrderRow.swift in Sources */,
+				CD66870A29C0CB490042ABEE /* OrderConfirmView.swift in Sources */,
+				CD8DB18129AA9D8E007B26BB /* NoSearchResult.swift in Sources */,
+				CD7A7E4B29BA21680092A4E3 /* ReadedIcon.swift in Sources */,
+				CD39D36B29A2483B0096AC89 /* BookRow.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CD8ED656299028EC0089B537 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD8ED657299028EC0089B537 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD8ED659299028EC0089B537 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Trantor/Preview Content\"";
+				DEVELOPMENT_TEAM = 27CHX4Z3YS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tizona.Trantor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD8ED65A299028EC0089B537 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Trantor/Preview Content\"";
+				DEVELOPMENT_TEAM = 27CHX4Z3YS;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tizona.Trantor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD8ED645299028EA0089B537 /* Build configuration list for PBXProject "Trantor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8ED656299028EC0089B537 /* Debug */,
+				CD8ED657299028EC0089B537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD8ED658299028EC0089B537 /* Build configuration list for PBXNativeTarget "Trantor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8ED659299028EC0089B537 /* Debug */,
+				CD8ED65A299028EC0089B537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD8ED642299028EA0089B537 /* Project object */;
+}
