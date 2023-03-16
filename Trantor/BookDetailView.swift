@@ -11,6 +11,7 @@ struct BookDetailView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var cartVM:CartViewModel
+    @EnvironmentObject var readedVM:ReadedViewModel
     @ObservedObject var bookDetailVM:BookDetailViewVM
     
     @State var showAlert                 = false
@@ -62,6 +63,7 @@ struct BookDetailView: View {
                                     Task {
                                         if (await booksVM.toggleReaded(email: userVM.usuario.email, bookID: [bookDetailVM.book.id])) {
                                             await booksVM.getReaded(email: userVM.usuario.email)
+                                            await readedVM.getReadedBooks(email: userVM.usuario.email)
                                         } else {
                                               showAlert = true
                                                 alertMsg = "Error, intente de nuevo"
@@ -177,5 +179,6 @@ struct BookDetailView_Previews: PreviewProvider {
             .environmentObject(BooksViewModel())
             .environmentObject(userVM)
             .environmentObject(CartViewModel())
+            .environmentObject(ReadedViewModel())
     }
 }

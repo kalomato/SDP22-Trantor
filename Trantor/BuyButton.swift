@@ -24,6 +24,7 @@ struct BuyButtonStyle: ButtonStyle {
 
 struct BuyButton: View {
     @EnvironmentObject var cartVM:CartViewModel
+    @State private var scale:CGFloat = 1
     
     let book:Books
     
@@ -37,6 +38,13 @@ struct BuyButton: View {
                 .frame(width: 45)
                 .foregroundColor(.blue)
                 .padding()
+                .scaleEffect(scale)
+                .onChange(of: cartVM.isInCart(bookID: book.id)) { _ in
+                    scale = 0.7
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.4, blendDuration: 0)) {
+                        scale = 1
+                    }
+                }
         }
         .buttonStyle(BuyButtonStyle())
     }
