@@ -16,7 +16,7 @@ struct LatestView: View {
     @State private var firstLoad     = true
     @State var showAlert             = false
     @State var alertMsg              = ""
-    @State private var scale:CGFloat = 0.8
+    @State private var scale:CGFloat = 0.9
     
     var body: some View {
         NavigationStack {

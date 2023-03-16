@@ -14,7 +14,7 @@ struct BooksView: View {
     @EnvironmentObject var readedVM:ReadedViewModel
     
     @State private var firstLoad = true
-    @State private var scale: CGFloat = 0.8
+    @State private var scale: CGFloat = 0.9
 
     var body: some View {
         NavigationStack {

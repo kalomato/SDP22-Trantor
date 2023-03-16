@@ -16,7 +16,7 @@ struct OrdersView: View {
     
     @State private var isLoading     = true
     @State private var firstLoad     = true
-    @State private var scale:CGFloat = 0.8
+    @State private var scale:CGFloat = 0.9
     @State var showAlert             = false
     @State var alertMsg              = ""
     
