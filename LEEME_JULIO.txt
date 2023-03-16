@@ -13,7 +13,7 @@ En la vista LoginView, utilizo NavigationLink para cargar la vista TabsView una 
 
 
 
-FUNCIONALIDADES QUE NO ME HA DADO TIEMPO A IMPLEMENTAR:
+FUNCIONALIDADES NO IMPLEMENTADAS AUN:
 
 Crear usuario
 Modificar usuario
