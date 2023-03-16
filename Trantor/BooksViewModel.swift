@@ -22,16 +22,16 @@ final class BooksViewModel:ObservableObject {
     @State var booksLoading     = true
     
     enum SortType:String, CaseIterable {
-        case ratingAscending  = "Por valoración ascencente"
-        case ratingDescending = "Por valoración descendente"
-        case titleAscending   = "Por título ascendente"
-        case titleDescending  = "Por título descendente"
-        case authorAscending  = "Por autor ascendente"
-        case authorDescending = "Por autor descendente"
-        case priceAscending   = "Por precio ascendente"
-        case priceDescending  = "Por precio descendente"
-        case yearAscending    = "Por año ascendente"
-        case yearDescending   = "Por año descendente"
+        case ratingAscending  = "\u{2191}  Por valoración"
+        case ratingDescending = "\u{2193}  Por valoración"
+        case titleAscending   = "\u{2191}  Por título"
+        case titleDescending  = "\u{2193}  Por título"
+        case authorAscending  = "\u{2191}  Por autor"
+        case authorDescending = "\u{2193}  Por autor"
+        case priceAscending   = "\u{2191}  Por precio"
+        case priceDescending  = "\u{2193}  Por precio"
+        case yearAscending    = "\u{2191}  Por año"
+        case yearDescending   = "\u{2193}  Por año"
         case noSort           = "Por defecto"
     }
     

@@ -17,7 +17,7 @@ struct ReadedView: View {
     @State var alertMsg  = ""
     @State private var isLoading     = true
     @State private var firstLoad     = true
-    @State private var scale:CGFloat = 0.0001
+    @State private var scale:CGFloat = 0.8
     
     var body: some View {
         NavigationStack {

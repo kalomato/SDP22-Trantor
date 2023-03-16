@@ -12,10 +12,11 @@ struct OrdersView: View {
     @EnvironmentObject var booksVM:BooksViewModel
     @EnvironmentObject var ordersVM:OrdersViewModel
     @EnvironmentObject var cartVM:CartViewModel
+    @EnvironmentObject var readedVM:ReadedViewModel
     
     @State private var isLoading     = true
     @State private var firstLoad     = true
-    @State private var scale:CGFloat = 0.0001
+    @State private var scale:CGFloat = 0.8
     @State var showAlert             = false
     @State var alertMsg              = ""
     
@@ -100,6 +101,7 @@ struct OrdersView_Previews: PreviewProvider {
             .environmentObject(OrdersViewModel())
             .environmentObject(userVM)
             .environmentObject(BooksViewModel())
+            .environmentObject(ReadedViewModel())
             .task {
                 await OrdersViewModel().getOrders(email: "enrique@tizona.net")
             }

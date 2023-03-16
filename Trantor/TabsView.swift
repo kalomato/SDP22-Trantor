@@ -45,6 +45,7 @@ struct TabsView: View {
                 .environmentObject(userVM)
                 .environmentObject(ordersVM)
                 .environmentObject(cartVM)
+                .environmentObject(readedVM)
                 .tabItem {
                     Label("Historial Pedidos", systemImage: "basket.fill")
                 }

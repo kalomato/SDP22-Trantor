@@ -18,12 +18,12 @@ final class OrdersViewModel:ObservableObject {
     @Published var errorMSG             = ""
         
     enum SortType:String, CaseIterable {
-        case dateAscending     = "Por fecha ascendente"
-        case estadoAscending   = "Por estado ascendente"
-        case estadoDescending  = "Por estado descendente"
-        case npedidoAscending  = "Por núm. pedido asc."
-        case npedidoDescending = "Por núm. pedido desc."
-        case noSort            = "Por defecto (fecha desc.)"
+        case dateAscending     = "\u{2191}  Por fecha"
+        case estadoAscending   = "\u{2191}  Por estado"
+        case estadoDescending  = "\u{2193}  Por estado"
+        case npedidoAscending  = "\u{2191}  Por núm. pedido"
+        case npedidoDescending = "\u{2193}  Por núm. pedido"
+        case noSort            = "Por defecto (fecha \u{2193})"
     }
     
     var filterOrders:[Order2] {

@@ -24,16 +24,16 @@ final class ReadedViewModel:ObservableObject {
 //    }
     
     enum SortType:String, CaseIterable {
-        case ratingAscending  = "Por valoración (0-9)"
-        case ratingDescending = "Por valoración (9-0)"
-        case titleAscending   = "Por título (A-Z)"
-        case titleDescending  = "Por título (Z-A)"
-        case authorAscending  = "Por autor (A-Z)"
-        case authorDescending = "Por autor (Z-A)"
-        case priceAscending   = "Por precio (0-9)"
-        case priceDescending  = "Por precio (9-0)"
-        case yearAscending    = "Por año (0-9)"
-        case yearDescending   = "Por año (9-0)"
+        case ratingAscending  = "\u{2191}  Por valoración"
+        case ratingDescending = "\u{2193}  Por valoración"
+        case titleAscending   = "\u{2191}  Por título"
+        case titleDescending  = "\u{2193}  Por título"
+        case authorAscending  = "\u{2191}  Por autor"
+        case authorDescending = "\u{2193}  Por autor"
+        case priceAscending   = "\u{2191}  Por precio"
+        case priceDescending  = "\u{2193}  Por precio"
+        case yearAscending    = "\u{2191}  Por año"
+        case yearDescending   = "\u{2193}  Por año"
         case noSort           = "Por defecto"
     }
     
