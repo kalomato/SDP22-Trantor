@@ -10,6 +10,7 @@ import SwiftUI
 struct TabsView: View {
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var booksVM:BooksViewModel
+    @EnvironmentObject var connectionStatus:ConnectionStatus
     
     @StateObject var readedVM = ReadedViewModel()
     @StateObject var ordersVM = OrdersViewModel()
@@ -59,6 +60,7 @@ struct TabsView: View {
                 .badge(cartVM.booksIDToShop.count > 0 ? "\(cartVM.booksIDToShop.count)" : nil)
         }
         .navigationBarHidden(true)
+        .modifier(NoConnectionAlert())
     }
 }
 
@@ -72,5 +74,6 @@ struct TabsView_Previews: PreviewProvider {
             .environmentObject(userVM)
             .environmentObject(ReadedViewModel())
             .environmentObject(OrdersViewModel())
+            .environmentObject(ConnectionStatus())
     }
 }

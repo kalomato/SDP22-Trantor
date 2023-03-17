@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var userVM:UserViewModel
+    @EnvironmentObject var connectionStatus:ConnectionStatus
     
     @State private var email         = ""
     @State private var password      = ""
@@ -79,7 +80,7 @@ struct LoginView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                 }
-                //No he conseguido cambiar esta llamada de forma que no me avise de que está "deprecado"
+                //No consigo cambiar esta llamada de forma que no me avise de que está "deprecado"
                 NavigationLink(destination: TabsView().environmentObject(userVM), isActive: $userVM.logged, label: { EmptyView() })
             }
             .padding()
@@ -89,6 +90,7 @@ struct LoginView: View {
         }
         .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
+        .modifier(NoConnectionAlert())
     }
 }
 
@@ -97,5 +99,6 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
             .environmentObject(UserViewModel())
+            .environmentObject(ConnectionStatus())
     }
 }

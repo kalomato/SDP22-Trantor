@@ -11,12 +11,14 @@ import SwiftUI
 struct TrantorApp: App {
     @StateObject var booksVM = BooksViewModel()
     @StateObject var userVM = UserViewModel()
+    @StateObject var connectionStatus = ConnectionStatus()
 
     var body: some Scene {
         WindowGroup {
             LoginView()
                 .environmentObject(userVM)
                 .environmentObject(booksVM)
+                .environmentObject(connectionStatus)
         }
     }
 }

@@ -12,6 +12,7 @@ struct BookDetailView: View {
     @EnvironmentObject var userVM:UserViewModel
     @EnvironmentObject var cartVM:CartViewModel
     @EnvironmentObject var readedVM:ReadedViewModel
+    
     @ObservedObject var bookDetailVM:BookDetailViewVM
     
     @State var showAlert                 = false
