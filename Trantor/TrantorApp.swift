@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct TrantorApp: App {
-    @StateObject var booksVM = BooksViewModel()
-    @StateObject var userVM = UserViewModel()
+    @StateObject var booksVM          = BooksViewModel()
+    @StateObject var userVM           = UserViewModel()
     @StateObject var connectionStatus = ConnectionStatus()
 
     var body: some Scene {
