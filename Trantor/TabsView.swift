@@ -64,16 +64,28 @@ struct TabsView: View {
     }
 }
 
-struct TabsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User.userTest
-        let userVM = UserViewModel()
-        userVM.usuario = user
-        return TabsView()
-            .environmentObject(BooksViewModel())
-            .environmentObject(userVM)
-            .environmentObject(ReadedViewModel())
-            .environmentObject(OrdersViewModel())
-            .environmentObject(ConnectionStatus())
-    }
+//struct TabsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = User.userTest
+//        let userVM = UserViewModel()
+//        userVM.usuario = user
+//        return TabsView()
+//            .environmentObject(BooksViewModel())
+//            .environmentObject(userVM)
+//            .environmentObject(ReadedViewModel())
+//            .environmentObject(OrdersViewModel())
+//            .environmentObject(ConnectionStatus())
+//    }
+//}
+
+#Preview {
+    let user = User.userTest
+    let userVM = UserViewModel()
+    userVM.usuario = user
+    return TabsView()
+        .environmentObject(BooksViewModel())
+        .environmentObject(userVM)
+        .environmentObject(ReadedViewModel())
+        .environmentObject(OrdersViewModel())
+        .environmentObject(ConnectionStatus())
 }

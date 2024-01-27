@@ -56,16 +56,28 @@ struct CartView: View {
 }
 
 
-struct CartView_Previews: PreviewProvider {
-    static var previews: some View {
-        let cartVM = CartViewModel()
-        cartVM.booksIDToShop = [1,1,3]
-        cartVM.booksToShop = [Books.bookTest, Books.bookTest,
-            Books(summary: "A Princess of Mars is a science fantasy novel...", author: "H. G. Wells", plot: "John Carter, a Confederate veteran of the American Civil War...", isbn: "0143104888", year: 1912, id: 3, cover: URL (string: "https://images.gr-assets.com/books/1332272118l/40395.jpg"), title: "A Princess of Mars",  pages: 118, rating: 3.87, price: 26.97)
-        ]
-        return CartView()
-            .environmentObject(cartVM)
-            .environmentObject(UserViewModel())
-            .environmentObject(BooksViewModel())
-    }
+//struct CartView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let cartVM = CartViewModel()
+//        cartVM.booksIDToShop = [1,1,3]
+//        cartVM.booksToShop = [Books.bookTest, Books.bookTest,
+//            Books(summary: "A Princess of Mars is a science fantasy novel...", author: "H. G. Wells", plot: "John Carter, a Confederate veteran of the American Civil War...", isbn: "0143104888", year: 1912, id: 3, cover: URL (string: "https://images.gr-assets.com/books/1332272118l/40395.jpg"), title: "A Princess of Mars",  pages: 118, rating: 3.87, price: 26.97)
+//        ]
+//        return CartView()
+//            .environmentObject(cartVM)
+//            .environmentObject(UserViewModel())
+//            .environmentObject(BooksViewModel())
+//    }
+//}
+
+#Preview {
+    let cartVM = CartViewModel()
+    cartVM.booksIDToShop = [1,1,3]
+    cartVM.booksToShop = [Books.bookTest, Books.bookTest,
+        Books(summary: "A Princess of Mars is a science fantasy novel...", author: "H. G. Wells", plot: "John Carter, a Confederate veteran of the American Civil War...", isbn: "0143104888", year: 1912, id: 3, cover: URL (string: "https://images.gr-assets.com/books/1332272118l/40395.jpg"), title: "A Princess of Mars",  pages: 118, rating: 3.87, price: 26.97)
+    ]
+    return CartView()
+        .environmentObject(cartVM)
+        .environmentObject(UserViewModel())
+        .environmentObject(BooksViewModel())
 }

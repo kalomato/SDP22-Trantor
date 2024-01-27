@@ -86,18 +86,32 @@ struct LatestView: View {
 }
 
 
-struct LatestView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User.userTest
-        let userVM = UserViewModel()
-        userVM.usuario = user
-        return LatestView()
-            .environmentObject(BooksViewModel())
-            .environmentObject(userVM)
-            .environmentObject(CartViewModel())
-            .environmentObject(ReadedViewModel())
-            .task {
-                await BooksViewModel().getBooksLatest()
-            }
-    }
+//struct LatestView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = User.userTest
+//        let userVM = UserViewModel()
+//        userVM.usuario = user
+//        return LatestView()
+//            .environmentObject(BooksViewModel())
+//            .environmentObject(userVM)
+//            .environmentObject(CartViewModel())
+//            .environmentObject(ReadedViewModel())
+//            .task {
+//                await BooksViewModel().getBooksLatest()
+//            }
+//    }
+//}
+
+#Preview {
+    let user = User.userTest
+    let userVM = UserViewModel()
+    userVM.usuario = user
+    return LatestView()
+        .environmentObject(BooksViewModel())
+        .environmentObject(userVM)
+        .environmentObject(CartViewModel())
+        .environmentObject(ReadedViewModel())
+        .task {
+            await BooksViewModel().getBooksLatest()
+        }
 }

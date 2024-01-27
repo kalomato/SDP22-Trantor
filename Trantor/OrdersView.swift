@@ -92,18 +92,32 @@ struct OrdersView: View {
 }
 
 
-struct OrdersView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
-        let userVM = UserViewModel()
-        userVM.usuario = user
-        return OrdersView()
-            .environmentObject(OrdersViewModel())
-            .environmentObject(userVM)
-            .environmentObject(BooksViewModel())
-            .environmentObject(ReadedViewModel())
-            .task {
-                await OrdersViewModel().getOrders(email: "enrique@tizona.net")
-            }
-    }
+//struct OrdersView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
+//        let userVM = UserViewModel()
+//        userVM.usuario = user
+//        return OrdersView()
+//            .environmentObject(OrdersViewModel())
+//            .environmentObject(userVM)
+//            .environmentObject(BooksViewModel())
+//            .environmentObject(ReadedViewModel())
+//            .task {
+//                await OrdersViewModel().getOrders(email: "enrique@tizona.net")
+//            }
+//    }
+//}
+
+#Preview {
+    let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
+    let userVM = UserViewModel()
+    userVM.usuario = user
+    return OrdersView()
+        .environmentObject(OrdersViewModel())
+        .environmentObject(userVM)
+        .environmentObject(BooksViewModel())
+        .environmentObject(ReadedViewModel())
+        .task {
+            await OrdersViewModel().getOrders(email: "enrique@tizona.net")
+        }
 }

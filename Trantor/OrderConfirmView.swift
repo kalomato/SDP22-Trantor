@@ -47,10 +47,16 @@ struct OrderConfirmView: View {
     }
 }
 
-struct OrderConfirmView_Previews: PreviewProvider {
-    static var previews: some View {
-        OrderConfirmView(order: Order2.order2Test)
-            .environmentObject(CartViewModel())
-            .environmentObject(BooksViewModel())
-    }
+//struct OrderConfirmView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OrderConfirmView(order: Order2.order2Test)
+//            .environmentObject(CartViewModel())
+//            .environmentObject(BooksViewModel())
+//    }
+//}
+
+#Preview {
+    OrderConfirmView(order: Order2.order2Test)
+        .environmentObject(CartViewModel())
+        .environmentObject(BooksViewModel())
 }

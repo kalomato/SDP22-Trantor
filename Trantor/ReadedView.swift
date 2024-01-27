@@ -99,14 +99,24 @@ struct ReadedView: View {
 }
 
 
-struct ReadedView_Previews: PreviewProvider {
-    static var previews: some View {
-        ReadedView()
-            .environmentObject(ReadedViewModel())
-            .environmentObject(UserViewModel())
-            .environmentObject(BooksViewModel())
-            .task {
-                await ReadedViewModel().getReadedBooks(email: "enrique@tizona.net")
-            }
-    }
+//struct ReadedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ReadedView()
+//            .environmentObject(ReadedViewModel())
+//            .environmentObject(UserViewModel())
+//            .environmentObject(BooksViewModel())
+//            .task {
+//                await ReadedViewModel().getReadedBooks(email: "enrique@tizona.net")
+//            }
+//    }
+//}
+
+#Preview {
+    ReadedView()
+        .environmentObject(ReadedViewModel())
+        .environmentObject(UserViewModel())
+        .environmentObject(BooksViewModel())
+        .task {
+            await ReadedViewModel().getReadedBooks(email: "enrique@tizona.net")
+        }
 }

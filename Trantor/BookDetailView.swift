@@ -171,15 +171,26 @@ struct BookDetailView: View {
 }
 
 
-struct BookDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
-        let userVM = UserViewModel()
-        userVM.usuario = user
-        return BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))
-            .environmentObject(BooksViewModel())
-            .environmentObject(userVM)
-            .environmentObject(CartViewModel())
-            .environmentObject(ReadedViewModel())
-    }
+//struct BookDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
+//        let userVM = UserViewModel()
+//        userVM.usuario = user
+//        return BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))
+//            .environmentObject(BooksViewModel())
+//            .environmentObject(userVM)
+//            .environmentObject(CartViewModel())
+//            .environmentObject(ReadedViewModel())
+//    }
+//}
+
+#Preview {
+    let user = User(location: "Mi casa", name: "Enrique", role: "user", email: "enrique@tizona.net")
+    let userVM = UserViewModel()
+    userVM.usuario = user
+    return BookDetailView(bookDetailVM: BookDetailViewVM(book: .bookTest))
+        .environmentObject(BooksViewModel())
+        .environmentObject(userVM)
+        .environmentObject(CartViewModel())
+        .environmentObject(ReadedViewModel())
 }
